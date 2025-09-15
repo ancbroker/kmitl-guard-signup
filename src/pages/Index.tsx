@@ -46,8 +46,8 @@ const Index = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-primary" />
+                  <div className="rounded-full p-2">
+                    <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
                     <span className="text-3xl font-bold text-gray-600">400,000 บาท</span>
@@ -55,8 +55,8 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-primary" />
+                  <div className="rounded-full p-2">
+                    <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
                     <span className="text-3xl font-bold text-gray-600">40,000 บาท</span>
@@ -64,8 +64,8 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-primary" />
+                  <div className="rounded-full p-2">
+                    <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
@@ -86,11 +86,11 @@ const Index = () => {
 
             {/* Right Side - Image with Floating Icons */}
             <div className="lg:justify-self-end relative">
-              <div className="relative">
+              <div className="relative overflow-hidden h-80">
                 <img 
                   src={insuranceBanner} 
-                  alt="ประกันอุบัติเหตุ - กลุ่มคนที่เกิดอุบัติเหตุแต่ยิ้มแฮปปี้ มีการดูแลจากประกัน" 
-                  className="w-full h-80 object-contain hover:scale-105 transition-transform duration-300"
+                  alt="ประกันอุบัติเหตุ - คนแขนหักยิ้มแฮปปี้ มีการดูแลจากประกัน" 
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
                 />
                 
                 {/* Floating Insurance Icons */}
