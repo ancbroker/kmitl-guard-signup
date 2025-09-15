@@ -36,36 +36,36 @@ const Index = () => {
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight" style={{ color: '#595959' }}>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: '#595959' }}>
+                <p className="text-lg md:text-xl mb-6 leading-relaxed text-black">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6 text-white" />
+                  <div className="bg-accent rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
                   <div>
                     <span className="text-3xl font-bold text-white">400,000 บาท</span>
-                    <span className="text-xl ml-3 text-foreground/80">เสียชีวิต/ทุพพลภาพถาวร</span>
+                    <span className="text-xl ml-3 text-white">เสียชีวิต/ทุพพลภาพถาวร</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6 text-white" />
+                  <div className="bg-accent rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
                   <div>
                     <span className="text-3xl font-bold text-white">40,000 บาท</span>
-                    <span className="text-xl ml-3 text-foreground/80">ค่ารักษาพยาบาลต่อครั้ง</span>
+                    <span className="text-xl ml-3 text-white">ค่ารักษาพยาบาลต่อครั้ง</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6 text-white" />
+                  <div className="bg-accent rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold text-white">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
