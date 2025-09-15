@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Plus, Trash2, CreditCard } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Plus, Trash2, CreditCard, ChevronDown, ChevronUp, User } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { DatePickerWithYearMonth } from "./DatePickerWithYearMonth";
 
 interface PersonData {
   id: string;
@@ -24,6 +24,7 @@ interface PersonData {
   relationship: string;
   major: string;
   faculty: string;
+  isExpanded?: boolean;
 }
 
 const calculateAge = (birthDate: Date) => {
@@ -42,6 +43,16 @@ const calculateAge = (birthDate: Date) => {
   }
 
   return { years, months, days };
+};
+
+const getPremiumByAge = (years: number) => {
+  if (years >= 1 && years <= 14) return 949;
+  if (years >= 15 && years <= 65) return 850;
+  if (years >= 66 && years <= 70) return 949;
+  if (years >= 71 && years <= 75) return 4690;
+  if (years >= 76 && years <= 80) return 5735;
+  if (years >= 81 && years <= 91) return 7205;
+  return 0;
 };
 
 const relationships = [
@@ -77,9 +88,11 @@ const InsuranceForm = () => {
       referencePersonName: "",
       relationship: "",
       major: "",
-      faculty: ""
+      faculty: "",
+      isExpanded: true
     }
   ]);
+  const [showSummary, setShowSummary] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -95,9 +108,11 @@ const InsuranceForm = () => {
       referencePersonName: "",
       relationship: "",
       major: "",
-      faculty: ""
+      faculty: "",
+      isExpanded: true
     };
     setPeople([...people, newPerson]);
+    setShowSummary(false);
   };
 
   const removePerson = (id: string) => {
@@ -109,6 +124,12 @@ const InsuranceForm = () => {
   const updatePerson = (id: string, field: keyof PersonData, value: any) => {
     setPeople(people.map(p => 
       p.id === id ? { ...p, [field]: value } : p
+    ));
+  };
+
+  const toggleExpanded = (id: string) => {
+    setPeople(people.map(p => 
+      p.id === id ? { ...p, isExpanded: !p.isExpanded } : p
     ));
   };
 
@@ -140,6 +161,10 @@ const InsuranceForm = () => {
       return;
     }
 
+    setShowSummary(true);
+  };
+
+  const proceedToPayment = () => {
     // Simulate payment redirect
     toast({
       title: "กำลังดำเนินการ",
@@ -152,192 +177,285 @@ const InsuranceForm = () => {
     }, 2000);
   };
 
-  return (
-    <div className="space-y-6">
-      {people.map((person, index) => (
-        <Card key={person.id} className="shadow-[var(--shadow-soft)]">
-          <CardHeader className="pb-4">
-            <div className="flex items-center justify-between">
-              <CardTitle className="text-lg">
-                ผู้สมัครคนที่ {index + 1}
-              </CardTitle>
-              {people.length > 1 && (
-                <Button
-                  variant="destructive"
-                  size="sm"
-                  onClick={() => removePerson(person.id)}
-                >
-                  <Trash2 className="w-4 h-4" />
-                </Button>
-              )}
-            </div>
+  const totalPremium = people.reduce((total, person) => {
+    if (person.birthDate) {
+      const age = calculateAge(person.birthDate);
+      return total + getPremiumByAge(age.years);
+    }
+    return total;
+  }, 0);
+
+  if (showSummary) {
+    return (
+      <div className="space-y-6">
+        {/* Summary Section */}
+        <Card className="shadow-[var(--shadow-medium)] border-primary/20">
+          <CardHeader>
+            <CardTitle className="text-xl text-center text-primary">
+              สรุปรายการสมัครประกัน
+            </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            {/* Name Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor={`firstName-${person.id}`}>ชื่อ *</Label>
-                <Input
-                  id={`firstName-${person.id}`}
-                  value={person.firstName}
-                  onChange={(e) => updatePerson(person.id, "firstName", e.target.value)}
-                  placeholder="กรอกชื่อ"
-                />
-              </div>
-              <div>
-                <Label htmlFor={`lastName-${person.id}`}>นามสกุล *</Label>
-                <Input
-                  id={`lastName-${person.id}`}
-                  value={person.lastName}
-                  onChange={(e) => updatePerson(person.id, "lastName", e.target.value)}
-                  placeholder="กรอกนามสกุล"
-                />
-              </div>
-            </div>
-
-            {/* Birth Date */}
-            <div>
-              <Label>วันเดือนปีเกิด *</Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal",
-                      !person.birthDate && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {person.birthDate ? (
-                      <span>
-                        {format(person.birthDate, "dd/MM/yyyy")}
-                        {person.birthDate && (
-                          (() => {
-                            const age = calculateAge(person.birthDate);
-                            return ` (อายุ ${age.years} ปี ${age.months} เดือน ${age.days} วัน)`;
-                          })()
-                        )}
-                      </span>
-                    ) : (
-                      <span>เลือกวันเกิด</span>
-                    )}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
-                  <Calendar
-                    mode="single"
-                    selected={person.birthDate || undefined}
-                    onSelect={(date) => updatePerson(person.id, "birthDate", date)}
-                    disabled={(date) =>
-                      date > new Date() || date < new Date("1900-01-01")
-                    }
-                    initialFocus
-                    className="pointer-events-auto"
-                  />
-                </PopoverContent>
-              </Popover>
-            </div>
-
-            {/* ID Number */}
-            <div>
-              <Label htmlFor={`idNumber-${person.id}`}>เลขบัตรประชาชน (13 หลัก) *</Label>
-              <Input
-                id={`idNumber-${person.id}`}
-                value={person.idNumber}
-                onChange={(e) => {
-                  const value = e.target.value.replace(/\D/g, "").slice(0, 13);
-                  updatePerson(person.id, "idNumber", value);
-                }}
-                placeholder="1234567890123"
-                maxLength={13}
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <Label htmlFor={`email-${person.id}`}>อีเมล *</Label>
-              <Input
-                id={`email-${person.id}`}
-                type="email"
-                value={person.email}
-                onChange={(e) => updatePerson(person.id, "email", e.target.value)}
-                placeholder="example@email.com"
-              />
-            </div>
-
-            {/* Beneficiary */}
-            <div>
-              <Label htmlFor={`beneficiary-${person.id}`}>ผู้รับประโยชน์ *</Label>
-              <Input
-                id={`beneficiary-${person.id}`}
-                value={person.beneficiary}
-                onChange={(e) => updatePerson(person.id, "beneficiary", e.target.value)}
-                placeholder="ชื่อผู้รับประโยชน์"
-              />
-            </div>
-
-            {/* Reference Person */}
-            <div>
-              <Label htmlFor={`referencePerson-${person.id}`}>ชื่อบุคคลอ้างอิง (บุคลากรของ สจล.) *</Label>
-              <Input
-                id={`referencePerson-${person.id}`}
-                value={person.referencePersonName}
-                onChange={(e) => updatePerson(person.id, "referencePersonName", e.target.value)}
-                placeholder="ชื่อบุคลากร สจล."
-              />
-            </div>
-
-            {/* Relationship */}
-            <div>
-              <Label>ความสัมพันธ์กับบุคลากร *</Label>
-              <Select
-                value={person.relationship}
-                onValueChange={(value) => updatePerson(person.id, "relationship", value)}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="เลือกความสัมพันธ์" />
-                </SelectTrigger>
-                <SelectContent>
-                  {relationships.map((rel) => (
-                    <SelectItem key={rel} value={rel}>
-                      {rel}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Major and Faculty */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor={`major-${person.id}`}>สาขาวิชา *</Label>
-                <Input
-                  id={`major-${person.id}`}
-                  value={person.major}
-                  onChange={(e) => updatePerson(person.id, "major", e.target.value)}
-                  placeholder="กรอกสาขาวิชา"
-                />
-              </div>
-              <div>
-                <Label>คณะ *</Label>
-                <Select
-                  value={person.faculty}
-                  onValueChange={(value) => updatePerson(person.id, "faculty", value)}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="เลือกคณะ" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {faculties.map((faculty) => (
-                      <SelectItem key={faculty} value={faculty}>
-                        {faculty}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+          <CardContent>
+            <div className="space-y-4">
+              {people.map((person, index) => {
+                const age = person.birthDate ? calculateAge(person.birthDate) : null;
+                const premium = age ? getPremiumByAge(age.years) : 0;
+                
+                return (
+                  <div key={person.id} className="flex items-center justify-between p-4 bg-muted/30 rounded-lg">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <User className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{person.firstName} {person.lastName}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {age ? `อายุ ${age.years} ปี ${age.months} เดือน` : 'ไม่ระบุอายุ'} • {person.relationship}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-bold text-lg">{premium.toLocaleString()} บาท</div>
+                      <div className="text-xs text-muted-foreground">ต่อปี</div>
+                    </div>
+                  </div>
+                );
+              })}
+              
+              <div className="border-t pt-4">
+                <div className="flex items-center justify-between text-xl font-bold">
+                  <span>รวมเบี้ยประกันทั้งหมด</span>
+                  <span className="text-primary">{totalPremium.toLocaleString()} บาท</span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  สำหรับ {people.length} คน (รวมอากรแสตมป์แล้ว)
+                </p>
               </div>
             </div>
           </CardContent>
+        </Card>
+
+        {/* Action Buttons */}
+        <div className="flex gap-4">
+          <Button
+            variant="outline"
+            onClick={() => setShowSummary(false)}
+            className="flex-1"
+          >
+            กลับไปแก้ไขข้อมูล
+          </Button>
+          <Button
+            variant="premium"
+            size="xl"
+            onClick={proceedToPayment}
+            className="flex-1"
+          >
+            <CreditCard className="w-4 h-4 mr-2" />
+            ไปชำระเงิน {totalPremium.toLocaleString()} บาท
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-6">
+      {people.map((person, index) => (
+        <Card key={person.id} className="shadow-[var(--shadow-soft)] border-l-4 border-l-primary/30">
+          <Collapsible 
+            open={person.isExpanded} 
+            onOpenChange={() => toggleExpanded(person.id)}
+          >
+            <CollapsibleTrigger asChild>
+              <CardHeader className="pb-4 cursor-pointer hover:bg-muted/30 transition-colors">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <User className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-lg">
+                        {person.firstName && person.lastName 
+                          ? `${person.firstName} ${person.lastName}` 
+                          : `ผู้สมัครคนที่ ${index + 1}`}
+                      </CardTitle>
+                      {person.birthDate && (
+                        <p className="text-sm text-muted-foreground">
+                          อายุ {calculateAge(person.birthDate).years} ปี • เบี้ย {getPremiumByAge(calculateAge(person.birthDate).years).toLocaleString()} บาท/ปี
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {people.length > 1 && (
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          removePerson(person.id);
+                        }}
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </Button>
+                    )}
+                    {person.isExpanded ? 
+                      <ChevronUp className="w-5 h-5 text-muted-foreground" /> : 
+                      <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                    }
+                  </div>
+                </div>
+              </CardHeader>
+            </CollapsibleTrigger>
+            
+            <CollapsibleContent>
+              <CardContent className="pt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Name Fields */}
+                  <div>
+                    <Label htmlFor={`firstName-${person.id}`}>ชื่อ *</Label>
+                    <Input
+                      id={`firstName-${person.id}`}
+                      value={person.firstName}
+                      onChange={(e) => updatePerson(person.id, "firstName", e.target.value)}
+                      placeholder="กรอกชื่อ"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor={`lastName-${person.id}`}>นามสกุล *</Label>
+                    <Input
+                      id={`lastName-${person.id}`}
+                      value={person.lastName}
+                      onChange={(e) => updatePerson(person.id, "lastName", e.target.value)}
+                      placeholder="กรอกนามสกุล"
+                    />
+                  </div>
+
+                  {/* Birth Date */}
+                  <div>
+                    <Label>วันเดือนปีเกิด *</Label>
+                    <DatePickerWithYearMonth
+                      date={person.birthDate || undefined}
+                      onSelect={(date) => updatePerson(person.id, "birthDate", date)}
+                      placeholder="เลือกวันเกิด"
+                      disabled={(date) => {
+                        const today = new Date();
+                        const maxAge = new Date(today.getFullYear() - 91, today.getMonth(), today.getDate());
+                        const minAge = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+                        return date > minAge || date < maxAge;
+                      }}
+                    />
+                    {person.birthDate && (
+                      <p className="text-xs text-muted-foreground mt-1">
+                        อายุ {calculateAge(person.birthDate).years} ปี {calculateAge(person.birthDate).months} เดือน {calculateAge(person.birthDate).days} วัน
+                        • เบี้ยประกัน {getPremiumByAge(calculateAge(person.birthDate).years).toLocaleString()} บาท/ปี
+                      </p>
+                    )}
+                  </div>
+
+                  {/* ID Number */}
+                  <div>
+                    <Label htmlFor={`idNumber-${person.id}`}>เลขบัตรประชาชน (13 หลัก) *</Label>
+                    <Input
+                      id={`idNumber-${person.id}`}
+                      value={person.idNumber}
+                      onChange={(e) => {
+                        const value = e.target.value.replace(/\D/g, "").slice(0, 13);
+                        updatePerson(person.id, "idNumber", value);
+                      }}
+                      placeholder="1234567890123"
+                      maxLength={13}
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <Label htmlFor={`email-${person.id}`}>อีเมล *</Label>
+                    <Input
+                      id={`email-${person.id}`}
+                      type="email"
+                      value={person.email}
+                      onChange={(e) => updatePerson(person.id, "email", e.target.value)}
+                      placeholder="example@email.com"
+                    />
+                  </div>
+
+                  {/* Beneficiary */}
+                  <div>
+                    <Label htmlFor={`beneficiary-${person.id}`}>ผู้รับประโยชน์ *</Label>
+                    <Input
+                      id={`beneficiary-${person.id}`}
+                      value={person.beneficiary}
+                      onChange={(e) => updatePerson(person.id, "beneficiary", e.target.value)}
+                      placeholder="ชื่อผู้รับประโยชน์"
+                    />
+                  </div>
+
+                  {/* Reference Person */}
+                  <div>
+                    <Label htmlFor={`referencePerson-${person.id}`}>ชื่อบุคคลอ้างอิง (บุคลากรของ สจล.) *</Label>
+                    <Input
+                      id={`referencePerson-${person.id}`}
+                      value={person.referencePersonName}
+                      onChange={(e) => updatePerson(person.id, "referencePersonName", e.target.value)}
+                      placeholder="ชื่อบุคลากร สจล."
+                    />
+                  </div>
+
+                  {/* Relationship */}
+                  <div>
+                    <Label>ความสัมพันธ์กับบุคลากร *</Label>
+                    <Select
+                      value={person.relationship}
+                      onValueChange={(value) => updatePerson(person.id, "relationship", value)}
+                    >
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="เลือกความสัมพันธ์" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-popover border shadow-[var(--shadow-medium)]">
+                        {relationships.map((rel) => (
+                          <SelectItem key={rel} value={rel}>
+                            {rel}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Major */}
+                  <div>
+                    <Label htmlFor={`major-${person.id}`}>สาขาวิชา *</Label>
+                    <Input
+                      id={`major-${person.id}`}
+                      value={person.major}
+                      onChange={(e) => updatePerson(person.id, "major", e.target.value)}
+                      placeholder="กรอกสาขาวิชา"
+                    />
+                  </div>
+
+                  {/* Faculty */}
+                  <div>
+                    <Label>คณะ *</Label>
+                    <Select
+                      value={person.faculty}
+                      onValueChange={(value) => updatePerson(person.id, "faculty", value)}
+                    >
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="เลือกคณะ" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-popover border shadow-[var(--shadow-medium)]">
+                        {faculties.map((faculty) => (
+                          <SelectItem key={faculty} value={faculty}>
+                            {faculty}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </CardContent>
+            </CollapsibleContent>
+          </Collapsible>
         </Card>
       ))}
 
@@ -357,9 +475,10 @@ const InsuranceForm = () => {
           size="xl"
           onClick={handleSubmit}
           className="flex-1"
+          disabled={people.some(p => !p.firstName || !p.lastName || !p.birthDate)}
         >
-          <CreditCard className="w-4 h-4 mr-2" />
-          ชำระเงิน ({people.length} คน)
+          ดูสรุปรายการ ({people.length} คน)
+          {totalPremium > 0 && ` • ${totalPremium.toLocaleString()} บาท`}
         </Button>
       </div>
     </div>
