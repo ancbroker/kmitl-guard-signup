@@ -26,8 +26,8 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <Shield className="w-12 h-12" />
               <div className="text-center">
-                <h3 className="font-bold text-lg">ทิพยประกันภัย</h3>
-                <p className="text-xs opacity-90">พาร์ทเนอร์ประกันอุบัติเหตุ</p>
+                <h3 className="font-bold text-lg">ANC Insurtech</h3>
+                <p className="text-xs opacity-90">พาร์ทเนอร์ลาดกระบัง</p>
               </div>
             </div>
           </div>
@@ -176,15 +176,15 @@ const Index = () => {
               <CardContent className="space-y-2 text-sm">
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-primary" />
-                  <span>02-329-8000 ต่อ 8200</span>
+                  <span>ANC Insurtech</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>hr@kmitl.ac.th</span>
+                  <span>สอบถามข้อมูลเพิ่มเติม</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-primary" />
-                  <span>อาคารบริหาร ชั้น 2</span>
+                  <span>ติดต่อทีม ANC</span>
                 </div>
               </CardContent>
             </Card>
@@ -212,15 +212,15 @@ const Index = () => {
               <CardContent className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center gap-2 justify-center">
                   <Phone className="w-4 h-4 text-primary" />
-                  <span>02-329-8000 ต่อ 8200</span>
+                  <span>ANC Insurtech</span>
                 </div>
                 <div className="flex items-center gap-2 justify-center">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>hr@kmitl.ac.th</span>
+                  <span>สอบถามข้อมูลเพิ่มเติม</span>
                 </div>
                 <div className="flex items-center gap-2 justify-center">
                   <MapPin className="w-4 h-4 text-primary" />
-                  <span>อาคารบริหาร ชั้น 2</span>
+                  <span>ติดต่อทีม ANC</span>
                 </div>
               </CardContent>
             </Card>
