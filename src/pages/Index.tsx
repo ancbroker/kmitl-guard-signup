@@ -46,8 +46,8 @@ const Index = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <span className="text-3xl font-bold text-gray-600">400,000 บาท</span>
@@ -55,8 +55,8 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <span className="text-3xl font-bold text-gray-600">40,000 บาท</span>
@@ -64,8 +64,8 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
