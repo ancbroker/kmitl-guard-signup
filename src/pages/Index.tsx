@@ -1,4 +1,5 @@
-import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Building2 } from "lucide-react";
+import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Building2, Check } from "lucide-react";
+import insuranceBanner from "@/assets/insurance-banner.jpg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
@@ -14,7 +15,7 @@ const Index = () => {
       <section className="bg-gradient-to-br from-primary via-primary-glow to-accent text-primary-foreground py-16 shadow-[var(--shadow-medium)]">
         <div className="container mx-auto px-4">
           {/* Logos */}
-          <div className="flex items-center justify-center gap-8 mb-8">
+          <div className="flex items-center justify-center gap-8 mb-12">
             <div className="flex items-center gap-3">
               <Building2 className="w-12 h-12" />
               <div className="text-center">
@@ -32,41 +33,73 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Main Headline */}
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-95">
-              สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
-            </p>
+          {/* Main Content - Left Text, Right Image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            {/* Left Side - Text Content */}
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
+                </h1>
+                <p className="text-xl md:text-2xl mb-6 opacity-95">
+                  สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
+                </p>
+              </div>
 
-            {/* Highlight Coverage */}
-            <div className="grid md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-2xl font-bold">400,000 บาท</div>
-                <div className="text-sm opacity-90">เสียชีวิต/ทุพพลภาพถาวร</div>
+              {/* Highlight Coverage with Check Marks */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2">
+                    <Check className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold">400,000 บาท</span>
+                    <span className="text-lg ml-2 opacity-90">เสียชีวิต/ทุพพลภาพถาวร</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2">
+                    <Check className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold">40,000 บาท</span>
+                    <span className="text-lg ml-2 opacity-90">ค่ารักษาพยาบาลต่อครั้ง</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2">
+                    <Check className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold">850 บาท/ปี</span>
+                    <span className="text-lg ml-2 opacity-90">เบี้ยประกัน (อายุ 15-65 ปี)</span>
+                  </div>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-2xl font-bold">40,000 บาท</div>
-                <div className="text-sm opacity-90">ค่ารักษาพยาบาลต่อครั้ง</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-2xl font-bold">850 บาท/ปี</div>
-                <div className="text-sm opacity-90">เบี้ยประกัน (อายุ 15-65 ปี)</div>
-              </div>
+
+              {/* CTA Button */}
+              <Button 
+                onClick={scrollToForm}
+                size="xl" 
+                variant="secondary"
+                className="text-lg px-8 py-4 shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300"
+              >
+                กรอกข้อมูลเพื่อซื้อเลย
+                <ArrowDown className="ml-2 w-5 h-5 animate-bounce" />
+              </Button>
             </div>
 
-            {/* CTA Button */}
-            <Button 
-              onClick={scrollToForm}
-              size="xl" 
-              variant="secondary"
-              className="text-lg px-8 py-4 shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300"
-            >
-              กรอกข้อมูลเพื่อซื้อเลย
-              <ArrowDown className="ml-2 w-5 h-5 animate-bounce" />
-            </Button>
+            {/* Right Side - Image */}
+            <div className="lg:justify-self-end">
+              <div className="relative">
+                <img 
+                  src={insuranceBanner} 
+                  alt="ประกันอุบัติเหตุ - ความคุ้มครองและการดูแลรักษา" 
+                  className="w-full max-w-lg rounded-2xl shadow-[var(--shadow-strong)] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
