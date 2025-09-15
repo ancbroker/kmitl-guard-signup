@@ -195,16 +195,15 @@ const Index = () => {
             </Card>
           </div>
           
-          {/* Disclaimer Text */}
+          {/* Coverage Details Button */}
           <div className="max-w-4xl mx-auto text-center mt-12">
-            <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">
-                *สิทธิการซื้อเฉพาะบุคลากร สจล. ญาติสายตรง และผู้เกษียณเท่านั้น
-              </p>
-              <p className="text-sm text-muted-foreground">
-                *เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว (ค่าภาษียกเว้น ไม่ต้องชำระ)
-              </p>
-            </div>
+            <Button 
+              onClick={() => window.open('/coverage-details.pdf', '_blank')}
+              variant="outline"
+              className="bg-white hover:bg-primary/5 text-primary border-primary px-8 py-3 text-lg shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-all duration-300"
+            >
+              ดูความคุ้มครองเพิ่มเติม
+            </Button>
           </div>
         </div>
       </section>
