@@ -1,6 +1,6 @@
 import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } from "lucide-react";
 import insuranceBanner from "@/assets/insurance-banner.jpg";
-import kmitlLogo from "@/assets/kmitl-logo.svg";
+import kmitlLogo from "@/assets/kmitl-logo.webp";
 import ancLogo from "@/assets/anc-logo.svg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
