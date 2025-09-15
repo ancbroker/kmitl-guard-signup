@@ -86,11 +86,11 @@ const Index = () => {
 
             {/* Right Side - Image with Floating Icons */}
             <div className="lg:justify-self-end relative">
-              <div className="relative overflow-hidden h-80">
+              <div className="relative">
                 <img 
                   src={insuranceBanner} 
                   alt="ประกันอุบัติเหตุ - คนแขนหักยิ้มแฮปปี้ มีการดูแลจากประกัน" 
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                  className="w-full h-96 object-contain hover:scale-105 transition-transform duration-300"
                 />
                 
                 {/* Floating Insurance Icons */}
