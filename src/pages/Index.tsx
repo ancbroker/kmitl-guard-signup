@@ -116,7 +116,7 @@ const Index = () => {
       </section>
 
       {/* Section 3: Package Details */}
-      <section className="py-16 bg-primary/10">
+      <section className="py-16 bg-primary/20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
