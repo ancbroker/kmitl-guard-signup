@@ -46,29 +46,29 @@ const Index = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-white">400,000 บาท</span>
-                    <span className="text-xl ml-3 text-white">เสียชีวิต/ทุพพลภาพถาวร</span>
+                    <span className="text-3xl font-bold text-gray-600">400,000 บาท</span>
+                    <span className="text-xl ml-3 text-gray-600">เสียชีวิต/ทุพพลภาพถาวร</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-white">40,000 บาท</span>
-                    <span className="text-xl ml-3 text-white">ค่ารักษาพยาบาลต่อครั้ง</span>
+                    <span className="text-3xl font-bold text-gray-600">40,000 บาท</span>
+                    <span className="text-xl ml-3 text-gray-600">ค่ารักษาพยาบาลต่อครั้ง</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full p-2 backdrop-blur-sm">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="bg-white rounded-full p-2 backdrop-blur-sm">
+                    <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold text-white">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                    <span className="text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
