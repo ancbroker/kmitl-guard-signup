@@ -44,6 +44,10 @@ All colors MUST be HSL.
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
+    /* Brand Light Blue - #75DAFF */
+    --brand-blue: 200 100% 73%;
+    --brand-blue-foreground: 0 0% 100%;
+
     /* Custom Theme Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 85%), hsl(200, 100%, 90%));
     --gradient-hero: linear-gradient(to right, hsl(200, 100%, 85%), hsl(0, 0%, 100%));

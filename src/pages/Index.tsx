@@ -118,6 +118,9 @@ const Index = () => {
       {/* Section 3: Package Details */}
       <section className="py-16 bg-primary/20">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-brand-blue">สิทธิประโยชน์ประกันภัย</h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
             <Card className="shadow-[var(--shadow-soft)]">
@@ -158,7 +161,7 @@ const Index = () => {
             {/* Premium by Age Card */}
             <Card className="shadow-[var(--shadow-soft)]">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-base">
+                <CardTitle className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-primary" />
                   อัตราเบี้ยประกันตามอายุ
                 </CardTitle>
@@ -166,7 +169,7 @@ const Index = () => {
               <CardContent className="space-y-2 text-sm">
                 <div className="grid grid-cols-1 gap-2">
                   <div>• อายุ 1-14 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
-                  <div>• อายุ 15-65 ปี: <span className="font-semibold text-primary">850 บาท/ปี</span></div>
+                  <div>• อายุ 15-65 ปี: <span className="font-semibold">850 บาท/ปี</span></div>
                   <div>• อายุ 66-70 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
                   <div>• อายุ 71-75 ปี: <span className="font-semibold">4,690 บาท/ปี</span></div>
                   <div>• อายุ 76-80 ปี: <span className="font-semibold">5,735 บาท/ปี</span></div>
@@ -200,10 +203,20 @@ const Index = () => {
             <Button 
               onClick={() => window.open('/coverage-details.pdf', '_blank')}
               variant="outline"
-              className="bg-white hover:bg-primary/5 text-primary border-primary px-8 py-3 text-lg shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-all duration-300"
+              className="bg-white hover:bg-brand-blue/5 text-brand-blue border-brand-blue px-8 py-3 text-lg shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-all duration-300"
             >
               ดูความคุ้มครองเพิ่มเติม
             </Button>
+          </div>
+          
+          {/* Disclaimer Text */}
+          <div className="max-w-4xl mx-auto text-center mt-8">
+            <p className="text-sm text-muted-foreground mb-2">
+              *สิทธิการซื้อเฉพาะบุคลากร สจล. ญาติสายตรง และผู้เกษียณเท่านั้น
+            </p>
+            <p className="text-sm text-muted-foreground">
+              *เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว (ค่าภาษียกเว้น ไม่ต้องชำระ)
+            </p>
           </div>
         </div>
       </section>
