@@ -17,17 +17,17 @@ const Index = () => {
       <section className="bg-[var(--gradient-hero)] text-primary-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
-          <div className="flex items-center justify-center gap-8 mb-12">
+          <div className="flex items-center justify-center gap-6 mb-12">
             <img 
               src={kmitlLogo} 
               alt="KMITL Logo" 
-              className="h-20 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
-            <div className="w-px h-20 bg-primary-foreground/30"></div>
+            <div className="w-px h-12 bg-primary-foreground/30"></div>
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
-              className="h-20 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
           </div>
 
