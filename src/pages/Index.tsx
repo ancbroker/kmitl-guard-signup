@@ -1,5 +1,5 @@
 import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } from "lucide-react";
-import insuranceBanner from "@/assets/insurance-banner.png";
+import insuranceBanner from "@/assets/insurance-people-banner.jpg";
 import kmitlLogo from "@/assets/kmitl-logo.webp";
 import ancLogo from "@/assets/anc-logo.svg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -87,7 +87,7 @@ const Index = () => {
             <div className="lg:justify-self-end relative h-[24rem]">
               <img 
                 src={insuranceBanner} 
-                alt="ประกันอุบัติเหตุ - ผู้หญิงแขนหักยิ้มแฮปปี้ มีโล่ประกันด้านหลัง" 
+                alt="บุคลากร ญาติ และผู้เกษียณประสบอุบัติเหตุแต่ยิ้มมั่นใจ - ประกันอุบัติเหตุทิพยประกันภัย" 
                 className="absolute bottom-0 right-0 w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
               />
             </div>
