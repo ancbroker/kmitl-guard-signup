@@ -18,10 +18,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 213 45% 12%;
 
-    /* Primary - #75DAFF (Light Blue) */
-    --primary: 200 100% 73%; /* #75DAFF converted to HSL */
+    /* Primary - #75DAFF (Light Blue) - Made lighter */
+    --primary: 200 100% 85%; /* Lighter blue than before */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 200 100% 85%; /* Lighter version */
+    --primary-glow: 200 100% 90%; /* Even lighter version */
 
     --secondary: 200 50% 95%;
     --secondary-foreground: 213 45% 12%;
@@ -45,8 +45,8 @@ All colors MUST be HSL.
     --success-foreground: 0 0% 100%;
 
     /* Custom Theme Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 73%), hsl(200, 100%, 85%));
-    --gradient-hero: linear-gradient(to right, hsl(200, 100%, 73%), hsl(0, 0%, 100%));
+    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 85%), hsl(200, 100%, 90%));
+    --gradient-hero: linear-gradient(to right, hsl(200, 100%, 85%), hsl(0, 0%, 100%));
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(200 30% 98%));
 
     /* Soft Shadows */
