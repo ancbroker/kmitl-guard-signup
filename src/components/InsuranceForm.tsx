@@ -463,18 +463,18 @@ const InsuranceForm = () => {
       <div className="flex flex-col sm:flex-row gap-4">
         <Button
           variant="outline"
+          size="xl"
           onClick={addPerson}
           className="flex-1"
         >
           <Plus className="w-4 h-4 mr-2" />
-          เพิ่มผู้สมัครคนต่อไป
+          เพิ่มผู้เอาประกัน
         </Button>
         
         <Button
-          variant="premium"
           size="xl"
           onClick={handleSubmit}
-          className="flex-1"
+          className="flex-1 bg-[#75DAFF] hover:bg-[#75DAFF]/90 text-white"
           disabled={people.some(p => !p.firstName || !p.lastName || !p.birthDate)}
         >
           ดูสรุปรายการ ({people.length} คน)
