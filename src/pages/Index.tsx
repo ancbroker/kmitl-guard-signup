@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-[var(--gradient-hero)] text-primary-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden">
+      <section className="bg-[var(--gradient-hero)] text-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
           <div className="flex items-center justify-center gap-6 mb-12">
@@ -23,7 +23,7 @@ const Index = () => {
               alt="KMITL Logo" 
               className="h-12 w-auto object-contain"
             />
-            <div className="w-px h-12 bg-primary-foreground/30"></div>
+            <div className="w-px h-12 bg-foreground/30"></div>
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
@@ -44,32 +44,31 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* Highlight Coverage with Check Marks */}
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6" />
+                  <div className="bg-primary/20 rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold">400,000 บาท</span>
-                    <span className="text-xl ml-3 opacity-90">เสียชีวิต/ทุพพลภาพถาวร</span>
+                    <span className="text-3xl font-bold text-primary">400,000 บาท</span>
+                    <span className="text-xl ml-3 text-foreground/80">เสียชีวิต/ทุพพลภาพถาวร</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6" />
+                  <div className="bg-primary/20 rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold">40,000 บาท</span>
-                    <span className="text-xl ml-3 opacity-90">ค่ารักษาพยาบาลต่อครั้ง</span>
+                    <span className="text-3xl font-bold text-primary">40,000 บาท</span>
+                    <span className="text-xl ml-3 text-foreground/80">ค่ารักษาพยาบาลต่อครั้ง</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6" />
+                  <div className="bg-primary/20 rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                    <span className="text-2xl font-bold text-primary">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
@@ -100,8 +99,8 @@ const Index = () => {
         </div>
         
         {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-32 -translate-x-32"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-48 translate-x-48"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full translate-y-32 -translate-x-32"></div>
       </section>
 
       {/* Section 2: Form */}
