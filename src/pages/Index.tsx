@@ -118,8 +118,8 @@ const Index = () => {
       {/* Section 3: Package Details */}
       <section className="py-16 bg-primary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-brand-blue">สิทธิประโยชน์ประกันภัย</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4">สิทธิประโยชน์ประกันภัย</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
@@ -207,52 +207,6 @@ const Index = () => {
             >
               ดูความคุ้มครองเพิ่มเติม
             </Button>
-          </div>
-          
-          {/* Disclaimer Text */}
-          <div className="max-w-4xl mx-auto text-center mt-8">
-            <p className="text-sm text-muted-foreground mb-2">
-              *สิทธิการซื้อเฉพาะบุคลากร สจล. ญาติสายตรง และผู้เกษียณเท่านั้น
-            </p>
-            <p className="text-sm text-muted-foreground">
-              *เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว (ค่าภาษียกเว้น ไม่ต้องชำระ)
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Notes & Contact */}
-      <section className="py-12 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <p className="text-sm text-muted-foreground mb-2">
-                *สิทธิการซื้อเฉพาะบุคลากร สจล. ญาติสายตรง และผู้เกษียณเท่านั้น
-              </p>
-              <p className="text-sm text-muted-foreground">
-                *เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว (ค่าภาษียกเว้น ไม่ต้องชำระ)
-              </p>
-            </div>
-            
-            <Card className="shadow-[var(--shadow-soft)] bg-secondary/30">
-              <CardHeader>
-                <CardTitle className="text-lg">ต้องการความช่วยเหลือ?</CardTitle>
-              </CardHeader>
-              <CardContent className="grid md:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-center gap-2 justify-center">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span>ANC Insurtech</span>
-                </div>
-                <div className="flex items-center gap-2 justify-center">
-                  <Mail className="w-4 h-4 text-primary" />
-                  <span>สอบถามข้อมูลเพิ่มเติม</span>
-                </div>
-                <div className="flex items-center gap-2 justify-center">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span>ติดต่อทีม ANC</span>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
