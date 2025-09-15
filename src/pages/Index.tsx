@@ -84,15 +84,31 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Right Side - Image */}
-            <div className="lg:justify-self-end">
+            {/* Right Side - Image with Floating Icons */}
+            <div className="lg:justify-self-end relative">
               <div className="relative">
                 <img 
                   src={insuranceBanner} 
-                  alt="ประกันอุบัติเหตุ - บุคคลยิ้มและเปิดแขนต้อนรับอย่างเป็นมิตร" 
-                  className="w-full max-w-lg rounded-3xl shadow-[var(--shadow-strong)] object-cover hover:scale-105 transition-transform duration-300"
+                  alt="ประกันอุบัติเหตุ - กลุ่มคนที่เกิดอุบัติเหตุแต่ยิ้มแฮปปี้ มีการดูแลจากประกัน" 
+                  className="w-full h-80 object-contain hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-3xl"></div>
+                
+                {/* Floating Insurance Icons */}
+                <div className="absolute -top-4 -left-4 bg-white rounded-full p-3 shadow-lg animate-float">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <div className="absolute top-8 -right-6 bg-white rounded-full p-3 shadow-lg animate-float-delayed">
+                  <Phone className="w-5 h-5 text-accent" />
+                </div>
+                <div className="absolute -bottom-2 left-8 bg-white rounded-full p-3 shadow-lg animate-float">
+                  <CheckCircle className="w-6 h-6 text-success" />
+                </div>
+                <div className="absolute bottom-16 -right-4 bg-white rounded-full p-2 shadow-lg animate-float-delayed">
+                  <Users className="w-5 h-5 text-primary" />
+                </div>
+                <div className="absolute top-20 left-0 bg-white rounded-full p-2 shadow-lg animate-float">
+                  <Mail className="w-4 h-4 text-accent" />
+                </div>
               </div>
             </div>
           </div>
