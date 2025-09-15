@@ -84,31 +84,14 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Right Side - Image with Floating Icons */}
+            {/* Right Side - Image */}
             <div className="lg:justify-self-end relative">
               <div className="relative">
                 <img 
                   src={insuranceBanner} 
-                  alt="ประกันอุบัติเหตุ - คนแขนหักยิ้มแฮปปี้ มีการดูแลจากประกัน" 
-                  className="w-full h-[24rem] scale-75 object-contain hover:scale-[0.8] transition-transform duration-300"
+                  alt="ประกันอุบัติเหตุ - ผู้หญิงแขนหักยิ้มแฮปปี้ มีโล่ประกันด้านหลัง" 
+                  className="w-full h-[24rem] object-contain object-bottom hover:scale-105 transition-transform duration-300"
                 />
-                
-                {/* Floating Insurance Icons */}
-                <div className="absolute -top-4 -left-4 bg-white rounded-full p-3 shadow-lg animate-float">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <div className="absolute top-8 -right-6 bg-white rounded-full p-3 shadow-lg animate-float-delayed">
-                  <Phone className="w-5 h-5 text-accent" />
-                </div>
-                <div className="absolute -bottom-2 left-8 bg-white rounded-full p-3 shadow-lg animate-float">
-                  <CheckCircle className="w-6 h-6 text-success" />
-                </div>
-                <div className="absolute bottom-16 -right-4 bg-white rounded-full p-2 shadow-lg animate-float-delayed">
-                  <Users className="w-5 h-5 text-primary" />
-                </div>
-                <div className="absolute top-20 left-0 bg-white rounded-full p-2 shadow-lg animate-float">
-                  <Mail className="w-4 h-4 text-accent" />
-                </div>
               </div>
             </div>
           </div>
