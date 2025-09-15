@@ -36,8 +36,9 @@ const Index = () => {
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-black">
-                  ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-black">
+                  ประกันอุบัติเหตุทิพยประกันภัย<br />
+                  สำหรับบุคลากร สจล. และครอบครัว
                 </h1>
                 <p className="text-lg md:text-xl mb-6 leading-relaxed text-black">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
@@ -46,7 +47,7 @@ const Index = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="rounded-full p-2">
+                  <div className="rounded-full p-2 bg-white">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
@@ -55,7 +56,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="rounded-full p-2">
+                  <div className="rounded-full p-2 bg-white">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
@@ -64,7 +65,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="rounded-full p-2">
+                  <div className="rounded-full p-2 bg-white">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
