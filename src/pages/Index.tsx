@@ -51,7 +51,7 @@ const Index = () => {
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
+                    <span className="text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -59,7 +59,7 @@ const Index = () => {
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
+                    <span className="text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
