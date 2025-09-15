@@ -85,14 +85,12 @@ const Index = () => {
             </div>
 
             {/* Right Side - Image */}
-            <div className="lg:justify-self-end relative">
-              <div className="relative">
-                <img 
-                  src={insuranceBanner} 
-                  alt="ประกันอุบัติเหตุ - ผู้หญิงแขนหักยิ้มแฮปปี้ มีโล่ประกันด้านหลัง" 
-                  className="w-full h-[24rem] object-contain object-bottom hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+            <div className="lg:justify-self-end relative h-[24rem]">
+              <img 
+                src={insuranceBanner} 
+                alt="ประกันอุบัติเหตุ - ผู้หญิงแขนหักยิ้มแฮปปี้ มีโล่ประกันด้านหลัง" 
+                className="absolute bottom-0 right-0 w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+              />
             </div>
           </div>
         </div>
