@@ -14,10 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section
-        className="text-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden bg-no-repeat bg-cover"
-        style={{ backgroundImage: 'var(--gradient-hero)' }}
-      >
+      <section className="bg-gradient-to-r from-primary to-white text-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
           <div className="flex items-center justify-center gap-6 mb-12">
