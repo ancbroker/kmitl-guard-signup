@@ -39,11 +39,15 @@ const Index = () => {
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-success" />
-                  <span>ค่าชดเชยอุบัติเหตุสูงสุด 500,000 บาท</span>
+                  <span>เสียชีวิต/ทุพพลภาพถาวรจากอุบัติเหตุ 400,000 บาท</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-success" />
-                  <span>ค่ารักษาพยาบาลสูงสุด 50,000 บาท</span>
+                  <span>อุบัติเหตุสาธารณภัยสูงสุด 800,000 บาท</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="w-4 h-4 text-success" />
+                  <span>ค่ารักษาพยาบาลต่ออุบัติเหตุ 40,000 บาท</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-success" />
@@ -51,7 +55,34 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-success" />
-                  <span>เบี้ยประกันเพียง 300 บาท/ปี</span>
+                  <span>เบี้ยประกันเริ่มต้น 850 บาท/ปี</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="w-4 h-4 text-success" />
+                  <span>ครอบคลุมการขับขี่รถจักรยานยนต์</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Premium by Age Card */}
+            <Card className="shadow-[var(--shadow-soft)]">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Shield className="w-5 h-5 text-primary" />
+                  อัตราเบี้ยประกันตามอายุ
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="grid grid-cols-2 gap-2">
+                  <div>• อายุ 1-14 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
+                  <div>• อายุ 15-65 ปี: <span className="font-semibold text-primary">850 บาท/ปี</span></div>
+                  <div>• อายุ 66-70 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
+                  <div>• อายุ 71-75 ปี: <span className="font-semibold">4,690 บาท/ปี</span></div>
+                  <div>• อายุ 76-80 ปี: <span className="font-semibold">5,735 บาท/ปี</span></div>
+                  <div>• อายุ 81-91 ปี: <span className="font-semibold">7,205 บาท/ปี</span></div>
+                </div>
+                <div className="text-xs text-muted-foreground mt-2 pt-2 border-t">
+                  * เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว
                 </div>
               </CardContent>
             </Card>
@@ -69,6 +100,9 @@ const Index = () => {
                 <div>• ญาติของบุคลากร (บิดา มารดา คู่สมรส บุตร)</div>
                 <div>• ผู้เกษียณอายุจากมหาวิทยาลัย</div>
                 <div>• อาจารย์พิเศษ</div>
+                <div className="text-xs text-muted-foreground mt-2 pt-2 border-t">
+                  สำหรับผู้มีอายุ 1-91 ปี สุขภาพสมบูรณ์ แข็งแรง
+                </div>
               </CardContent>
             </Card>
 
