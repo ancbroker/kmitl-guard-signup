@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground py-12 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
           <div className="flex items-center justify-center gap-6 mb-12">
@@ -36,39 +36,39 @@ const Index = () => {
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight" style={{ color: '#595959' }}>
                   ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-xl md:text-2xl mb-8 leading-relaxed text-foreground/90">
+                <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: '#595959' }}>
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary/20 rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6 text-primary" />
+                  <div className="bg-accent rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-foreground">400,000 บาท</span>
+                    <span className="text-3xl font-bold text-white">400,000 บาท</span>
                     <span className="text-xl ml-3 text-foreground/80">เสียชีวิต/ทุพพลภาพถาวร</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary/20 rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6 text-primary" />
+                  <div className="bg-accent rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-foreground">40,000 บาท</span>
+                    <span className="text-3xl font-bold text-white">40,000 บาท</span>
                     <span className="text-xl ml-3 text-foreground/80">ค่ารักษาพยาบาลต่อครั้ง</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary/20 rounded-full p-3 backdrop-blur-sm">
-                    <Check className="w-6 h-6 text-primary" />
+                  <div className="bg-accent rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold text-foreground">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                    <span className="text-2xl font-bold text-white">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
