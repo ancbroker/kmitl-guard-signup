@@ -90,7 +90,7 @@ const Index = () => {
                 <img 
                   src={insuranceBanner} 
                   alt="ประกันอุบัติเหตุ - คนแขนหักยิ้มแฮปปี้ มีการดูแลจากประกัน" 
-                  className="w-full h-96 object-contain hover:scale-105 transition-transform duration-300"
+                  className="w-full h-[48rem] scale-150 object-contain hover:scale-[1.55] transition-transform duration-300"
                 />
                 
                 {/* Floating Insurance Icons */}
