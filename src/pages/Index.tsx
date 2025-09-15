@@ -116,9 +116,9 @@ const Index = () => {
       </section>
 
       {/* Section 3: Package Details */}
-      <section className="py-16">
+      <section className="py-16 bg-primary/10">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
             <Card className="shadow-[var(--shadow-soft)]">
               <CardHeader>
@@ -164,16 +164,13 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 gap-2">
                   <div>• อายุ 1-14 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
                   <div>• อายุ 15-65 ปี: <span className="font-semibold text-primary">850 บาท/ปี</span></div>
                   <div>• อายุ 66-70 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
                   <div>• อายุ 71-75 ปี: <span className="font-semibold">4,690 บาท/ปี</span></div>
                   <div>• อายุ 76-80 ปี: <span className="font-semibold">5,735 บาท/ปี</span></div>
                   <div>• อายุ 81-91 ปี: <span className="font-semibold">7,205 บาท/ปี</span></div>
-                </div>
-                <div className="text-xs text-muted-foreground mt-2 pt-2 border-t">
-                  * เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว
                 </div>
               </CardContent>
             </Card>
@@ -196,27 +193,18 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Contact Info */}
-            <Card className="shadow-[var(--shadow-soft)] bg-secondary/30">
-              <CardHeader>
-                <CardTitle className="text-base">ต้องการความช่วยเหลือ?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span>ANC Insurtech</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-primary" />
-                  <span>สอบถามข้อมูลเพิ่มเติม</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span>ติดต่อทีม ANC</span>
-                </div>
-              </CardContent>
-            </Card>
+          </div>
+          
+          {/* Disclaimer Text */}
+          <div className="max-w-4xl mx-auto text-center mt-12">
+            <div className="space-y-2">
+              <p className="text-sm text-muted-foreground">
+                *สิทธิการซื้อเฉพาะบุคลากร สจล. ญาติสายตรง และผู้เกษียณเท่านั้น
+              </p>
+              <p className="text-sm text-muted-foreground">
+                *เบี้ยประกันรวมอากรแสตมป์ 0.4% แล้ว (ค่าภาษียกเว้น ไม่ต้องชำระ)
+              </p>
+            </div>
           </div>
         </div>
       </section>
