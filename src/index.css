@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* KMITL & ANC Insurtech Brand Colors */
+    /* ANC InsurTech Brand Colors - Light Blue/Cyan Theme */
     --background: 0 0% 99%;
     --foreground: 213 45% 12%;
 
@@ -18,45 +18,45 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 213 45% 12%;
 
-    /* KMITL Navy Blue Primary */
-    --primary: 213 89% 18%;
+    /* ANC Light Blue Primary */
+    --primary: 186 65% 55%; /* Light Blue/Cyan from ANC website */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 213 89% 35%;
+    --primary-glow: 186 65% 75%; /* Lighter version */
 
-    --secondary: 213 20% 95%;
+    --secondary: 186 30% 95%;
     --secondary-foreground: 213 45% 12%;
 
-    --muted: 213 20% 95%;
+    --muted: 186 20% 96%;
     --muted-foreground: 213 25% 50%;
 
-    /* ANC Insurtech Orange Accent */
-    --accent: 25 95% 53%;
+    /* ANC Orange Accent */
+    --accent: 24 90% 55%; /* Orange from ANC website */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 213 25% 85%;
-    --input: 213 25% 92%;
-    --ring: 213 89% 18%;
+    --border: 186 30% 90%;
+    --input: 186 30% 90%;
+    --ring: 186 65% 55%;
 
     /* Success colors */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
-    /* Brand gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(213 89% 18%), hsl(213 89% 28%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(213 20% 98%));
+    /* ANC InsurTech Style Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(186, 65%, 85%), hsl(199, 89%, 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(186, 65%, 85%), hsl(199, 89%, 48%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(186 20% 98%));
 
-    /* Professional shadows */
-    --shadow-soft: 0 2px 10px -2px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 8px 25px -8px hsl(var(--primary) / 0.15);
-    --shadow-strong: 0 15px 35px -10px hsl(var(--primary) / 0.2);
+    /* Soft Shadows with light blue tint */
+    --shadow-soft: 0 2px 10px -2px hsl(186 65% 55% / 0.1);
+    --shadow-medium: 0 8px 25px -8px hsl(186 65% 55% / 0.15);
+    --shadow-strong: 0 15px 35px -10px hsl(186 65% 55% / 0.2);
 
     --radius: 0.5rem;
 
-    /* Transition system */
+    /* Smooth Transitions */
     --transition-fast: all 0.15s ease-out;
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 

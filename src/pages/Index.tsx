@@ -14,20 +14,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-br from-primary via-primary-glow to-accent text-primary-foreground py-16 shadow-[var(--shadow-medium)]">
+      <section className="bg-[var(--gradient-hero)] text-primary-foreground py-20 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
           <div className="flex items-center justify-center gap-8 mb-12">
             <img 
               src={kmitlLogo} 
               alt="KMITL Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
-            <div className="w-px h-16 bg-primary-foreground/30"></div>
+            <div className="w-px h-20 bg-primary-foreground/30"></div>
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </div>
 
@@ -36,37 +36,37 @@ const Index = () => {
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-xl md:text-2xl mb-6 opacity-95">
+                <p className="text-xl md:text-2xl mb-8 opacity-95 leading-relaxed">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
 
               {/* Highlight Coverage with Check Marks */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="bg-white/20 rounded-full p-2">
-                    <Check className="w-5 h-5" />
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold">400,000 บาท</span>
-                    <span className="text-lg ml-2 opacity-90">เสียชีวิต/ทุพพลภาพถาวร</span>
+                    <span className="text-3xl font-bold">400,000 บาท</span>
+                    <span className="text-xl ml-3 opacity-90">เสียชีวิต/ทุพพลภาพถาวร</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="bg-white/20 rounded-full p-2">
-                    <Check className="w-5 h-5" />
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold">40,000 บาท</span>
-                    <span className="text-lg ml-2 opacity-90">ค่ารักษาพยาบาลต่อครั้ง</span>
+                    <span className="text-3xl font-bold">40,000 บาท</span>
+                    <span className="text-xl ml-3 opacity-90">ค่ารักษาพยาบาลต่อครั้ง</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="bg-white/20 rounded-full p-2">
-                    <Check className="w-5 h-5" />
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                    <Check className="w-6 h-6" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
@@ -78,11 +78,10 @@ const Index = () => {
               <Button 
                 onClick={scrollToForm}
                 size="xl" 
-                variant="secondary"
-                className="text-lg px-8 py-4 shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-xl px-12 py-6 rounded-xl shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300 hover:scale-105"
               >
                 กรอกข้อมูลเพื่อซื้อเลย
-                <ArrowDown className="ml-2 w-5 h-5 animate-bounce" />
+                <ArrowDown className="ml-3 w-6 h-6 animate-bounce" />
               </Button>
             </div>
 
@@ -91,14 +90,18 @@ const Index = () => {
               <div className="relative">
                 <img 
                   src={insuranceBanner} 
-                  alt="ประกันอุบัติเหตุ - ความคุ้มครองและการดูแลรักษา" 
-                  className="w-full max-w-lg rounded-2xl shadow-[var(--shadow-strong)] object-cover"
+                  alt="ประกันอุบัติเหตุ - บุคคลยิ้มและเปิดแขนต้อนรับอย่างเป็นมิตร" 
+                  className="w-full max-w-lg rounded-3xl shadow-[var(--shadow-strong)] object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-3xl"></div>
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-32 -translate-x-32"></div>
       </section>
 
       {/* Section 2: Form */}
