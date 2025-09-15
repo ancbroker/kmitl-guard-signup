@@ -1,5 +1,7 @@
-import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Building2, Check } from "lucide-react";
+import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } from "lucide-react";
 import insuranceBanner from "@/assets/insurance-banner.jpg";
+import kmitlLogo from "@/assets/kmitl-logo.svg";
+import ancLogo from "@/assets/anc-logo.svg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
@@ -16,21 +18,17 @@ const Index = () => {
         <div className="container mx-auto px-4">
           {/* Logos */}
           <div className="flex items-center justify-center gap-8 mb-12">
-            <div className="flex items-center gap-3">
-              <Building2 className="w-12 h-12" />
-              <div className="text-center">
-                <h3 className="font-bold text-lg">KMITL</h3>
-                <p className="text-xs opacity-90">มหาวิทยาลัยเทคโนโลยี<br/>พระจอมเกล้าลาดกระบัง</p>
-              </div>
-            </div>
+            <img 
+              src={kmitlLogo} 
+              alt="KMITL Logo" 
+              className="h-16 w-auto object-contain"
+            />
             <div className="w-px h-16 bg-primary-foreground/30"></div>
-            <div className="flex items-center gap-3">
-              <Shield className="w-12 h-12" />
-              <div className="text-center">
-                <h3 className="font-bold text-lg">ANC Insurtech</h3>
-                <p className="text-xs opacity-90">พาร์ทเนอร์ลาดกระบัง</p>
-              </div>
-            </div>
+            <img 
+              src={ancLogo} 
+              alt="ANC Insurtech Logo" 
+              className="h-16 w-auto object-contain"
+            />
           </div>
 
           {/* Main Content - Left Text, Right Image */}
@@ -71,8 +69,7 @@ const Index = () => {
                     <Check className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold">850 บาท/ปี</span>
-                    <span className="text-lg ml-2 opacity-90">เบี้ยประกัน (อายุ 15-65 ปี)</span>
+                    <span className="text-2xl font-bold">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
