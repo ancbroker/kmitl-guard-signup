@@ -36,10 +36,10 @@ const Index = () => {
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
                   ประกันอุบัติเหตุสำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-xl md:text-2xl mb-8 opacity-95 leading-relaxed">
+                <p className="text-xl md:text-2xl mb-8 leading-relaxed text-foreground/90">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
@@ -50,7 +50,7 @@ const Index = () => {
                     <Check className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-primary">400,000 บาท</span>
+                    <span className="text-3xl font-bold text-foreground">400,000 บาท</span>
                     <span className="text-xl ml-3 text-foreground/80">เสียชีวิต/ทุพพลภาพถาวร</span>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ const Index = () => {
                     <Check className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="text-3xl font-bold text-primary">40,000 บาท</span>
+                    <span className="text-3xl font-bold text-foreground">40,000 บาท</span>
                     <span className="text-xl ml-3 text-foreground/80">ค่ารักษาพยาบาลต่อครั้ง</span>
                   </div>
                 </div>
@@ -68,7 +68,7 @@ const Index = () => {
                     <Check className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold text-primary">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                    <span className="text-2xl font-bold text-foreground">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
