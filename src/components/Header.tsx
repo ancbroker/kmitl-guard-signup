@@ -76,8 +76,8 @@ const Header = () => {
             />
           </div>
 
-          {/* Desktop Navigation - Right aligned */}
-          <nav className="hidden md:flex items-center">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center flex-1">
             <div className="flex items-center space-x-16">
               {navigationItems.map((item) => (
                 <button
