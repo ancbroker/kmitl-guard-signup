@@ -156,6 +156,64 @@ const Index = () => {
                 className="w-full h-auto object-contain drop-shadow-lg scale-110"
               />
             </div>
+
+            {/* Top Layer Blue Graphics and Light Effects */}
+            <div className="absolute inset-0 z-20 pointer-events-none">
+              {/* Floating Blue Light Particles */}
+              <div className="absolute top-16 right-24 animate-pulse" style={{animationDuration: '2s'}}>
+                <div className="w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.8)]"></div>
+              </div>
+              <div className="absolute top-32 right-40 animate-pulse" style={{animationDuration: '2.5s', animationDelay: '0.5s'}}>
+                <div className="w-2 h-2 bg-blue-300 rounded-full shadow-[0_0_15px_rgba(147,197,253,0.7)]"></div>
+              </div>
+              <div className="absolute bottom-40 right-16 animate-pulse" style={{animationDuration: '3s', animationDelay: '1s'}}>
+                <div className="w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_25px_rgba(37,99,235,0.9)]"></div>
+              </div>
+              <div className="absolute bottom-60 right-32 animate-pulse" style={{animationDuration: '2.2s', animationDelay: '1.5s'}}>
+                <div className="w-2.5 h-2.5 bg-blue-200 rounded-full shadow-[0_0_18px_rgba(191,219,254,0.6)]"></div>
+              </div>
+
+              {/* Protective Blue Aura */}
+              <div className="absolute bottom-16 right-20 animate-pulse" style={{animationDuration: '4s'}}>
+                <div className="w-48 h-48 rounded-full bg-gradient-radial from-blue-400/20 to-transparent shadow-[0_0_60px_rgba(59,130,246,0.4)]"></div>
+              </div>
+
+              {/* Blue Energy Rings */}
+              <div className="absolute bottom-32 right-28 animate-spin" style={{animationDuration: '8s'}}>
+                <div className="w-32 h-32 rounded-full border-2 border-blue-400/40 border-dashed"></div>
+              </div>
+              <div className="absolute bottom-20 right-36 animate-spin" style={{animationDuration: '12s', animationDirection: 'reverse'}}>
+                <div className="w-24 h-24 rounded-full border border-blue-300/30 border-dotted"></div>
+              </div>
+
+              {/* Sparkling Effects */}
+              <div className="absolute top-20 right-20 animate-bounce" style={{animationDuration: '1.5s'}}>
+                <div className="w-0 h-0 border-l-2 border-r-2 border-b-3 border-l-transparent border-r-transparent border-b-blue-400">
+                  <div className="absolute -top-1 -left-2 w-0 h-0 border-l-2 border-r-2 border-t-3 border-l-transparent border-r-transparent border-t-blue-400"></div>
+                </div>
+              </div>
+              <div className="absolute bottom-48 right-44 animate-bounce" style={{animationDuration: '1.8s', animationDelay: '0.3s'}}>
+                <div className="w-0 h-0 border-l-1.5 border-r-1.5 border-b-2.5 border-l-transparent border-r-transparent border-b-blue-300">
+                  <div className="absolute -top-0.5 -left-1.5 w-0 h-0 border-l-1.5 border-r-1.5 border-t-2.5 border-l-transparent border-r-transparent border-t-blue-300"></div>
+                </div>
+              </div>
+
+              {/* Floating Blue Geometric Shapes */}
+              <div className="absolute top-40 right-48 animate-float" style={{animationDuration: '3s'}}>
+                <div className="w-6 h-6 bg-blue-400/60 transform rotate-45 shadow-[0_0_12px_rgba(59,130,246,0.5)]"></div>
+              </div>
+              <div className="absolute bottom-36 right-52 animate-float" style={{animationDuration: '4s', animationDelay: '1s'}}>
+                <div className="w-4 h-4 bg-blue-300/50 rounded-full shadow-[0_0_10px_rgba(147,197,253,0.4)]"></div>
+              </div>
+
+              {/* Blue Light Rays */}
+              <div className="absolute bottom-24 right-24 opacity-60">
+                <div className="w-1 h-16 bg-gradient-to-t from-blue-400/0 to-blue-400/80 transform rotate-12"></div>
+              </div>
+              <div className="absolute bottom-32 right-40 opacity-50">
+                <div className="w-0.5 h-12 bg-gradient-to-t from-blue-300/0 to-blue-300/70 transform -rotate-6"></div>
+              </div>
+            </div>
           </div>
         </div>
         
