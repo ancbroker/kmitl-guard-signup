@@ -2,7 +2,6 @@ import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } fro
 import kmitlLogo from "@/assets/kmitl-logo.webp";
 import ancLogo from "@/assets/anc-logo.svg";
 import insurancePeopleBanner from "@/assets/insurance-people-banner.png";
-import silverShield from "@/assets/silver-shield.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
@@ -86,71 +85,97 @@ const Index = () => {
 
           </div>
 
-          {/* Banner Image - Absolute positioned at bottom */}
+          {/* Banner Image and Graphics - Absolute positioned at bottom */}
           <div className="absolute bottom-0 right-0 w-1/2 h-96 lg:block hidden">
-            {/* Protection Graphics Background */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              {/* Main Shield Shape */}
-              <div className="absolute bottom-8 right-20 w-64 h-80 z-0">
-                <div className="w-full h-full relative">
-                  {/* Shield Base */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-blue-400/20 via-blue-500/15 to-blue-600/25 rounded-t-full"></div>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-32 border-r-32 border-t-40 border-l-transparent border-r-transparent border-t-blue-500/20"></div>
-                  
-                  {/* Shield Outline */}
-                  <div className="absolute inset-0 border-2 border-blue-400/30 rounded-t-full"></div>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-32 border-r-32 border-t-40 border-l-blue-400/30 border-r-blue-400/30 border-t-blue-400/30"></div>
+            {/* Insurance & Protection Graphics */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Shield Protection Icons */}
+              <div className="absolute top-12 left-8 animate-fade-in">
+                <Shield className="w-16 h-16 text-blue-500/40" strokeWidth={1.5} />
+              </div>
+              <div className="absolute top-20 right-16 animate-fade-in" style={{animationDelay: '0.5s'}}>
+                <Shield className="w-12 h-12 text-orange-500/45" strokeWidth={2} />
+              </div>
+              <div className="absolute bottom-32 left-20 animate-fade-in" style={{animationDelay: '1s'}}>
+                <Shield className="w-14 h-14 text-blue-600/35" strokeWidth={1.5} />
+              </div>
+              <div className="absolute bottom-40 right-12 animate-fade-in" style={{animationDelay: '1.5s'}}>
+                <Shield className="w-10 h-10 text-orange-400/50" strokeWidth={2} />
+              </div>
+
+              {/* Medical Cross Icons for Health Coverage */}
+              <div className="absolute top-32 left-16 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                <div className="w-8 h-8 relative">
+                  <div className="absolute inset-0 bg-blue-500/30 transform rotate-0"></div>
+                  <div className="absolute top-1/2 left-1/2 w-6 h-2 bg-blue-500/40 transform -translate-x-1/2 -translate-y-1/2"></div>
+                  <div className="absolute top-1/2 left-1/2 w-2 h-6 bg-blue-500/40 transform -translate-x-1/2 -translate-y-1/2"></div>
+                </div>
+              </div>
+              <div className="absolute bottom-24 right-20 animate-fade-in" style={{animationDelay: '2s'}}>
+                <div className="w-6 h-6 relative">
+                  <div className="absolute top-1/2 left-1/2 w-5 h-1.5 bg-orange-500/45 transform -translate-x-1/2 -translate-y-1/2"></div>
+                  <div className="absolute top-1/2 left-1/2 w-1.5 h-5 bg-orange-500/45 transform -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
               </div>
 
-              {/* Protective Circles */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 z-0">
-                <div className="w-full h-full border-2 border-blue-300/25 rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
-              </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 z-0">
-                <div className="w-full h-full border border-blue-200/20 rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
-              </div>
-
-              {/* Protection Lines */}
-              <div className="absolute bottom-16 right-32 z-0">
-                {/* Radiating Protection Lines */}
-                <div className="absolute w-24 h-0.5 bg-gradient-to-r from-blue-400/40 to-transparent transform -rotate-12"></div>
-                <div className="absolute w-20 h-0.5 bg-gradient-to-r from-blue-300/35 to-transparent transform rotate-12"></div>
-                <div className="absolute w-28 h-0.5 bg-gradient-to-r from-blue-500/45 to-transparent transform -rotate-45"></div>
-                <div className="absolute w-22 h-0.5 bg-gradient-to-r from-blue-400/40 to-transparent transform rotate-45"></div>
-                <div className="absolute w-26 h-0.5 bg-gradient-to-r from-blue-300/30 to-transparent transform -rotate-75"></div>
-                <div className="absolute w-18 h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent transform rotate-75"></div>
-              </div>
-
-              {/* Safety Barriers */}
-              <div className="absolute top-20 right-24 z-0">
-                <div className="w-16 h-2 bg-gradient-to-r from-blue-400/40 to-blue-300/20 rounded-full"></div>
-              </div>
-              <div className="absolute top-32 right-16 z-0">
-                <div className="w-20 h-2 bg-gradient-to-r from-blue-300/35 to-blue-200/15 rounded-full"></div>
-              </div>
-              <div className="absolute bottom-40 left-20 z-0">
-                <div className="w-18 h-2 bg-gradient-to-r from-blue-500/45 to-blue-400/25 rounded-full"></div>
-              </div>
-
-              {/* Floating Shield Elements */}
-              <div className="absolute top-16 left-16 z-0 animate-float" style={{animationDuration: '3s'}}>
-                <div className="w-12 h-16 bg-gradient-to-b from-blue-400/30 to-blue-500/20 rounded-t-lg relative">
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-8 border-l-transparent border-r-transparent border-t-blue-500/20"></div>
+              {/* Safety Umbrella Shapes for Coverage */}
+              <div className="absolute top-40 right-32 animate-fade-in" style={{animationDelay: '1.2s'}}>
+                <div className="w-12 h-8 bg-gradient-to-b from-blue-400/30 to-blue-500/20 rounded-t-full relative">
+                  <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-blue-600/40 transform -translate-x-1/2"></div>
                 </div>
               </div>
-              <div className="absolute bottom-32 right-48 z-0 animate-float" style={{animationDuration: '4s', animationDelay: '1s'}}>
-                <div className="w-10 h-14 bg-gradient-to-b from-blue-300/25 to-blue-400/15 rounded-t-lg relative">
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-5 border-r-5 border-t-6 border-l-transparent border-r-transparent border-t-blue-400/15"></div>
+              <div className="absolute bottom-28 left-24 animate-fade-in" style={{animationDelay: '1.8s'}}>
+                <div className="w-10 h-6 bg-gradient-to-b from-orange-400/35 to-orange-500/25 rounded-t-full relative">
+                  <div className="absolute bottom-0 left-1/2 w-0.5 h-3 bg-orange-600/45 transform -translate-x-1/2"></div>
                 </div>
               </div>
 
-              {/* Comfort Glow */}
-              <div className="absolute bottom-20 right-24 z-0">
-                <div className="w-48 h-48 bg-gradient-radial from-blue-400/15 via-blue-300/10 to-transparent rounded-full animate-pulse" style={{animationDuration: '5s'}}></div>
+              {/* Protective Circle Barriers */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-80 h-80 border-2 border-blue-400/25 rounded-full animate-pulse" style={{animationDuration: '3s'}}></div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-96 h-96 border border-orange-400/20 rounded-full animate-pulse" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
+              </div>
+
+              {/* Safety Warning Triangles */}
+              <div className="absolute top-24 left-32 animate-fade-in" style={{animationDelay: '0.6s'}}>
+                <div className="w-0 h-0 border-l-4 border-r-4 border-b-6 border-l-transparent border-r-transparent border-b-orange-500/40"></div>
+              </div>
+              <div className="absolute bottom-36 right-28 animate-fade-in" style={{animationDelay: '1.6s'}}>
+                <div className="w-0 h-0 border-l-3 border-r-3 border-b-5 border-l-transparent border-r-transparent border-b-blue-500/35"></div>
+              </div>
+
+              {/* Heart Rate Lines for Life Insurance */}
+              <div className="absolute top-1/3 left-1/4 transform -rotate-12 animate-fade-in" style={{animationDelay: '1.4s'}}>
+                <div className="flex items-center space-x-1">
+                  <div className="w-4 h-0.5 bg-blue-400/30"></div>
+                  <div className="w-2 h-3 bg-blue-500/40"></div>
+                  <div className="w-1 h-5 bg-blue-600/45"></div>
+                  <div className="w-2 h-2 bg-blue-500/40"></div>
+                  <div className="w-4 h-0.5 bg-blue-400/30"></div>
+                </div>
+              </div>
+              <div className="absolute bottom-1/3 right-1/4 transform rotate-12 animate-fade-in" style={{animationDelay: '2.2s'}}>
+                <div className="flex items-center space-x-1">
+                  <div className="w-3 h-0.5 bg-orange-400/35"></div>
+                  <div className="w-1 h-2 bg-orange-500/45"></div>
+                  <div className="w-1 h-4 bg-orange-600/50"></div>
+                  <div className="w-1 h-1 bg-orange-500/45"></div>
+                  <div className="w-3 h-0.5 bg-orange-400/35"></div>
+                </div>
+              </div>
+
+              {/* Safety Glow Effects */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-64 h-64 bg-gradient-radial from-blue-400/10 to-transparent rounded-full animate-pulse" style={{animationDuration: '5s'}}></div>
+              </div>
+              <div className="absolute top-1/3 right-1/4">
+                <div className="w-48 h-48 bg-gradient-radial from-orange-400/8 to-transparent rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
               </div>
             </div>
-
+            
+            {/* Main Image - Positioned at bottom */}
             <div className="absolute bottom-0 right-0 z-10">
               <img 
                 src={insurancePeopleBanner} 
@@ -291,9 +316,8 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold">02-881-1888</p>
-                <p className="text-sm text-muted-foreground">จันทร์ - ศุกร์ 8:30 - 17:30</p>
-                <p className="text-sm text-muted-foreground">เสาร์ 9:00 - 15:00</p>
+                <p className="text-lg font-semibold">02-123-4567</p>
+                <p className="text-sm text-muted-foreground">จันทร์-ศุกร์ 9:00-18:00 น.</p>
               </CardContent>
             </Card>
 
@@ -305,7 +329,7 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold">info@ancbroker.com</p>
+                <p className="text-lg font-semibold">info@ancinsurtech.com</p>
                 <p className="text-sm text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
               </CardContent>
             </Card>
@@ -318,8 +342,8 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm">บริษัท เอ เอ็น ซี โบรกเกอร์เรจ จำกัด</p>
-                <p className="text-sm text-muted-foreground">126/5 ถนนสิรินธร แขวงบางพลัด เขตบางพลัด กรุงเทพฯ 10700</p>
+                <p className="text-sm">ANC Insurtech Co., Ltd.</p>
+                <p className="text-sm text-muted-foreground">123 Technology Road, Innovation District, Bangkok 10110</p>
               </CardContent>
             </Card>
           </div>
