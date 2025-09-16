@@ -297,7 +297,7 @@ const Index = () => {
           </div>
           
           {/* Coverage Details Button */}
-          <div className="max-w-4xl mx-auto text-center mt-12">
+          <div className="max-w-4xl mx-auto text-center mt-8">
             <Button 
               onClick={() => window.open('/coverage-details.pdf', '_blank')}
               variant="outline"
