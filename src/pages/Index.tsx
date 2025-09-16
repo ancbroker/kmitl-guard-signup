@@ -85,7 +85,7 @@ const Index = () => {
             </div>
 
             {/* Right Side - Banner Image and Graphics */}
-            <div className="relative w-full flex justify-center lg:justify-end xl:hidden">
+            <div className="relative w-full flex justify-center lg:justify-end">
               {/* Banner Image and Graphics - Mobile version (< 768px) */}
               <div className="w-full max-w-md mx-auto block md:hidden">
                 <div className="relative w-full">
@@ -186,61 +186,10 @@ const Index = () => {
                     <img 
                       src={insurancePeopleBanner} 
                       alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                      className="w-full h-auto object-contain drop-shadow-lg"
+                      className="w-full h-auto object-contain drop-shadow-lg xl:scale-125 xl:origin-bottom-right"
                     />
-          </div>
-
-          {/* Full Banner Background for xl screens */}
-          <div className="absolute inset-0 hidden xl:block">
-            {/* Background Protection Graphics - Full Banner */}
-            <div className="absolute inset-0 overflow-hidden">
-              {/* Shield Icons scattered around entire banner */}
-              <div className="absolute top-16 left-20 animate-fade-in">
-                <Shield className="w-20 h-20 text-blue-400/30" strokeWidth={1.5} />
-              </div>
-              <div className="absolute top-24 right-32 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <Shield className="w-24 h-24 text-blue-500/25" strokeWidth={1.5} />
-              </div>
-              <div className="absolute top-48 left-40 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <Shield className="w-16 h-16 text-blue-300/35" strokeWidth={1.5} />
-              </div>
-              <div className="absolute bottom-20 right-20 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <Shield className="w-22 h-22 text-blue-400/30" strokeWidth={1.5} />
-              </div>
-              <div className="absolute top-32 right-96 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                <Shield className="w-14 h-14 text-blue-600/40" strokeWidth={1.5} />
-              </div>
-              <div className="absolute bottom-32 left-32 animate-fade-in" style={{animationDelay: '1s'}}>
-                <Shield className="w-18 h-18 text-blue-500/30" strokeWidth={1.5} />
-              </div>
-              
-              {/* Protective Circle Lines - Full Scale */}
-              <div className="absolute top-1/2 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-[50rem] h-[50rem] border border-blue-400/20 rounded-full animate-scale-in"></div>
-              </div>
-              <div className="absolute top-1/2 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-[44rem] h-[44rem] border border-blue-500/15 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
-              </div>
-              <div className="absolute top-1/2 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-[38rem] h-[38rem] border border-blue-600/10 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
-              </div>
-              
-              {/* Central Protection Glow - Full Scale */}
-              <div className="absolute top-1/2 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-[38rem] h-[38rem] bg-blue-400/8 rounded-full blur-3xl animate-pulse"></div>
-              </div>
-            </div>
-            
-            {/* Main Image - Full Banner Right */}
-            <div className="absolute bottom-0 right-0 w-3/5 h-full flex items-end justify-end">
-              <img 
-                src={insurancePeopleBanner} 
-                alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                className="w-full h-auto object-contain object-bottom drop-shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -251,7 +200,7 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full translate-y-32 -translate-x-32"></div>
       </section>
 
-      {/* Section 2: Form */}
+          {/* Section 2: Form */}
       <section id="insurance-form" className="py-8 md:py-12 lg:py-10 xl:py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
