@@ -316,8 +316,9 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold">02-123-4567</p>
-                <p className="text-sm text-muted-foreground">จันทร์-ศุกร์ 9:00-18:00 น.</p>
+                <p className="text-lg font-semibold">02-881-1888</p>
+                <p className="text-sm text-muted-foreground">จันทร์ - ศุกร์ 8:30 - 17:30</p>
+                <p className="text-sm text-muted-foreground">เสาร์ 9:00 - 15:00</p>
               </CardContent>
             </Card>
 
@@ -329,7 +330,7 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold">info@ancinsurtech.com</p>
+                <p className="text-lg font-semibold">info@ancbroker.com</p>
                 <p className="text-sm text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
               </CardContent>
             </Card>
@@ -342,8 +343,8 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm">ANC Insurtech Co., Ltd.</p>
-                <p className="text-sm text-muted-foreground">123 Technology Road, Innovation District, Bangkok 10110</p>
+                <p className="text-sm">บริษัท เอ เอ็น ซี โบรกเกอร์เรจ จำกัด</p>
+                <p className="text-sm text-muted-foreground">126/5 ถนนสิรินธร แขวงบางพลัด เขตบางพลัด กรุงเทพฯ 10700</p>
               </CardContent>
             </Card>
           </div>
