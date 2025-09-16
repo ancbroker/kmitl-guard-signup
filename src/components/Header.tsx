@@ -57,7 +57,7 @@ const Header = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-12">
+            <div className="flex items-center space-x-16">
               {navigationItems.map((item) => (
                 <button
                   key={item.sectionId}
