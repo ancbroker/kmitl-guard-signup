@@ -86,7 +86,7 @@ const Index = () => {
           </div>
 
           {/* Banner Image and Graphics - Combined in one container */}
-          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/2 2xl:w-2/5 h-96 md:h-[28rem] xl:h-[32rem] 2xl:h-[28rem] lg:block hidden scale-100 xl:scale-110 2xl:scale-100 origin-bottom-right">
+          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/3 2xl:w-2/5 h-96 md:h-[28rem] xl:h-96 2xl:h-[28rem] lg:block hidden scale-100 xl:scale-90 2xl:scale-100 origin-bottom-right">
             {/* Background Protection Graphics */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Shield Icons scattered around */}
