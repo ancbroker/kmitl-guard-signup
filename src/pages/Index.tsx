@@ -45,6 +45,34 @@ const Index = () => {
                 </p>
               </div>
 
+              {/* Benefits - Show only on desktop (>= 768px) */}
+              <div className="space-y-2 md:space-y-4 hidden md:block">
+                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
+                  <div className="rounded-full p-1 md:p-2 bg-white">
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
+                  </div>
+                  <div>
+                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
+                  <div className="rounded-full p-1 md:p-2 bg-white">
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
+                  </div>
+                  <div>
+                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
+                  <div className="rounded-full p-1 md:p-2 bg-white">
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
+                  </div>
+                  <div>
+                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                  </div>
+                </div>
+              </div>
+
               {/* CTA Button */}
               <Button 
                 onClick={scrollToForm}
