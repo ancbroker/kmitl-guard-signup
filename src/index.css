@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Custom Theme Colors - #75DAFF, #ffffff, #FFA947 */
+    /* Custom Theme Colors - #75DAFF, #ffffff, #F16322 */
     --background: 0 0% 100%; /* White background */
     --foreground: 213 45% 12%;
 
@@ -29,8 +29,8 @@ All colors MUST be HSL.
     --muted: 200 30% 96%;
     --muted-foreground: 213 25% 50%;
 
-    /* Accent - #FFA947 (Orange) */
-    --accent: 35 100% 64%; /* #FFA947 converted to HSL */
+    /* Accent - #F16322 (Orange) */
+    --accent: 19 88% 54%; /* #F16322 converted to HSL */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -100,7 +100,7 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 19 88% 54%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
