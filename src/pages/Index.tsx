@@ -86,52 +86,52 @@ const Index = () => {
           </div>
 
           {/* Banner Image and Graphics - Absolute positioned at bottom */}
-          <div className="absolute bottom-0 right-0 w-1/2 h-96 lg:block hidden">
+          <div className="absolute bottom-0 right-0 w-1/3 xl:w-2/5 2xl:w-1/3 h-80 md:h-96 xl:h-[28rem] 2xl:h-96 lg:block hidden">
             {/* Background Protection Graphics - Larger and No Grid */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Shield Icons scattered around - Larger sizes */}
               <div className="absolute top-8 left-8 animate-fade-in">
-                <Shield className="w-12 h-12 text-blue-400/50" strokeWidth={1.5} />
+                <Shield className="w-8 h-8 xl:w-12 xl:h-12 text-blue-400/50" strokeWidth={1.5} />
               </div>
               <div className="absolute top-16 right-12 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <Shield className="w-14 h-14 text-blue-500/45" strokeWidth={1.5} />
+                <Shield className="w-10 h-10 xl:w-14 xl:h-14 text-blue-500/45" strokeWidth={1.5} />
               </div>
               <div className="absolute top-32 left-16 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <Shield className="w-10 h-10 text-blue-300/55" strokeWidth={1.5} />
+                <Shield className="w-6 h-6 xl:w-10 xl:h-10 text-blue-300/55" strokeWidth={1.5} />
               </div>
               <div className="absolute bottom-32 right-8 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <Shield className="w-13 h-13 text-blue-400/50" strokeWidth={1.5} />
+                <Shield className="w-8 h-8 xl:w-13 xl:h-13 text-blue-400/50" strokeWidth={1.5} />
               </div>
               <div className="absolute top-20 right-20 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                <Shield className="w-8 h-8 text-blue-600/40" strokeWidth={1.5} />
+                <Shield className="w-6 h-6 xl:w-8 xl:h-8 text-blue-600/40" strokeWidth={1.5} />
               </div>
               <div className="absolute bottom-20 left-12 animate-fade-in" style={{animationDelay: '1s'}}>
-                <Shield className="w-11 h-11 text-blue-500/50" strokeWidth={1.5} />
+                <Shield className="w-7 h-7 xl:w-11 xl:h-11 text-blue-500/50" strokeWidth={1.5} />
               </div>
               
-              {/* Protective Circle Lines - Larger */}
+              {/* Protective Circle Lines - Responsive sizes */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-[28rem] h-[28rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
+                <div className="w-80 h-80 xl:w-[28rem] xl:h-[28rem] 2xl:w-96 2xl:h-96 border border-blue-400/35 rounded-full animate-scale-in"></div>
               </div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-96 h-96 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
+                <div className="w-64 h-64 xl:w-96 xl:h-96 2xl:w-80 2xl:h-80 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
               </div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-80 h-80 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
+                <div className="w-52 h-52 xl:w-80 xl:h-80 2xl:w-64 2xl:h-64 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
               </div>
               
-              {/* Central Protection Glow - Larger */}
+              {/* Central Protection Glow - Responsive */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-80 h-80 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
+                <div className="w-52 h-52 xl:w-80 xl:h-80 2xl:w-64 2xl:h-64 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
               </div>
             </div>
             
-            {/* Main Image - Positioned at bottom */}
-            <div className="absolute bottom-0 right-0 z-10">
+            {/* Main Image - Positioned at bottom with responsive sizing */}
+            <div className="absolute bottom-0 right-0 z-10 max-w-full max-h-full">
               <img 
                 src={insurancePeopleBanner} 
                 alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                className="w-full h-auto object-contain drop-shadow-lg scale-110"
+                className="w-full h-auto object-contain drop-shadow-lg scale-90 xl:scale-100 2xl:scale-90 max-h-80 md:max-h-96 xl:max-h-[28rem] 2xl:max-h-96"
               />
             </div>
           </div>
