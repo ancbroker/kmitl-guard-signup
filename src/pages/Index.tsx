@@ -14,60 +14,60 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-12 pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-12 pb-6 md:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
-          <div className="flex items-center justify-center gap-6 mb-12">
+          <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12">
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
-              className="h-12 w-auto object-contain"
+              className="h-8 md:h-12 w-auto object-contain"
             />
-            <div className="w-px h-12 bg-foreground/30"></div>
+            <div className="w-px h-8 md:h-12 bg-foreground/30"></div>
             <img 
               src={kmitlLogo} 
               alt="KMITL Logo" 
-              className="h-12 w-auto object-contain"
+              className="h-8 md:h-12 w-auto object-contain"
             />
           </div>
 
-          {/* Main Content - Left Text, Right Image */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          {/* Main Content - Responsive Layout */}
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center max-w-7xl mx-auto">
             {/* Left Side - Text Content */}
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-8 text-center lg:text-left">
               <div>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-black">
+                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 md:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
                   สำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-lg md:text-xl mb-6 leading-relaxed text-black">
+                <p className="text-base md:text-lg lg:text-xl mb-3 md:mb-6 leading-relaxed text-black">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full p-2 bg-white">
-                    <Check className="w-4 h-4 text-accent" strokeWidth={3} />
+              <div className="space-y-2 md:space-y-4">
+                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
+                  <div className="rounded-full p-1 md:p-2 bg-white">
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
+                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full p-2 bg-white">
-                    <Check className="w-4 h-4 text-accent" strokeWidth={3} />
+                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
+                  <div className="rounded-full p-1 md:p-2 bg-white">
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
+                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full p-2 bg-white">
-                    <Check className="w-4 h-4 text-accent" strokeWidth={3} />
+                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
+                  <div className="rounded-full p-1 md:p-2 bg-white">
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
-                    <span className="text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
@@ -76,17 +76,16 @@ const Index = () => {
               <Button 
                 onClick={scrollToForm}
                 size="xl" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-xl px-12 py-6 rounded-xl shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300 hover:scale-105"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-xl shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300 hover:scale-105"
               >
                 กรอกข้อมูลเพื่อซื้อเลย
-                <ArrowDown className="ml-3 w-6 h-6 animate-bounce" />
+                <ArrowDown className="ml-3 w-5 h-5 md:w-6 md:h-6 animate-bounce" />
               </Button>
             </div>
-
           </div>
 
-          {/* Banner Image and Graphics - Combined in one container */}
-          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/3 2xl:w-2/5 h-96 md:h-[28rem] xl:h-96 2xl:h-[28rem] lg:block hidden scale-100 xl:scale-90 2xl:scale-100 origin-bottom-right">
+          {/* Banner Image and Graphics - Hidden on mobile, positioned for desktop */}
+          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/3 2xl:w-2/5 h-96 md:h-[28rem] xl:h-96 2xl:h-[28rem] hidden lg:block scale-100 xl:scale-90 2xl:scale-100 origin-bottom-right">
             {/* Background Protection Graphics */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Shield Icons scattered around */}
@@ -143,16 +142,69 @@ const Index = () => {
       </section>
 
       {/* Section 2: Form */}
-      <section id="insurance-form" className="py-16 bg-secondary/30">
+      <section id="insurance-form" className="py-8 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">กรอกข้อมูลผู้สมัครประกัน</h2>
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">กรอกข้อมูลผู้สมัครประกัน</h2>
               <p className="text-muted-foreground">
                 กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง สามารถเพิ่มผู้สมัครได้หลายคน
               </p>
             </div>
             <InsuranceForm />
+          </div>
+        </div>
+
+        {/* Mobile Banner Image and Graphics - Below the form section */}
+        <div className="lg:hidden mt-8 relative flex justify-center items-center py-8">
+          <div className="relative w-80 h-64 scale-75">
+            {/* Background Protection Graphics for Mobile */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Shield Icons scattered around - Smaller for mobile */}
+              <div className="absolute top-4 left-4 animate-fade-in">
+                <Shield className="w-6 h-6 text-blue-400/50" strokeWidth={1.5} />
+              </div>
+              <div className="absolute top-8 right-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <Shield className="w-7 h-7 text-blue-500/45" strokeWidth={1.5} />
+              </div>
+              <div className="absolute top-16 left-8 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <Shield className="w-5 h-5 text-blue-300/55" strokeWidth={1.5} />
+              </div>
+              <div className="absolute bottom-16 right-4 animate-fade-in" style={{animationDelay: '0.6s'}}>
+                <Shield className="w-6 h-6 text-blue-400/50" strokeWidth={1.5} />
+              </div>
+              <div className="absolute top-12 right-12 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                <Shield className="w-4 h-4 text-blue-600/40" strokeWidth={1.5} />
+              </div>
+              <div className="absolute bottom-12 left-6 animate-fade-in" style={{animationDelay: '1s'}}>
+                <Shield className="w-5 h-5 text-blue-500/50" strokeWidth={1.5} />
+              </div>
+              
+              {/* Protective Circle Lines - Smaller for mobile */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-56 h-56 border border-blue-400/35 rounded-full animate-scale-in"></div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-44 h-44 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-32 h-32 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
+              </div>
+              
+              {/* Central Protection Glow - Smaller for mobile */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-32 h-32 bg-blue-400/15 rounded-full blur-2xl animate-pulse"></div>
+              </div>
+            </div>
+            
+            {/* Main Image for Mobile */}
+            <div className="absolute bottom-0 right-0 z-10 w-full h-full flex items-end justify-center">
+              <img 
+                src={insurancePeopleBanner} 
+                alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
+                className="w-full h-auto object-contain drop-shadow-lg max-h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
