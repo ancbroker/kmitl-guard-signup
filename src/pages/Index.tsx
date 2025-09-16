@@ -87,92 +87,48 @@ const Index = () => {
 
           {/* Banner Image and Graphics - Absolute positioned at bottom */}
           <div className="absolute bottom-0 right-0 w-1/2 h-96 lg:block hidden">
-            {/* Insurance & Protection Graphics */}
+            {/* Beautiful Floating Background Graphics */}
             <div className="absolute inset-0 overflow-hidden">
-              {/* Shield Protection Icons */}
+              {/* Floating Geometric Shapes */}
               <div className="absolute top-12 left-8 animate-fade-in">
-                <Shield className="w-16 h-16 text-blue-500/40" strokeWidth={1.5} />
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400/30 to-purple-500/30 rounded-full blur-sm animate-pulse"></div>
               </div>
               <div className="absolute top-20 right-16 animate-fade-in" style={{animationDelay: '0.5s'}}>
-                <Shield className="w-12 h-12 text-orange-500/45" strokeWidth={2} />
+                <div className="w-8 h-8 bg-gradient-to-br from-cyan-400/40 to-blue-500/40 rotate-45 animate-bounce" style={{animationDuration: '3s'}}></div>
               </div>
-              <div className="absolute bottom-32 left-20 animate-fade-in" style={{animationDelay: '1s'}}>
-                <Shield className="w-14 h-14 text-blue-600/35" strokeWidth={1.5} />
+              <div className="absolute top-32 left-20 animate-fade-in" style={{animationDelay: '1s'}}>
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400/35 to-blue-600/35 rounded-lg rotate-12 animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
               <div className="absolute bottom-40 right-12 animate-fade-in" style={{animationDelay: '1.5s'}}>
-                <Shield className="w-10 h-10 text-orange-400/50" strokeWidth={2} />
+                <div className="w-20 h-20 bg-gradient-to-br from-sky-400/25 to-blue-500/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
               </div>
-
-              {/* Medical Cross Icons for Health Coverage */}
-              <div className="absolute top-32 left-16 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                <div className="w-8 h-8 relative">
-                  <div className="absolute inset-0 bg-blue-500/30 transform rotate-0"></div>
-                  <div className="absolute top-1/2 left-1/2 w-6 h-2 bg-blue-500/40 transform -translate-x-1/2 -translate-y-1/2"></div>
-                  <div className="absolute top-1/2 left-1/2 w-2 h-6 bg-blue-500/40 transform -translate-x-1/2 -translate-y-1/2"></div>
-                </div>
+              <div className="absolute bottom-32 left-16 animate-fade-in" style={{animationDelay: '2s'}}>
+                <div className="w-6 h-6 bg-gradient-to-br from-violet-400/45 to-purple-500/45 rotate-45"></div>
               </div>
-              <div className="absolute bottom-24 right-20 animate-fade-in" style={{animationDelay: '2s'}}>
-                <div className="w-6 h-6 relative">
-                  <div className="absolute top-1/2 left-1/2 w-5 h-1.5 bg-orange-500/45 transform -translate-x-1/2 -translate-y-1/2"></div>
-                  <div className="absolute top-1/2 left-1/2 w-1.5 h-5 bg-orange-500/45 transform -translate-x-1/2 -translate-y-1/2"></div>
-                </div>
+              <div className="absolute top-40 right-32 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                <div className="w-10 h-10 bg-gradient-to-br from-teal-400/30 to-cyan-500/30 rounded-full"></div>
               </div>
-
-              {/* Safety Umbrella Shapes for Coverage */}
-              <div className="absolute top-40 right-32 animate-fade-in" style={{animationDelay: '1.2s'}}>
-                <div className="w-12 h-8 bg-gradient-to-b from-blue-400/30 to-blue-500/20 rounded-t-full relative">
-                  <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-blue-600/40 transform -translate-x-1/2"></div>
-                </div>
+              
+              {/* Flowing Wave Elements */}
+              <div className="absolute top-1/4 left-1/4 transform -rotate-12">
+                <div className="w-32 h-2 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full animate-pulse"></div>
               </div>
-              <div className="absolute bottom-28 left-24 animate-fade-in" style={{animationDelay: '1.8s'}}>
-                <div className="w-10 h-6 bg-gradient-to-b from-orange-400/35 to-orange-500/25 rounded-t-full relative">
-                  <div className="absolute bottom-0 left-1/2 w-0.5 h-3 bg-orange-600/45 transform -translate-x-1/2"></div>
-                </div>
+              <div className="absolute bottom-1/3 right-1/4 transform rotate-45">
+                <div className="w-24 h-2 bg-gradient-to-r from-transparent via-purple-400/20 to-transparent rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
-
-              {/* Protective Circle Barriers */}
+              
+              {/* Large Gradient Orbs */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-80 h-80 border-2 border-blue-400/25 rounded-full animate-pulse" style={{animationDuration: '3s'}}></div>
+                <div className="w-96 h-96 bg-gradient-radial from-blue-400/10 via-cyan-400/5 to-transparent rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
               </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-96 h-96 border border-orange-400/20 rounded-full animate-pulse" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
+              <div className="absolute top-1/3 right-1/4 transform translate-x-8">
+                <div className="w-64 h-64 bg-gradient-radial from-purple-400/15 via-blue-400/8 to-transparent rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '1s'}}></div>
               </div>
-
-              {/* Safety Warning Triangles */}
-              <div className="absolute top-24 left-32 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <div className="w-0 h-0 border-l-4 border-r-4 border-b-6 border-l-transparent border-r-transparent border-b-orange-500/40"></div>
-              </div>
-              <div className="absolute bottom-36 right-28 animate-fade-in" style={{animationDelay: '1.6s'}}>
-                <div className="w-0 h-0 border-l-3 border-r-3 border-b-5 border-l-transparent border-r-transparent border-b-blue-500/35"></div>
-              </div>
-
-              {/* Heart Rate Lines for Life Insurance */}
-              <div className="absolute top-1/3 left-1/4 transform -rotate-12 animate-fade-in" style={{animationDelay: '1.4s'}}>
-                <div className="flex items-center space-x-1">
-                  <div className="w-4 h-0.5 bg-blue-400/30"></div>
-                  <div className="w-2 h-3 bg-blue-500/40"></div>
-                  <div className="w-1 h-5 bg-blue-600/45"></div>
-                  <div className="w-2 h-2 bg-blue-500/40"></div>
-                  <div className="w-4 h-0.5 bg-blue-400/30"></div>
-                </div>
-              </div>
-              <div className="absolute bottom-1/3 right-1/4 transform rotate-12 animate-fade-in" style={{animationDelay: '2.2s'}}>
-                <div className="flex items-center space-x-1">
-                  <div className="w-3 h-0.5 bg-orange-400/35"></div>
-                  <div className="w-1 h-2 bg-orange-500/45"></div>
-                  <div className="w-1 h-4 bg-orange-600/50"></div>
-                  <div className="w-1 h-1 bg-orange-500/45"></div>
-                  <div className="w-3 h-0.5 bg-orange-400/35"></div>
-                </div>
-              </div>
-
-              {/* Safety Glow Effects */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-64 h-64 bg-gradient-radial from-blue-400/10 to-transparent rounded-full animate-pulse" style={{animationDuration: '5s'}}></div>
-              </div>
-              <div className="absolute top-1/3 right-1/4">
-                <div className="w-48 h-48 bg-gradient-radial from-orange-400/8 to-transparent rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
-              </div>
+              
+              {/* Subtle Floating Particles */}
+              <div className="absolute top-16 left-1/3 w-2 h-2 bg-blue-400/40 rounded-full animate-bounce" style={{animationDuration: '2s', animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-24 right-1/3 w-1 h-1 bg-cyan-400/50 rounded-full animate-bounce" style={{animationDuration: '2.5s', animationDelay: '1.2s'}}></div>
+              <div className="absolute top-2/3 left-8 w-1.5 h-1.5 bg-purple-400/45 rounded-full animate-bounce" style={{animationDuration: '3s', animationDelay: '0.8s'}}></div>
             </div>
             
             {/* Main Image - Positioned at bottom */}
