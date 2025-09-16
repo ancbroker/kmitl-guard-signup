@@ -251,7 +251,7 @@ const InsuranceForm = () => {
             กลับไปแก้ไขข้อมูล
           </Button>
           <Button
-            variant="premium"
+            variant="default"
             size="xl"
             onClick={proceedToPayment}
             className="flex-1"
