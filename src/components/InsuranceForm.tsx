@@ -270,7 +270,7 @@ const InsuranceForm = () => {
           <Button
             variant="outline"
             onClick={() => setShowSummary(false)}
-            className="flex-1"
+            className="flex-1 py-4 text-base"
           >
             กลับไปแก้ไขข้อมูล
           </Button>
@@ -278,7 +278,7 @@ const InsuranceForm = () => {
             variant="default"
             size="xl"
             onClick={proceedToPayment}
-            className="flex-1"
+            className="flex-1 py-4 text-base"
             style={{backgroundColor: '#4DCFFF', color: 'white'}}
           >
             <CreditCard className="w-4 h-4 mr-2" />

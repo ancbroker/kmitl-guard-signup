@@ -216,7 +216,7 @@ const Index = () => {
       <section className="py-16 bg-primary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">สิทธิประโยชน์ประกันภัย</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">สิทธิประโยชน์ประกันภัย</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
@@ -296,7 +296,7 @@ const Index = () => {
             <Button 
               onClick={() => window.open('/coverage-details.pdf', '_blank')}
               variant="outline"
-              className="bg-white hover:bg-brand-blue/5 text-brand-blue border-brand-blue px-8 py-3 text-lg shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-all duration-300"
+              className="bg-white hover:bg-brand-blue/5 text-brand-blue border-brand-blue px-8 py-4 text-base shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-all duration-300"
             >
               ดูความคุ้มครองเพิ่มเติม
             </Button>
@@ -308,7 +308,7 @@ const Index = () => {
       <section className="py-16 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">ช่องทางติดต่อ</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">ช่องทางติดต่อ</h2>
             <p className="text-muted-foreground">
               สอบถามข้อมูลเพิ่มเติมหรือขอความช่วยเหลือ
             </p>
