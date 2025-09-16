@@ -199,8 +199,8 @@ const Index = () => {
       <section id="insurance-form" className="py-8 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">กรอกข้อมูลผู้สมัครประกัน</h2>
+            <div className="text-center mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">กรอกข้อมูลผู้สมัครประกัน</h2>
               <p className="text-muted-foreground">
                 กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง สามารถเพิ่มผู้สมัครได้หลายคน
               </p>
@@ -215,8 +215,8 @@ const Index = () => {
       {/* Section 3: Package Details */}
       <section className="py-8 md:py-16 bg-primary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">สิทธิประโยชน์ประกันภัย</h2>
+          <div className="text-center mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">สิทธิประโยชน์ประกันภัย</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
@@ -307,8 +307,8 @@ const Index = () => {
       {/* Section 4: Contact Information */}
       <section className="py-8 md:py-16 bg-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">ช่องทางติดต่อ</h2>
+          <div className="text-center mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">ช่องทางติดต่อ</h2>
             <p className="text-muted-foreground">
               สอบถามข้อมูลเพิ่มเติมหรือขอความช่วยเหลือ
             </p>
