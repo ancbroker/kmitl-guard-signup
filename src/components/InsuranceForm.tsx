@@ -270,7 +270,7 @@ const InsuranceForm = () => {
           <Button
             variant="outline"
             onClick={() => setShowSummary(false)}
-            className="flex-1 py-4 text-base"
+            className="flex-1 py-3 text-sm"
           >
             กลับไปแก้ไขข้อมูล
           </Button>
@@ -278,7 +278,7 @@ const InsuranceForm = () => {
             variant="default"
             size="xl"
             onClick={proceedToPayment}
-            className="flex-1 py-4 text-base"
+            className="flex-1 py-3 text-sm"
             style={{backgroundColor: '#4DCFFF', color: 'white'}}
           >
             <CreditCard className="w-4 h-4 mr-2" />
@@ -507,7 +507,7 @@ const InsuranceForm = () => {
           variant="outline"
           size="xl"
           onClick={addPerson}
-          className="flex-1 py-4 text-base"
+          className="flex-1 py-3 text-sm"
         >
           <Plus className="w-4 h-4 mr-2" />
           เพิ่มผู้เอาประกัน
@@ -516,7 +516,7 @@ const InsuranceForm = () => {
         <Button
           size="xl"
           onClick={handleSubmit}
-          className="flex-1 bg-[#75DAFF] hover:bg-[#75DAFF]/90 text-white py-4 text-base"
+          className="flex-1 bg-[#75DAFF] hover:bg-[#75DAFF]/90 text-white py-3 text-sm"
           disabled={people.some(p => !p.firstName || !p.lastName || !p.birthDate)}
         >
           ดูสรุปรายการ ({people.length} คน)
