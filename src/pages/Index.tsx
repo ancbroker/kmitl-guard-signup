@@ -140,7 +140,7 @@ const Index = () => {
               </div>
 
               {/* Banner Image and Graphics - Desktop version (>= 768px) */}
-              <div className="w-full hidden md:block xl:absolute xl:bottom-0 xl:right-0 xl:w-1/2 2xl:w-2/5 xl:transform xl:translate-y-8">
+              <div className="w-full hidden md:block xl:hidden">
                 <div className="relative w-full xl:scale-110 2xl:scale-105 xl:origin-bottom-right">
                   {/* Background Protection Graphics */}
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -192,7 +192,7 @@ const Index = () => {
           <div className="absolute bottom-0 right-0 w-[45vw] h-full">
             <div className="relative w-full h-full">
               {/* Background Protection Graphics */}
-              <div className="absolute inset-0 flex items-end justify-center transform translate-y-8">
+              <div className="absolute bottom-0 left-0 right-0 h-[70%] flex items-center justify-center">
                 <div className="absolute -top-6 -left-6 animate-fade-in">
                   <Shield className="w-8 h-8 text-blue-400/40" strokeWidth={1.5} />
                 </div>
