@@ -89,11 +89,11 @@ const Index = () => {
           {/* Banner Image - Absolute positioned at bottom */}
           <div className="absolute bottom-0 right-0 w-1/2 h-96 lg:block hidden">
             {/* Silver Shield Background behind the woman */}
-            <div className="absolute bottom-8 right-32 z-0">
+            <div className="absolute bottom-16 left-8 z-0">
               <img 
                 src={silverShield} 
                 alt="Silver protective shield representing insurance coverage" 
-                className="w-80 h-auto object-contain opacity-25 drop-shadow-2xl"
+                className="w-[500px] h-auto object-contain opacity-25 drop-shadow-2xl"
               />
             </div>
             
