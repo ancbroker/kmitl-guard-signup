@@ -83,7 +83,7 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Right Side - Image with Protection Graphics */}
+            {/* Right Side - Protection Graphics Only */}
             <div className="relative lg:flex hidden items-end justify-center h-full">
               {/* Background Protection Graphics - More Subtle */}
               <div className="absolute inset-0 overflow-hidden">
@@ -121,15 +121,6 @@ const Index = () => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-64 h-64 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
                 </div>
-              </div>
-              
-              {/* Main Image - Larger Size */}
-              <div className="relative z-10 scale-110">
-                <img 
-                  src={insurancePeopleBanner} 
-                  alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                  className="w-full h-auto object-contain drop-shadow-lg"
-                />
               </div>
             </div>
 
