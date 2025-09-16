@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-12 pb-0 shadow-[var(--shadow-medium)] relative overflow-hidden min-h-[24rem] md:min-h-[36rem] lg:min-h-[40rem]">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-12 pb-0 shadow-[var(--shadow-medium)] relative overflow-hidden min-h-[24rem] md:min-h-[36rem] lg:min-h-[40rem]">
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-[36rem]">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12">
@@ -201,7 +201,7 @@ const Index = () => {
       </section>
 
       {/* Section 2: Form */}
-      <section id="insurance-form" className="py-8 md:py-16 bg-secondary/30">
+      <section id="insurance-form" className="py-8 md:py-12 lg:py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-4">
@@ -218,7 +218,7 @@ const Index = () => {
       </section>
 
       {/* Section 3: Package Details */}
-      <section className="py-8 md:py-16 bg-primary/20">
+      <section className="py-8 md:py-12 lg:py-16 bg-primary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">สิทธิประโยชน์ประกันภัย</h2>
@@ -310,7 +310,7 @@ const Index = () => {
       </section>
 
       {/* Section 4: Contact Information */}
-      <section className="py-8 md:py-16 bg-secondary/20">
+      <section className="py-8 md:py-12 lg:py-16 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">ช่องทางติดต่อ</h2>
