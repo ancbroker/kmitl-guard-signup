@@ -193,15 +193,44 @@ const Index = () => {
             <div className="relative w-full h-full">
               {/* Background Protection Graphics */}
               <div className="absolute bottom-0 left-0 right-0 h-[70%] flex items-center justify-center">
-                <div className="absolute -top-6 -left-6 animate-fade-in">
-                  <Shield className="w-8 h-8 text-blue-400/40" strokeWidth={1.5} />
+                {/* Shield Icons scattered around */}
+                <div className="absolute top-6 left-6 animate-fade-in">
+                  <Shield className="w-10 h-10 text-blue-400/50" strokeWidth={1.5} />
                 </div>
-                <div className="absolute -top-4 right-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                  <Shield className="w-10 h-10 text-blue-500/30" strokeWidth={1.5} />
+                <div className="absolute top-12 right-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                  <Shield className="w-12 h-12 text-blue-500/45" strokeWidth={1.5} />
                 </div>
-                <div className="absolute -bottom-8 right-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                  <Shield className="w-9 h-9 text-blue-400/35" strokeWidth={1.5} />
+                <div className="absolute top-20 left-12 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                  <Shield className="w-8 h-8 text-blue-300/55" strokeWidth={1.5} />
                 </div>
+                <div className="absolute bottom-20 right-6 animate-fade-in" style={{animationDelay: '0.6s'}}>
+                  <Shield className="w-11 h-11 text-blue-400/50" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-16 right-16 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                  <Shield className="w-9 h-9 text-blue-600/40" strokeWidth={1.5} />
+                </div>
+                <div className="absolute bottom-16 left-8 animate-fade-in" style={{animationDelay: '1s'}}>
+                  <Shield className="w-10 h-10 text-blue-500/50" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-8 left-20 animate-fade-in" style={{animationDelay: '1.2s'}}>
+                  <Shield className="w-7 h-7 text-blue-400/45" strokeWidth={1.5} />
+                </div>
+                <div className="absolute bottom-8 right-20 animate-fade-in" style={{animationDelay: '1.4s'}}>
+                  <Shield className="w-9 h-9 text-blue-500/40" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-4 right-4 animate-fade-in" style={{animationDelay: '1.6s'}}>
+                  <Shield className="w-8 h-8 text-blue-300/50" strokeWidth={1.5} />
+                </div>
+                <div className="absolute bottom-4 left-4 animate-fade-in" style={{animationDelay: '1.8s'}}>
+                  <Shield className="w-10 h-10 text-blue-600/45" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-24 right-12 animate-fade-in" style={{animationDelay: '2s'}}>
+                  <Shield className="w-6 h-6 text-blue-400/40" strokeWidth={1.5} />
+                </div>
+                <div className="absolute bottom-24 left-16 animate-fade-in" style={{animationDelay: '2.2s'}}>
+                  <Shield className="w-8 h-8 text-blue-500/35" strokeWidth={1.5} />
+                </div>
+                
                 {/* Protective Circle Lines - Centered on image */}
                 <div className="w-[30rem] h-[30rem] border border-blue-400/25 rounded-full animate-scale-in"></div>
                 <div className="absolute w-[26rem] h-[26rem] border border-blue-500/20 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
