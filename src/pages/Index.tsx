@@ -5,6 +5,7 @@ import insurancePeopleBanner from "@/assets/insurance-people-banner.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
+import Header from "@/components/Header";
 
 const scrollToForm = () => {
   document.getElementById('insurance-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -13,6 +14,8 @@ const scrollToForm = () => {
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Header />
+      
       {/* Section 1: Hero & Intro */}
       <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 2xl:pt-16 pb-6 md:pb-8 lg:pb-10 xl:pb-12 2xl:pb-24 shadow-[var(--shadow-medium)] relative overflow-hidden" >
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0 xl:max-w-none xl:mx-0 xl:px-12">
@@ -256,7 +259,7 @@ const Index = () => {
       </section>
 
       {/* Section 3: Package Details */}
-      <section className="py-8 md:py-12 lg:py-10 xl:py-16 bg-primary/20">
+      <section id="benefits-section" className="py-8 md:py-12 lg:py-10 xl:py-16 bg-primary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">สิทธิประโยชน์ประกันภัย</h2>
@@ -394,6 +397,63 @@ const Index = () => {
               <CardContent className="flex-1 pt-0 space-y-2">
                 <p className="text-base">บริษัท เอ เอ็น ซี โบรกเกอร์เรจ จำกัด</p>
                 <p className="text-base text-muted-foreground">126/5 ถนนสิรินธร แขวงบางพลัด เขตบางพลัด กรุงเทพฯ 10700</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Contact Information */}
+      <section id="contact-section" className="py-8 md:py-12 lg:py-10 xl:py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">ช่องทางติดต่อ</h2>
+            <p className="text-muted-foreground">สอบถามข้อมูลเพิ่มเติมหรือติดต่อสำหรับการสมัครประกัน</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {/* Phone Contact */}
+            <Card className="text-center">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-lg">โทรศัพท์</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-2">สอบถามข้อมูลทั่วไป</p>
+                <p className="font-semibold">02-123-4567</p>
+                <p className="text-sm text-muted-foreground">จันทร์-ศุกร์ 8:30-17:30</p>
+              </CardContent>
+            </Card>
+
+            {/* Email Contact */}
+            <Card className="text-center">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-lg">อีเมล</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-2">ส่งคำถามหรือเอกสาร</p>
+                <p className="font-semibold">info@ancinsurtech.com</p>
+                <p className="text-sm text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
+              </CardContent>
+            </Card>
+
+            {/* Office Location */}
+            <Card className="text-center">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-lg">สำนักงาน</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-2">มาพบเราได้ที่</p>
+                <p className="font-semibold">สจล. ลาดกระบัง</p>
+                <p className="text-sm text-muted-foreground">กรุงเทพมหานคร</p>
               </CardContent>
             </Card>
           </div>
