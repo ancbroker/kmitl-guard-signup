@@ -2,6 +2,7 @@ import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } fro
 import kmitlLogo from "@/assets/kmitl-logo.webp";
 import ancLogo from "@/assets/anc-logo.svg";
 import insurancePeopleBanner from "@/assets/insurance-people-banner.png";
+import silverShield from "@/assets/silver-shield.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
@@ -83,6 +84,15 @@ const Index = () => {
               </Button>
             </div>
 
+          </div>
+
+          {/* Silver Shield Background - Left Side */}
+          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/4 lg:block hidden z-0">
+            <img 
+              src={silverShield} 
+              alt="Silver protective shield representing insurance coverage" 
+              className="w-96 h-auto object-contain opacity-30 drop-shadow-2xl"
+            />
           </div>
 
           {/* Banner Image - Absolute positioned at bottom */}
