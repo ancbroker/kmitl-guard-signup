@@ -178,10 +178,6 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-success" />
-                  <span>คุ้มครอง 24 ชั่วโมง ทั่วโลก</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="w-4 h-4 text-success" />
                   <span>เบี้ยประกันเริ่มต้น 850 บาท/ปี</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
@@ -262,8 +258,8 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold">02-329-8000</p>
-                <p className="text-sm text-muted-foreground">จันทร์-ศุกร์ 8:00-17:00 น.</p>
+                <p className="text-lg font-semibold">02-123-4567</p>
+                <p className="text-sm text-muted-foreground">จันทร์-ศุกร์ 9:00-18:00 น.</p>
               </CardContent>
             </Card>
 
@@ -275,7 +271,7 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold">insurance@kmitl.ac.th</p>
+                <p className="text-lg font-semibold">info@ancinsurtech.com</p>
                 <p className="text-sm text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
               </CardContent>
             </Card>
@@ -288,8 +284,8 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าลาดกระบัง</p>
-                <p className="text-sm text-muted-foreground">1 ซอยฉลองกรุง 1 แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520</p>
+                <p className="text-sm">ANC Insurtech Co., Ltd.</p>
+                <p className="text-sm text-muted-foreground">123 Technology Road, Innovation District, Bangkok 10110</p>
               </CardContent>
             </Card>
           </div>
@@ -299,7 +295,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-primary/5 py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2024 มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าลาดกระบัง | ประกันอุบัติเหตุสำหรับบุคลากรและญาติ</p>
+          <p>© 2024 ANC Insurtech Co., Ltd. | ประกันอุบัติเหตุสำหรับบุคลากรและญาติ</p>
         </div>
       </footer>
     </div>
