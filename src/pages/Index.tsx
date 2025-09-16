@@ -45,33 +45,6 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="space-y-2 md:space-y-4">
-                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
-                  <div className="rounded-full p-1 md:p-2 bg-white">
-                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
-                  </div>
-                  <div>
-                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
-                  <div className="rounded-full p-1 md:p-2 bg-white">
-                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
-                  </div>
-                  <div>
-                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
-                  <div className="rounded-full p-1 md:p-2 bg-white">
-                    <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
-                  </div>
-                  <div>
-                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
-                  </div>
-                </div>
-              </div>
-
               {/* CTA Button */}
               <Button 
                 onClick={scrollToForm}
@@ -155,7 +128,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Mobile Banner Image and Graphics - Below the form section */}
+        {/* Mobile Banner Image and Graphics - Show on mobile */}
         <div className="lg:hidden mt-8 relative flex justify-center items-center py-8">
           <div className="relative w-80 h-64 scale-75">
             {/* Background Protection Graphics for Mobile */}
