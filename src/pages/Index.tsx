@@ -34,7 +34,7 @@ const Index = () => {
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-8 xl:gap-12 items-center max-w-7xl mx-auto xl:max-w-none xl:mx-0 xl:w-full xl:grid-cols-1 xl:justify-start">
             {/* Left Side - Text Content */}
-            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-16 xl:pl-0 xl:max-w-2xl xl:mx-0 xl:z-10 xl:relative xl:ml-8 xl:mr-auto">
+            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-16 xl:pl-0 xl:max-w-2xl xl:mx-0 xl:z-10 xl:relative xl:ml-16 xl:mr-auto">
               <div>
                 <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 lg:mb-4 xl:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
@@ -140,7 +140,7 @@ const Index = () => {
               </div>
 
               {/* Banner Image and Graphics - Desktop version (>= 768px) */}
-              <div className="w-full hidden md:block xl:absolute xl:bottom-0 xl:right-0 xl:w-1/2 2xl:w-2/5">
+              <div className="w-full hidden md:block xl:absolute xl:bottom-0 xl:right-0 xl:w-1/2 2xl:w-2/5 xl:transform xl:translate-y-8">
                 <div className="relative w-full xl:scale-110 2xl:scale-105 xl:origin-bottom-right">
                   {/* Background Protection Graphics */}
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -192,7 +192,7 @@ const Index = () => {
           <div className="absolute bottom-0 right-0 w-[45vw] h-full">
             <div className="relative w-full h-full">
               {/* Background Protection Graphics */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-end justify-center transform translate-y-8">
                 <div className="absolute -top-6 -left-6 animate-fade-in">
                   <Shield className="w-8 h-8 text-blue-400/40" strokeWidth={1.5} />
                 </div>
@@ -213,7 +213,7 @@ const Index = () => {
               <img
                 src={insurancePeopleBanner}
                 alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล"
-                className="absolute bottom-0 right-0 w-full h-auto object-contain drop-shadow-lg"
+                className="absolute bottom-0 right-0 w-full h-auto object-contain drop-shadow-lg transform translate-y-16"
               />
             </div>
           </div>
