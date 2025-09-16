@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden min-h-[24rem] lg:min-h-0 xl:min-h-[40rem]">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden" >
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12 lg:mb-8 xl:mb-12">
