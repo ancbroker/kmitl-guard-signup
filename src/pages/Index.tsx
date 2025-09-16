@@ -222,8 +222,8 @@ const Index = () => {
             {/* Benefits Card */}
             <Card className="shadow-[var(--shadow-soft)]">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-primary" />
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Shield className="w-4 h-4 text-primary" />
                   ประโยชน์ที่ได้รับ
                 </CardTitle>
               </CardHeader>
@@ -254,8 +254,8 @@ const Index = () => {
             {/* Premium by Age Card */}
             <Card className="shadow-[var(--shadow-soft)]">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-primary" />
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Shield className="w-4 h-4 text-primary" />
                   อัตราเบี้ยประกันตามอายุ
                 </CardTitle>
               </CardHeader>
@@ -274,8 +274,8 @@ const Index = () => {
             {/* Eligible People */}
             <Card className="shadow-[var(--shadow-soft)]">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary" />
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Users className="w-4 h-4 text-primary" />
                   ผู้มีสิทธิ์สมัคร
                 </CardTitle>
               </CardHeader>
