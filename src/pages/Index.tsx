@@ -87,6 +87,15 @@ const Index = () => {
             <div className="relative lg:flex hidden items-end justify-center h-full">
               {/* Background Protection Graphics - More Subtle */}
               <div className="absolute inset-0 overflow-hidden">
+                {/* Small Rectangle Shapes - Blue and Orange */}
+                <div className="absolute top-12 left-20 w-8 h-12 bg-blue-400/30 rounded rotate-12 animate-fade-in"></div>
+                <div className="absolute top-24 right-16 w-6 h-10 bg-orange-400/40 rounded rotate-45 animate-fade-in" style={{animationDelay: '0.1s'}}></div>
+                <div className="absolute top-40 left-32 w-10 h-6 bg-blue-500/35 rounded -rotate-12 animate-fade-in" style={{animationDelay: '0.3s'}}></div>
+                <div className="absolute top-56 right-28 w-7 h-9 bg-orange-500/45 rounded rotate-30 animate-fade-in" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute bottom-40 left-24 w-9 h-7 bg-blue-400/40 rounded rotate-45 animate-fade-in" style={{animationDelay: '0.7s'}}></div>
+                <div className="absolute bottom-56 right-20 w-6 h-8 bg-orange-400/35 rounded -rotate-30 animate-fade-in" style={{animationDelay: '0.9s'}}></div>
+                <div className="absolute bottom-72 left-40 w-8 h-6 bg-blue-500/30 rounded rotate-15 animate-fade-in" style={{animationDelay: '1.1s'}}></div>
+                
                 {/* Shield Icons scattered around - Balanced Visibility */}
                 <div className="absolute top-8 left-8 animate-fade-in">
                   <Shield className="w-7 h-7 text-blue-400/50" strokeWidth={1.5} />
