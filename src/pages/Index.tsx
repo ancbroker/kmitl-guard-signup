@@ -192,7 +192,7 @@ const Index = () => {
           <div className="absolute bottom-0 right-0 w-[45vw] h-full">
             <div className="relative w-full h-full">
               {/* Background Protection Graphics */}
-              <div className="absolute inset-0 flex items-end justify-center transform translate-y-8">
+              <div className="absolute inset-0 flex items-center justify-center transform translate-y-4">
                 <div className="absolute -top-6 -left-6 animate-fade-in">
                   <Shield className="w-8 h-8 text-blue-400/40" strokeWidth={1.5} />
                 </div>
