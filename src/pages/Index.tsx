@@ -336,7 +336,7 @@ const Index = () => {
       </section>
 
       {/* Section 4: Contact Information */}
-      <section className="py-8 md:py-12 lg:py-10 xl:py-16 bg-secondary/20">
+      <section id="contact-section" className="py-8 md:py-12 lg:py-10 xl:py-16 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">ช่องทางติดต่อ</h2>
