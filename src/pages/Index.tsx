@@ -221,13 +221,13 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Benefits Card */}
             <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <Shield className="w-4 h-4 text-primary" />
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Shield className="w-5 h-5 text-primary" />
                   ประโยชน์ที่ได้รับ
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 flex-1">
+              <CardContent className="space-y-4 flex-1 pt-0">
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-success" />
                   <span>เสียชีวิต/ทุพพลภาพถาวรจากอุบัติเหตุ 400,000 บาท</span>
@@ -253,13 +253,13 @@ const Index = () => {
 
             {/* Premium by Age Card */}
             <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <Shield className="w-4 h-4 text-primary" />
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Shield className="w-5 h-5 text-primary" />
                   อัตราเบี้ยประกันตามอายุ
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 text-sm flex-1">
+              <CardContent className="space-y-3 text-base flex-1 pt-0">
                 <div className="grid grid-cols-1 gap-2">
                   <div>• อายุ 1-14 ปี: <span className="font-semibold">949 บาท/ปี</span></div>
                   <div>• อายุ 15-65 ปี: <span className="font-semibold">850 บาท/ปี</span></div>
@@ -273,13 +273,13 @@ const Index = () => {
 
             {/* Eligible People */}
             <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <Users className="w-4 h-4 text-primary" />
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Users className="w-5 h-5 text-primary" />
                   ผู้มีสิทธิ์สมัคร
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 text-sm flex-1">
+              <CardContent className="space-y-3 text-base flex-1 pt-0">
                 <div>• บุคลากรของมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าลาดกระบัง</div>
                 <div>• ญาติของบุคลากร (บิดา มารดา คู่สมรส บุตร)</div>
                 <div>• ผู้เกษียณอายุจากมหาวิทยาลัย</div>
