@@ -17,7 +17,7 @@ const Index = () => {
       <Header />
       
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 2xl:pt-16 pb-6 md:pb-8 lg:pb-10 xl:pb-12 2xl:pb-24 shadow-[var(--shadow-medium)] relative overflow-hidden" >
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-16 md:pt-20 lg:pt-24 xl:pt-28 2xl:pt-32 pb-6 md:pb-8 lg:pb-10 xl:pb-12 2xl:pb-24 shadow-[var(--shadow-medium)] relative overflow-hidden" >
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0 xl:max-w-none xl:mx-0 xl:px-12">
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-8 xl:gap-12 items-center max-w-7xl mx-auto xl:max-w-none xl:mx-0 xl:w-full xl:grid-cols-1 xl:justify-start">
