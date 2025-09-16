@@ -197,7 +197,7 @@ const InsuranceForm = () => {
         {/* Summary Section */}
         <Card className="shadow-[var(--shadow-medium)] border-primary/20">
           <CardHeader>
-            <CardTitle className="text-xl text-center text-primary">
+            <CardTitle className="text-xl text-center" style={{color: '#4DCFFF'}}>
               สรุปรายการสมัครประกัน
             </CardTitle>
           </CardHeader>
@@ -255,6 +255,7 @@ const InsuranceForm = () => {
             size="xl"
             onClick={proceedToPayment}
             className="flex-1"
+            style={{backgroundColor: '#4DCFFF', color: 'white'}}
           >
             <CreditCard className="w-4 h-4 mr-2" />
             ไปชำระเงิน {totalPremium.toLocaleString()} บาท
