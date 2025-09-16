@@ -88,6 +88,69 @@ const Index = () => {
 
           {/* Banner Image - Absolute positioned at bottom */}
           <div className="absolute bottom-0 right-0 w-1/2 h-96 lg:block hidden">
+            {/* Protection Graphics Background */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              {/* Main Shield Shape */}
+              <div className="absolute bottom-8 right-20 w-64 h-80 z-0">
+                <div className="w-full h-full relative">
+                  {/* Shield Base */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-blue-400/20 via-blue-500/15 to-blue-600/25 rounded-t-full"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-32 border-r-32 border-t-40 border-l-transparent border-r-transparent border-t-blue-500/20"></div>
+                  
+                  {/* Shield Outline */}
+                  <div className="absolute inset-0 border-2 border-blue-400/30 rounded-t-full"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-32 border-r-32 border-t-40 border-l-blue-400/30 border-r-blue-400/30 border-t-blue-400/30"></div>
+                </div>
+              </div>
+
+              {/* Protective Circles */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 z-0">
+                <div className="w-full h-full border-2 border-blue-300/25 rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 z-0">
+                <div className="w-full h-full border border-blue-200/20 rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
+              </div>
+
+              {/* Protection Lines */}
+              <div className="absolute bottom-16 right-32 z-0">
+                {/* Radiating Protection Lines */}
+                <div className="absolute w-24 h-0.5 bg-gradient-to-r from-blue-400/40 to-transparent transform -rotate-12"></div>
+                <div className="absolute w-20 h-0.5 bg-gradient-to-r from-blue-300/35 to-transparent transform rotate-12"></div>
+                <div className="absolute w-28 h-0.5 bg-gradient-to-r from-blue-500/45 to-transparent transform -rotate-45"></div>
+                <div className="absolute w-22 h-0.5 bg-gradient-to-r from-blue-400/40 to-transparent transform rotate-45"></div>
+                <div className="absolute w-26 h-0.5 bg-gradient-to-r from-blue-300/30 to-transparent transform -rotate-75"></div>
+                <div className="absolute w-18 h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent transform rotate-75"></div>
+              </div>
+
+              {/* Safety Barriers */}
+              <div className="absolute top-20 right-24 z-0">
+                <div className="w-16 h-2 bg-gradient-to-r from-blue-400/40 to-blue-300/20 rounded-full"></div>
+              </div>
+              <div className="absolute top-32 right-16 z-0">
+                <div className="w-20 h-2 bg-gradient-to-r from-blue-300/35 to-blue-200/15 rounded-full"></div>
+              </div>
+              <div className="absolute bottom-40 left-20 z-0">
+                <div className="w-18 h-2 bg-gradient-to-r from-blue-500/45 to-blue-400/25 rounded-full"></div>
+              </div>
+
+              {/* Floating Shield Elements */}
+              <div className="absolute top-16 left-16 z-0 animate-float" style={{animationDuration: '3s'}}>
+                <div className="w-12 h-16 bg-gradient-to-b from-blue-400/30 to-blue-500/20 rounded-t-lg relative">
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-8 border-l-transparent border-r-transparent border-t-blue-500/20"></div>
+                </div>
+              </div>
+              <div className="absolute bottom-32 right-48 z-0 animate-float" style={{animationDuration: '4s', animationDelay: '1s'}}>
+                <div className="w-10 h-14 bg-gradient-to-b from-blue-300/25 to-blue-400/15 rounded-t-lg relative">
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-5 border-r-5 border-t-6 border-l-transparent border-r-transparent border-t-blue-400/15"></div>
+                </div>
+              </div>
+
+              {/* Comfort Glow */}
+              <div className="absolute bottom-20 right-24 z-0">
+                <div className="w-48 h-48 bg-gradient-radial from-blue-400/15 via-blue-300/10 to-transparent rounded-full animate-pulse" style={{animationDuration: '5s'}}></div>
+              </div>
+            </div>
+
             <div className="absolute bottom-0 right-0 z-10">
               <img 
                 src={insurancePeopleBanner} 
