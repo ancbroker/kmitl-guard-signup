@@ -34,7 +34,7 @@ const Index = () => {
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center max-w-7xl mx-auto">
             {/* Left Side - Text Content */}
-            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-8 xl:pl-0">
+            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-16 xl:pl-0">
               <div>
                 <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 lg:mb-4 xl:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
