@@ -57,54 +57,56 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Banner Image and Graphics - Hidden on mobile, positioned for desktop */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 md:h-96 xl:h-[26rem] 2xl:h-[28rem] block z-10">
-            {/* Background Protection Graphics */}
-            <div className="absolute inset-0 overflow-hidden">
-              {/* Shield Icons scattered around */}
-              <div className="absolute top-8 left-8 animate-fade-in">
-                <Shield className="w-8 h-8 xl:w-12 xl:h-12 text-blue-400/50" strokeWidth={1.5} />
-              </div>
-              <div className="absolute top-16 right-12 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <Shield className="w-10 h-10 xl:w-14 xl:h-14 text-blue-500/45" strokeWidth={1.5} />
-              </div>
-              <div className="absolute top-32 left-16 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <Shield className="w-6 h-6 xl:w-10 xl:h-10 text-blue-300/55" strokeWidth={1.5} />
-              </div>
-              <div className="absolute bottom-32 right-8 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <Shield className="w-8 h-8 xl:w-13 xl:h-13 text-blue-400/50" strokeWidth={1.5} />
-              </div>
-              <div className="absolute top-20 right-20 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                <Shield className="w-6 h-6 xl:w-8 xl:h-8 text-blue-600/40" strokeWidth={1.5} />
-              </div>
-              <div className="absolute bottom-20 left-12 animate-fade-in" style={{animationDelay: '1s'}}>
-                <Shield className="w-7 h-7 xl:w-11 xl:h-11 text-blue-500/50" strokeWidth={1.5} />
+          {/* Banner Image and Graphics - Below the button in normal flow */}
+          <div className="w-full max-w-3xl mx-auto mt-8 md:mt-12">
+            <div className="relative w-80 h-64 mx-auto scale-75 md:scale-90 lg:scale-100">
+              {/* Background Protection Graphics */}
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Shield Icons scattered around */}
+                <div className="absolute top-4 left-4 animate-fade-in">
+                  <Shield className="w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 text-blue-400/50" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-8 right-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                  <Shield className="w-7 h-7 md:w-10 md:h-10 lg:w-14 lg:h-14 text-blue-500/45" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-16 left-8 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                  <Shield className="w-5 h-5 md:w-6 md:h-6 lg:w-10 lg:h-10 text-blue-300/55" strokeWidth={1.5} />
+                </div>
+                <div className="absolute bottom-16 right-4 animate-fade-in" style={{animationDelay: '0.6s'}}>
+                  <Shield className="w-6 h-6 md:w-8 md:h-8 lg:w-13 lg:h-13 text-blue-400/50" strokeWidth={1.5} />
+                </div>
+                <div className="absolute top-12 right-12 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                  <Shield className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-blue-600/40" strokeWidth={1.5} />
+                </div>
+                <div className="absolute bottom-12 left-6 animate-fade-in" style={{animationDelay: '1s'}}>
+                  <Shield className="w-5 h-5 md:w-7 md:h-7 lg:w-11 lg:h-11 text-blue-500/50" strokeWidth={1.5} />
+                </div>
+                
+                {/* Protective Circle Lines */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-56 h-56 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-44 h-44 md:w-64 md:h-64 lg:w-96 lg:h-96 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-32 h-32 md:w-52 md:h-52 lg:w-80 lg:h-80 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
+                </div>
+                
+                {/* Central Protection Glow */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-32 h-32 md:w-52 md:h-52 lg:w-80 lg:h-80 bg-blue-400/15 rounded-full blur-2xl md:blur-3xl animate-pulse"></div>
+                </div>
               </div>
               
-              {/* Protective Circle Lines */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-80 h-80 xl:w-[28rem] xl:h-[28rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
+              {/* Main Image */}
+              <div className="absolute bottom-0 left-0 z-10 w-full h-full flex items-end justify-center">
+                <img 
+                  src={insurancePeopleBanner} 
+                  alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
+                  className="w-full h-auto object-contain drop-shadow-lg max-h-full"
+                />
               </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-64 h-64 xl:w-96 xl:h-96 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
-              </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-52 h-52 xl:w-80 xl:h-80 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
-              </div>
-              
-              {/* Central Protection Glow */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-52 h-52 xl:w-80 xl:h-80 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
-              </div>
-            </div>
-            
-            {/* Main Image - Same container, same scaling */}
-            <div className="absolute bottom-0 left-0 z-10 w-full h-full flex items-end justify-center">
-              <img 
-                src={insurancePeopleBanner} 
-                alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                className="w-full h-auto object-contain drop-shadow-lg max-h-full"
-              />
             </div>
           </div>
         </div>
