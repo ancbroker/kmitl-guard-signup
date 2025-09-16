@@ -58,7 +58,7 @@ const Index = () => {
           </div>
 
           {/* Banner Image and Graphics - Hidden on mobile, positioned for desktop */}
-          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/3 2xl:w-2/5 h-96 md:h-[28rem] xl:h-96 2xl:h-[28rem] hidden lg:block scale-100 xl:scale-90 2xl:scale-100 origin-bottom-right">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-72 md:h-96 xl:h-[26rem] 2xl:h-[28rem] hidden lg:block">
             {/* Background Protection Graphics */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Shield Icons scattered around */}
@@ -99,7 +99,7 @@ const Index = () => {
             </div>
             
             {/* Main Image - Same container, same scaling */}
-            <div className="absolute bottom-0 right-0 z-10 w-full h-full flex items-end justify-end">
+            <div className="absolute bottom-0 left-0 z-10 w-full h-full flex items-end justify-center">
               <img 
                 src={insurancePeopleBanner} 
                 alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
