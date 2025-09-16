@@ -134,17 +134,23 @@ const InsuranceForm = () => {
   };
 
   const validateForm = () => {
-    for (const person of people) {
+    for (let i = 0; i < people.length; i++) {
+      const person = people[i];
       if (!person.firstName || !person.lastName || !person.birthDate || 
-          !person.idNumber || !person.email || !person.beneficiary ||
+          !person.idNumber || !person.beneficiary ||
           !person.referencePersonName || !person.relationship || 
           !person.major || !person.faculty) {
+        return false;
+      }
+      // Only validate email for first person
+      if (i === 0 && !person.email) {
         return false;
       }
       if (person.idNumber.length !== 13 || !/^\d+$/.test(person.idNumber)) {
         return false;
       }
-      if (!/\S+@\S+\.\S+/.test(person.email)) {
+      // Only validate email format for first person
+      if (i === 0 && !/\S+@\S+\.\S+/.test(person.email)) {
         return false;
       }
     }
@@ -368,17 +374,19 @@ const InsuranceForm = () => {
                     />
                   </div>
 
-                  {/* Email */}
-                  <div>
-                    <Label htmlFor={`email-${person.id}`}>อีเมล *</Label>
-                    <Input
-                      id={`email-${person.id}`}
-                      type="email"
-                      value={person.email}
-                      onChange={(e) => updatePerson(person.id, "email", e.target.value)}
-                      placeholder="example@email.com"
-                    />
-                  </div>
+                  {/* Email - Only for first person */}
+                  {index === 0 && (
+                    <div>
+                      <Label htmlFor={`email-${person.id}`}>อีเมล *</Label>
+                      <Input
+                        id={`email-${person.id}`}
+                        type="email"
+                        value={person.email}
+                        onChange={(e) => updatePerson(person.id, "email", e.target.value)}
+                        placeholder="example@email.com"
+                      />
+                    </div>
+                  )}
 
                   {/* Beneficiary */}
                   <div>

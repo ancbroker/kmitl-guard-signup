@@ -20,14 +20,14 @@ const Index = () => {
           {/* Logos */}
           <div className="flex items-center justify-center gap-6 mb-12">
             <img 
-              src={kmitlLogo} 
-              alt="KMITL Logo" 
+              src={ancLogo} 
+              alt="ANC Insurtech Logo" 
               className="h-12 w-auto object-contain"
             />
             <div className="w-px h-12 bg-foreground/30"></div>
             <img 
-              src={ancLogo} 
-              alt="ANC Insurtech Logo" 
+              src={kmitlLogo} 
+              alt="KMITL Logo" 
               className="h-12 w-auto object-contain"
             />
           </div>
@@ -49,7 +49,7 @@ const Index = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="rounded-full p-2 bg-white">
-                    <Check className="w-4 h-4 text-accent" />
+                    <Check className="w-4 h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
                     <span className="text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
@@ -57,7 +57,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="rounded-full p-2 bg-white">
-                    <Check className="w-4 h-4 text-accent" />
+                    <Check className="w-4 h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
                     <span className="text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
@@ -65,7 +65,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="rounded-full p-2 bg-white">
-                    <Check className="w-4 h-4 text-accent" />
+                    <Check className="w-4 h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
                     <span className="text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
@@ -84,15 +84,6 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Right Side - Image */}
-            <div className="lg:justify-self-end relative h-[24rem]">
-              <img 
-                src={insuranceBanner} 
-                alt="บุคลากร ญาติ และผู้เกษียณประสบอุบัติเหตุแต่ยิ้มมั่นใจ - ประกันอุบัติเหตุทิพยประกันภัย" 
-                className="absolute bottom-0 right-0 w-full h-auto object-contain hover:scale-105 transition-transform duration-300 z-10"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).src = fallbackBanner; }}
-              />
-            </div>
           </div>
         </div>
         
@@ -208,6 +199,58 @@ const Index = () => {
             >
               ดูความคุ้มครองเพิ่มเติม
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Contact Information */}
+      <section className="py-16 bg-secondary/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4">ช่องทางติดต่อ</h2>
+            <p className="text-muted-foreground">
+              สอบถามข้อมูลเพิ่มเติมหรือขอความช่วยเหลือ
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <Card className="shadow-[var(--shadow-soft)]">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Phone className="w-5 h-5 text-primary" />
+                  โทรศัพท์
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold">02-329-8000</p>
+                <p className="text-sm text-muted-foreground">จันทร์-ศุกร์ 8:00-17:00 น.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-[var(--shadow-soft)]">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-primary" />
+                  อีเมล
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold">insurance@kmitl.ac.th</p>
+                <p className="text-sm text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-[var(--shadow-soft)]">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  ที่อยู่
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าลาดกระบัง</p>
+                <p className="text-sm text-muted-foreground">1 ซอยฉลองกรุง 1 แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
