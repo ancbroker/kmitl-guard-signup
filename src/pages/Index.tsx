@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-12 pb-0 md:pb-0 shadow-[var(--shadow-medium)] relative overflow-hidden">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-12 pb-28 md:pb-0 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-[36rem]">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12">
@@ -86,7 +86,7 @@ const Index = () => {
           </div>
 
           {/* Banner Image and Graphics - Mobile version (< 768px) - at bottom */}
-          <div className="w-full max-w-3xl mx-auto mt-auto block md:hidden">
+          <div className="w-full max-w-3xl mx-auto block md:hidden absolute bottom-0 left-1/2 -translate-x-1/2">
             <div className="relative w-80 h-64 mx-auto scale-75">
               {/* Background Protection Graphics */}
               <div className="absolute inset-0 overflow-hidden">
