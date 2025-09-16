@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-6 xl:pt-12 pb-0 shadow-[var(--shadow-medium)] relative overflow-hidden min-h-[24rem] md:min-h-[36rem] lg:min-h-[20rem] xl:min-h-[40rem]">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-6 xl:pt-12 pb-0 shadow-[var(--shadow-medium)] relative overflow-hidden min-h-[24rem] md:min-h-[36rem] lg:min-h-[18rem] xl:min-h-[40rem]">
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-[36rem]">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12">
@@ -36,7 +36,7 @@ const Index = () => {
             {/* Left Side - Text Content */}
             <div className="space-y-4 md:space-y-8 text-center lg:text-left lg:pl-8 xl:pl-0">
               <div>
-                <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 leading-tight text-black">
+                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
                   สำหรับบุคลากร สจล. และครอบครัว
                 </h1>
