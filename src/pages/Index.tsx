@@ -87,7 +87,7 @@ const Index = () => {
 
           {/* Banner Image and Graphics - Mobile version (< 768px) - at bottom */}
           <div className="w-full max-w-3xl mx-auto block md:hidden absolute bottom-0 left-1/2 -translate-x-1/2">
-            <div className="relative w-80 h-64 mx-auto scale-75">
+            <div className="relative w-80 mx-auto scale-75" style={{ height: 'auto' }}>
               {/* Background Protection Graphics */}
               <div className="absolute inset-0 overflow-hidden">
                 {/* Shield Icons scattered around */}
@@ -128,18 +128,18 @@ const Index = () => {
               </div>
               
               {/* Main Image */}
-              <div className="absolute bottom-0 left-0 z-10 w-full h-full flex items-end justify-center">
+              <div className="relative z-10 w-full flex items-end justify-center">
                 <img 
                   src={insurancePeopleBanner} 
                   alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                  className="w-full h-auto object-contain drop-shadow-lg max-h-full"
+                  className="w-full h-auto object-contain drop-shadow-lg block"
                 />
               </div>
             </div>
           </div>
 
           {/* Banner Image and Graphics - Desktop version (>= 768px) - at right side */}
-          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/3 2xl:w-2/5 h-96 md:h-[28rem] xl:h-96 2xl:h-[28rem] hidden md:block scale-100 xl:scale-90 2xl:scale-100 origin-bottom-right">
+          <div className="absolute bottom-0 right-0 w-2/5 xl:w-1/3 2xl:w-2/5 hidden md:block scale-100 xl:scale-90 2xl:scale-100 origin-bottom-right">
             {/* Background Protection Graphics */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Shield Icons scattered around */}
@@ -180,11 +180,11 @@ const Index = () => {
             </div>
             
             {/* Main Image */}
-            <div className="absolute bottom-0 right-0 z-10 w-full h-full flex items-end justify-end">
+            <div className="relative z-10 w-full flex items-end justify-end">
               <img 
                 src={insurancePeopleBanner} 
                 alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                className="w-full h-auto object-contain drop-shadow-lg max-h-full"
+                className="w-full h-auto object-contain drop-shadow-lg block"
               />
             </div>
           </div>
