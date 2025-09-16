@@ -21,13 +21,13 @@ const Index = () => {
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
-              className="h-8 md:h-12 w-auto object-contain"
+              className="h-6 md:h-12 w-auto object-contain"
             />
-            <div className="w-px h-8 md:h-12 bg-foreground/30"></div>
+            <div className="w-px h-6 md:h-12 bg-foreground/30"></div>
             <img 
               src={kmitlLogo} 
               alt="KMITL Logo" 
-              className="h-8 md:h-12 w-auto object-contain"
+              className="h-6 md:h-12 w-auto object-contain"
             />
           </div>
 
