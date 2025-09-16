@@ -96,6 +96,58 @@ const Index = () => {
                 className="w-[550px] h-auto object-contain opacity-25 drop-shadow-2xl"
               />
             </div>
+
+            {/* Additional Protection Graphics */}
+            {/* Protective Circles */}
+            <div className="absolute top-16 right-20 animate-pulse z-0" style={{animationDuration: '3s'}}>
+              <div className="w-32 h-32 rounded-full border-4 border-blue-400/30 bg-blue-400/10"></div>
+            </div>
+            <div className="absolute bottom-32 left-16 animate-pulse z-0" style={{animationDuration: '4s', animationDelay: '1s'}}>
+              <div className="w-24 h-24 rounded-full border-3 border-orange-400/35 bg-orange-400/15"></div>
+            </div>
+
+            {/* Safety Umbrellas */}
+            <div className="absolute top-24 left-24 z-0">
+              <div className="w-16 h-12 bg-gradient-to-b from-blue-400/40 to-blue-500/25 rounded-t-full relative">
+                <div className="absolute bottom-0 left-1/2 w-1 h-6 bg-blue-600/50 transform -translate-x-1/2"></div>
+              </div>
+            </div>
+            <div className="absolute bottom-40 right-32 z-0">
+              <div className="w-12 h-8 bg-gradient-to-b from-orange-400/45 to-orange-500/30 rounded-t-full relative">
+                <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-orange-600/55 transform -translate-x-1/2"></div>
+              </div>
+            </div>
+
+            {/* Medical Cross Icons */}
+            <div className="absolute top-32 right-28 z-0">
+              <div className="w-10 h-10 relative">
+                <div className="absolute top-1/2 left-1/2 w-8 h-2 bg-blue-500/40 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute top-1/2 left-1/2 w-2 h-8 bg-blue-500/40 transform -translate-x-1/2 -translate-y-1/2"></div>
+              </div>
+            </div>
+            <div className="absolute bottom-28 left-28 z-0">
+              <div className="w-8 h-8 relative">
+                <div className="absolute top-1/2 left-1/2 w-6 h-1.5 bg-orange-500/45 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute top-1/2 left-1/2 w-1.5 h-6 bg-orange-500/45 transform -translate-x-1/2 -translate-y-1/2"></div>
+              </div>
+            </div>
+
+            {/* Heart Protection Symbol */}
+            <div className="absolute top-40 left-32 z-0">
+              <div className="w-12 h-12 relative">
+                <div className="absolute top-3 left-3 w-3 h-3 bg-blue-400/35 rounded-full transform -rotate-45"></div>
+                <div className="absolute top-3 right-3 w-3 h-3 bg-blue-400/35 rounded-full transform -rotate-45"></div>
+                <div className="absolute top-5 left-1/2 w-0 h-0 border-l-3 border-r-3 border-t-4 border-l-transparent border-r-transparent border-t-blue-400/35 transform -translate-x-1/2"></div>
+              </div>
+            </div>
+
+            {/* Glow Effects */}
+            <div className="absolute top-1/3 right-1/3 z-0">
+              <div className="w-40 h-40 bg-gradient-radial from-blue-400/15 to-transparent rounded-full animate-pulse" style={{animationDuration: '5s'}}></div>
+            </div>
+            <div className="absolute bottom-1/4 left-1/4 z-0">
+              <div className="w-32 h-32 bg-gradient-radial from-orange-400/12 to-transparent rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
+            </div>
             
             <div className="absolute bottom-0 right-0 z-10">
               <img 
