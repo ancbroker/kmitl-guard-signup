@@ -314,43 +314,43 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="shadow-[var(--shadow-soft)]">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg">
                   <Phone className="w-5 h-5 text-primary" />
                   โทรศัพท์
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-1 pt-0 space-y-2">
                 <p className="text-lg font-semibold">02-881-1888</p>
-                <p className="text-sm text-muted-foreground">จันทร์ - ศุกร์ 8:30 - 17:30</p>
-                <p className="text-sm text-muted-foreground">เสาร์ 9:00 - 15:00</p>
+                <p className="text-base text-muted-foreground">จันทร์ - ศุกร์ 8:30 - 17:30</p>
+                <p className="text-base text-muted-foreground">เสาร์ 9:00 - 15:00</p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-[var(--shadow-soft)]">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg">
                   <Mail className="w-5 h-5 text-primary" />
                   อีเมล
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-1 pt-0 space-y-2">
                 <p className="text-lg font-semibold">info@ancbroker.com</p>
-                <p className="text-sm text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
+                <p className="text-base text-muted-foreground">ตอบกลับภายใน 24 ชั่วโมง</p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-[var(--shadow-soft)]">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg">
                   <MapPin className="w-5 h-5 text-primary" />
                   ที่อยู่
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">บริษัท เอ เอ็น ซี โบรกเกอร์เรจ จำกัด</p>
-                <p className="text-sm text-muted-foreground">126/5 ถนนสิรินธร แขวงบางพลัด เขตบางพลัด กรุงเทพฯ 10700</p>
+              <CardContent className="flex-1 pt-0 space-y-2">
+                <p className="text-base">บริษัท เอ เอ็น ซี โบรกเกอร์เรจ จำกัด</p>
+                <p className="text-base text-muted-foreground">126/5 ถนนสิรินธร แขวงบางพลัด เขตบางพลัด กรุงเทพฯ 10700</p>
               </CardContent>
             </Card>
           </div>
