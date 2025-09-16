@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden xl:overflow-visible" >
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden" >
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0 xl:max-w-none xl:mx-0 xl:px-12">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12 lg:mb-8 xl:mb-12">
@@ -143,42 +143,34 @@ const Index = () => {
               <div className="w-full hidden md:block xl:absolute xl:bottom-0 xl:right-0 xl:w-1/3 2xl:w-1/3">
                 <div className="relative w-full xl:scale-85 2xl:scale-80 xl:origin-bottom-right">
                   {/* Background Protection Graphics */}
-                  <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
                     {/* Shield Icons scattered around */}
-                    <div className="absolute top-10 left-10 animate-fade-in">
+                    <div className="absolute -top-8 -left-8 animate-fade-in">
                       <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-blue-400/50" strokeWidth={1.5} />
                     </div>
-                    <div className="absolute top-20 right-16 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                    <div className="absolute -top-4 right-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
                       <Shield className="w-10 h-10 xl:w-12 xl:h-12 text-blue-500/45" strokeWidth={1.5} />
                     </div>
-                    <div className="absolute top-40 left-20 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                    <div className="absolute top-8 -left-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
                       <Shield className="w-6 h-6 xl:w-8 xl:h-8 text-blue-300/55" strokeWidth={1.5} />
                     </div>
-                    <div className="absolute bottom-40 right-10 animate-fade-in" style={{animationDelay: '0.6s'}}>
+                    <div className="absolute -bottom-8 right-4 animate-fade-in" style={{animationDelay: '0.6s'}}>
                       <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-blue-400/50" strokeWidth={1.5} />
                     </div>
-                    <div className="absolute top-28 right-28 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                    <div className="absolute top-4 right-12 animate-fade-in" style={{animationDelay: '0.8s'}}>
                       <Shield className="w-6 h-6 xl:w-8 xl:h-8 text-blue-600/40" strokeWidth={1.5} />
                     </div>
-                    <div className="absolute bottom-28 left-16 animate-fade-in" style={{animationDelay: '1s'}}>
+                    <div className="absolute -bottom-4 -left-8 animate-fade-in" style={{animationDelay: '1s'}}>
                       <Shield className="w-7 h-7 xl:w-10 xl:h-10 text-blue-500/50" strokeWidth={1.5} />
                     </div>
                     
-                    {/* Protective Circle Lines */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-96 h-96 xl:w-[20rem] xl:h-[20rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
-                    </div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-80 h-80 xl:w-[16rem] xl:h-[16rem] border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
-                    </div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-64 h-64 xl:w-[12rem] xl:h-[12rem] border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
-                    </div>
+                    {/* Protective Circle Lines - Centered */}
+                    <div className="w-96 h-96 xl:w-[20rem] xl:h-[20rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
+                    <div className="absolute w-80 h-80 xl:w-[16rem] xl:h-[16rem] border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
+                    <div className="absolute w-64 h-64 xl:w-[12rem] xl:h-[12rem] border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
                     
                     {/* Central Protection Glow */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-64 h-64 xl:w-[12rem] xl:h-[12rem] bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
-                    </div>
+                    <div className="absolute w-64 h-64 xl:w-[12rem] xl:h-[12rem] bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
                   </div>
                   
                   {/* Main Image */}
@@ -200,30 +192,22 @@ const Index = () => {
           <div className="absolute bottom-0 right-0 w-[35vw] h-full">
             <div className="relative w-full h-full">
               {/* Background Protection Graphics */}
-              <div className="absolute inset-0">
-                <div className="absolute top-24 left-10 animate-fade-in">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute -top-6 -left-6 animate-fade-in">
                   <Shield className="w-6 h-6 text-blue-400/40" strokeWidth={1.5} />
                 </div>
-                <div className="absolute top-20 right-24 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="absolute -top-4 right-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
                   <Shield className="w-8 h-8 text-blue-500/30" strokeWidth={1.5} />
                 </div>
-                <div className="absolute bottom-40 right-12 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <div className="absolute -bottom-8 right-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
                   <Shield className="w-7 h-7 text-blue-400/35" strokeWidth={1.5} />
                 </div>
-                {/* Protective Circle Lines */}
-                <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4">
-                  <div className="w-[22rem] h-[22rem] border border-blue-400/25 rounded-full animate-scale-in"></div>
-                </div>
-                <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4">
-                  <div className="w-[18rem] h-[18rem] border border-blue-500/20 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
-                </div>
-                <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4">
-                  <div className="w-[14rem] h-[14rem] border border-blue-600/15 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
-                </div>
+                {/* Protective Circle Lines - Centered on image */}
+                <div className="w-[22rem] h-[22rem] border border-blue-400/25 rounded-full animate-scale-in"></div>
+                <div className="absolute w-[18rem] h-[18rem] border border-blue-500/20 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
+                <div className="absolute w-[14rem] h-[14rem] border border-blue-600/15 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
                 {/* Central Protection Glow */}
-                <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4">
-                  <div className="w-[14rem] h-[14rem] bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-                </div>
+                <div className="absolute w-[14rem] h-[14rem] bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
               </div>
               {/* Main Image */}
               <img
