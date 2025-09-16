@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden" >
-        <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0">
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden xl:overflow-visible" >
+        <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0 xl:max-w-none xl:mx-0 xl:px-12">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12 lg:mb-8 xl:mb-12">
             <img 
@@ -32,7 +32,7 @@ const Index = () => {
           </div>
 
           {/* Main Content - Responsive Layout */}
-          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-8 xl:gap-12 items-center max-w-7xl mx-auto xl:max-w-none xl:grid-cols-1 xl:justify-start">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-8 xl:gap-12 items-center max-w-7xl mx-auto xl:max-w-none xl:mx-0 xl:w-full xl:grid-cols-1 xl:justify-start">
             {/* Left Side - Text Content */}
             <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-16 xl:pl-0 xl:max-w-2xl xl:mx-0 xl:z-10 xl:relative xl:ml-8 xl:mr-auto">
               <div>
@@ -197,10 +197,10 @@ const Index = () => {
         
         {/* XL Absolute Banner Graphics and Image */}
         <div className="hidden xl:block absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 right-0 w-[60vw] h-full">
+          <div className="absolute bottom-0 right-0 w-[70vw] h-full">
             <div className="relative w-full h-full">
               {/* Background Protection Graphics */}
-              <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute inset-0">
                 <div className="absolute top-24 left-10 animate-fade-in">
                   <Shield className="w-10 h-10 text-blue-400/40" strokeWidth={1.5} />
                 </div>
