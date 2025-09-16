@@ -58,7 +58,7 @@ const Index = () => {
           </div>
 
           {/* Banner Image and Graphics - Hidden on mobile, positioned for desktop */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-72 md:h-96 xl:h-[26rem] 2xl:h-[28rem] hidden lg:block">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 md:h-96 xl:h-[26rem] 2xl:h-[28rem] block z-10">
             {/* Background Protection Graphics */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Shield Icons scattered around */}
