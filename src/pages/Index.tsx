@@ -213,7 +213,7 @@ const Index = () => {
       </section>
 
       {/* Section 3: Package Details */}
-      <section className="py-16 bg-primary/20">
+      <section className="py-8 md:py-16 bg-primary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">สิทธิประโยชน์ประกันภัย</h2>
@@ -305,7 +305,7 @@ const Index = () => {
       </section>
 
       {/* Section 4: Contact Information */}
-      <section className="py-16 bg-secondary/20">
+      <section className="py-8 md:py-16 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">ช่องทางติดต่อ</h2>
