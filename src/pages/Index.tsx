@@ -87,43 +87,48 @@ const Index = () => {
 
           {/* Banner Image and Graphics - Absolute positioned at bottom */}
           <div className="absolute bottom-0 right-0 w-1/2 h-96 lg:block hidden">
-            {/* Background Protection Graphics - Larger and No Grid */}
+            {/* Beautiful Floating Background Graphics */}
             <div className="absolute inset-0 overflow-hidden">
-              {/* Shield Icons scattered around - Larger sizes */}
-              <div className="absolute top-8 left-8 animate-fade-in">
-                <Shield className="w-12 h-12 text-blue-400/50" strokeWidth={1.5} />
+              {/* Floating Geometric Shapes */}
+              <div className="absolute top-12 left-8 animate-fade-in">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400/30 to-purple-500/30 rounded-full blur-sm animate-pulse"></div>
               </div>
-              <div className="absolute top-16 right-12 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <Shield className="w-14 h-14 text-blue-500/45" strokeWidth={1.5} />
+              <div className="absolute top-20 right-16 animate-fade-in" style={{animationDelay: '0.5s'}}>
+                <div className="w-8 h-8 bg-gradient-to-br from-cyan-400/40 to-blue-500/40 rotate-45 animate-bounce" style={{animationDuration: '3s'}}></div>
               </div>
-              <div className="absolute top-32 left-16 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <Shield className="w-10 h-10 text-blue-300/55" strokeWidth={1.5} />
+              <div className="absolute top-32 left-20 animate-fade-in" style={{animationDelay: '1s'}}>
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400/35 to-blue-600/35 rounded-lg rotate-12 animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
-              <div className="absolute bottom-32 right-8 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <Shield className="w-13 h-13 text-blue-400/50" strokeWidth={1.5} />
+              <div className="absolute bottom-40 right-12 animate-fade-in" style={{animationDelay: '1.5s'}}>
+                <div className="w-20 h-20 bg-gradient-to-br from-sky-400/25 to-blue-500/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
               </div>
-              <div className="absolute top-20 right-20 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                <Shield className="w-8 h-8 text-blue-600/40" strokeWidth={1.5} />
+              <div className="absolute bottom-32 left-16 animate-fade-in" style={{animationDelay: '2s'}}>
+                <div className="w-6 h-6 bg-gradient-to-br from-violet-400/45 to-purple-500/45 rotate-45"></div>
               </div>
-              <div className="absolute bottom-20 left-12 animate-fade-in" style={{animationDelay: '1s'}}>
-                <Shield className="w-11 h-11 text-blue-500/50" strokeWidth={1.5} />
-              </div>
-              
-              {/* Protective Circle Lines - Larger */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-[28rem] h-[28rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
-              </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-96 h-96 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
-              </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-80 h-80 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
+              <div className="absolute top-40 right-32 animate-fade-in" style={{animationDelay: '0.8s'}}>
+                <div className="w-10 h-10 bg-gradient-to-br from-teal-400/30 to-cyan-500/30 rounded-full"></div>
               </div>
               
-              {/* Central Protection Glow - Larger */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-80 h-80 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
+              {/* Flowing Wave Elements */}
+              <div className="absolute top-1/4 left-1/4 transform -rotate-12">
+                <div className="w-32 h-2 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full animate-pulse"></div>
               </div>
+              <div className="absolute bottom-1/3 right-1/4 transform rotate-45">
+                <div className="w-24 h-2 bg-gradient-to-r from-transparent via-purple-400/20 to-transparent rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              </div>
+              
+              {/* Large Gradient Orbs */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="w-96 h-96 bg-gradient-radial from-blue-400/10 via-cyan-400/5 to-transparent rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
+              </div>
+              <div className="absolute top-1/3 right-1/4 transform translate-x-8">
+                <div className="w-64 h-64 bg-gradient-radial from-purple-400/15 via-blue-400/8 to-transparent rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '1s'}}></div>
+              </div>
+              
+              {/* Subtle Floating Particles */}
+              <div className="absolute top-16 left-1/3 w-2 h-2 bg-blue-400/40 rounded-full animate-bounce" style={{animationDuration: '2s', animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-24 right-1/3 w-1 h-1 bg-cyan-400/50 rounded-full animate-bounce" style={{animationDuration: '2.5s', animationDelay: '1.2s'}}></div>
+              <div className="absolute top-2/3 left-8 w-1.5 h-1.5 bg-purple-400/45 rounded-full animate-bounce" style={{animationDuration: '3s', animationDelay: '0.8s'}}></div>
             </div>
             
             {/* Main Image - Positioned at bottom */}
