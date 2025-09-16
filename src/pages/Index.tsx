@@ -85,41 +85,41 @@ const Index = () => {
 
             {/* Right Side - Image with Protection Graphics */}
             <div className="relative lg:flex hidden items-end justify-center h-full">
-              {/* Background Protection Graphics */}
+              {/* Background Protection Graphics - More Subtle */}
               <div className="absolute inset-0 overflow-hidden">
-                {/* Shield Icons scattered around - More Visible */}
+                {/* Shield Icons scattered around - Balanced Visibility */}
                 <div className="absolute top-8 left-8 animate-fade-in">
-                  <Shield className="w-8 h-8 text-blue-500/80" strokeWidth={2} />
+                  <Shield className="w-7 h-7 text-blue-400/50" strokeWidth={1.5} />
                 </div>
                 <div className="absolute top-16 right-12 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                  <Shield className="w-12 h-12 text-blue-600/70" strokeWidth={2} />
+                  <Shield className="w-9 h-9 text-blue-500/45" strokeWidth={1.5} />
                 </div>
                 <div className="absolute top-32 left-16 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                  <Shield className="w-7 h-7 text-blue-400/80" strokeWidth={2} />
+                  <Shield className="w-6 h-6 text-blue-300/55" strokeWidth={1.5} />
                 </div>
                 <div className="absolute bottom-32 right-8 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                  <Shield className="w-10 h-10 text-blue-500/70" strokeWidth={2} />
+                  <Shield className="w-8 h-8 text-blue-400/50" strokeWidth={1.5} />
                 </div>
                 
-                {/* Protective Circle Lines - More Visible */}
+                {/* Protective Circle Lines - Balanced */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-96 h-96 border-2 border-blue-400/60 rounded-full animate-scale-in"></div>
+                  <div className="w-96 h-96 border border-blue-400/35 rounded-full animate-scale-in"></div>
                 </div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-80 h-80 border-2 border-blue-500/50 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
-                </div>
-                
-                {/* Coverage Grid Lines - More Visible */}
-                <div className="absolute inset-0 opacity-40">
-                  <div className="absolute left-1/4 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-blue-500 to-transparent"></div>
-                  <div className="absolute right-1/4 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-blue-500 to-transparent"></div>
-                  <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-                  <div className="absolute bottom-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+                  <div className="w-80 h-80 border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
                 </div>
                 
-                {/* Central Protection Glow - More Visible */}
+                {/* Coverage Grid Lines - Subtle */}
+                <div className="absolute inset-0 opacity-25">
+                  <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-400 to-transparent"></div>
+                  <div className="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-400 to-transparent"></div>
+                  <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                  <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                </div>
+                
+                {/* Central Protection Glow - Subtle */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="w-64 h-64 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
                 </div>
               </div>
               
