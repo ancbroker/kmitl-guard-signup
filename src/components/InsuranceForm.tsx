@@ -93,6 +93,7 @@ const InsuranceForm = () => {
     }
   ]);
   const [showSummary, setShowSummary] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<{[key: string]: string[]}>({});
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -113,6 +114,7 @@ const InsuranceForm = () => {
     };
     setPeople([...people, newPerson]);
     setShowSummary(false);
+    setValidationErrors({});
   };
 
   const removePerson = (id: string) => {
@@ -125,6 +127,14 @@ const InsuranceForm = () => {
     setPeople(people.map(p => 
       p.id === id ? { ...p, [field]: value } : p
     ));
+    
+    // Clear validation error for this field
+    if (validationErrors[id]?.includes(field as string)) {
+      setValidationErrors(prev => ({
+        ...prev,
+        [id]: prev[id].filter(error => error !== field)
+      }));
+    }
   };
 
   const toggleExpanded = (id: string) => {
@@ -134,27 +144,41 @@ const InsuranceForm = () => {
   };
 
   const validateForm = () => {
+    const errors: {[key: string]: string[]} = {};
+    
     for (let i = 0; i < people.length; i++) {
       const person = people[i];
-      if (!person.firstName || !person.lastName || !person.birthDate || 
-          !person.idNumber || !person.beneficiary ||
-          !person.referencePersonName || !person.relationship || 
-          !person.major || !person.faculty) {
-        return false;
-      }
+      const personErrors: string[] = [];
+      
+      if (!person.firstName) personErrors.push('firstName');
+      if (!person.lastName) personErrors.push('lastName');
+      if (!person.birthDate) personErrors.push('birthDate');
+      if (!person.idNumber) personErrors.push('idNumber');
+      if (!person.beneficiary) personErrors.push('beneficiary');
+      if (!person.referencePersonName) personErrors.push('referencePersonName');
+      if (!person.relationship) personErrors.push('relationship');
+      if (!person.major) personErrors.push('major');
+      if (!person.faculty) personErrors.push('faculty');
+      
       // Only validate email for first person
-      if (i === 0 && !person.email) {
-        return false;
+      if (i === 0 && !person.email) personErrors.push('email');
+      
+      if (person.idNumber && (person.idNumber.length !== 13 || !/^\d+$/.test(person.idNumber))) {
+        personErrors.push('idNumber');
       }
-      if (person.idNumber.length !== 13 || !/^\d+$/.test(person.idNumber)) {
-        return false;
-      }
+      
       // Only validate email format for first person
-      if (i === 0 && !/\S+@\S+\.\S+/.test(person.email)) {
-        return false;
+      if (i === 0 && person.email && !/\S+@\S+\.\S+/.test(person.email)) {
+        personErrors.push('email');
+      }
+      
+      if (personErrors.length > 0) {
+        errors[person.id] = personErrors;
       }
     }
-    return true;
+    
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = () => {
@@ -326,6 +350,7 @@ const InsuranceForm = () => {
                       value={person.firstName}
                       onChange={(e) => updatePerson(person.id, "firstName", e.target.value)}
                       placeholder="กรอกชื่อ"
+                      className={cn(validationErrors[person.id]?.includes('firstName') && "border-red-500 focus:border-red-500")}
                     />
                   </div>
                   <div>
@@ -335,23 +360,26 @@ const InsuranceForm = () => {
                       value={person.lastName}
                       onChange={(e) => updatePerson(person.id, "lastName", e.target.value)}
                       placeholder="กรอกนามสกุล"
+                      className={cn(validationErrors[person.id]?.includes('lastName') && "border-red-500 focus:border-red-500")}
                     />
                   </div>
 
                   {/* Birth Date */}
                   <div>
                     <Label>วันเดือนปีเกิด *</Label>
-                    <DatePickerWithYearMonth
-                      date={person.birthDate || undefined}
-                      onSelect={(date) => updatePerson(person.id, "birthDate", date)}
-                      placeholder="เลือกวันเกิด"
-                      disabled={(date) => {
-                        const today = new Date();
-                        const maxAge = new Date(today.getFullYear() - 91, today.getMonth(), today.getDate());
-                        const minAge = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
-                        return date > minAge || date < maxAge;
-                      }}
-                    />
+                    <div className={cn(validationErrors[person.id]?.includes('birthDate') && "border border-red-500 rounded-md")}>
+                      <DatePickerWithYearMonth
+                        date={person.birthDate || undefined}
+                        onSelect={(date) => updatePerson(person.id, "birthDate", date)}
+                        placeholder="เลือกวันเกิด"
+                        disabled={(date) => {
+                          const today = new Date();
+                          const maxAge = new Date(today.getFullYear() - 91, today.getMonth(), today.getDate());
+                          const minAge = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+                          return date > minAge || date < maxAge;
+                        }}
+                      />
+                    </div>
                     {person.birthDate && (
                       <p className="text-xs text-muted-foreground mt-1">
                         อายุ {calculateAge(person.birthDate).years} ปี {calculateAge(person.birthDate).months} เดือน {calculateAge(person.birthDate).days} วัน
@@ -372,6 +400,7 @@ const InsuranceForm = () => {
                       }}
                       placeholder="1234567890123"
                       maxLength={13}
+                      className={cn(validationErrors[person.id]?.includes('idNumber') && "border-red-500 focus:border-red-500")}
                     />
                   </div>
 
@@ -379,13 +408,14 @@ const InsuranceForm = () => {
                   {index === 0 && (
                     <div>
                       <Label htmlFor={`email-${person.id}`}>อีเมล *</Label>
-                      <Input
-                        id={`email-${person.id}`}
-                        type="email"
-                        value={person.email}
-                        onChange={(e) => updatePerson(person.id, "email", e.target.value)}
-                        placeholder="example@email.com"
-                      />
+                        <Input
+                          id={`email-${person.id}`}
+                          type="email"
+                          value={person.email}
+                          onChange={(e) => updatePerson(person.id, "email", e.target.value)}
+                          placeholder="example@email.com"
+                          className={cn(validationErrors[person.id]?.includes('email') && "border-red-500 focus:border-red-500")}
+                        />
                     </div>
                   )}
 
@@ -397,6 +427,7 @@ const InsuranceForm = () => {
                       value={person.beneficiary}
                       onChange={(e) => updatePerson(person.id, "beneficiary", e.target.value)}
                       placeholder="ชื่อผู้รับประโยชน์"
+                      className={cn(validationErrors[person.id]?.includes('beneficiary') && "border-red-500 focus:border-red-500")}
                     />
                   </div>
 
@@ -408,6 +439,7 @@ const InsuranceForm = () => {
                       value={person.referencePersonName}
                       onChange={(e) => updatePerson(person.id, "referencePersonName", e.target.value)}
                       placeholder="ชื่อบุคลากร สจล."
+                      className={cn(validationErrors[person.id]?.includes('referencePersonName') && "border-red-500 focus:border-red-500")}
                     />
                   </div>
 
@@ -418,7 +450,7 @@ const InsuranceForm = () => {
                       value={person.relationship}
                       onValueChange={(value) => updatePerson(person.id, "relationship", value)}
                     >
-                      <SelectTrigger className="bg-background">
+                      <SelectTrigger className={cn("bg-background", validationErrors[person.id]?.includes('relationship') && "border-red-500 focus:border-red-500")}>
                         <SelectValue placeholder="เลือกความสัมพันธ์" />
                       </SelectTrigger>
                       <SelectContent className="bg-popover border shadow-[var(--shadow-medium)]">
@@ -439,6 +471,7 @@ const InsuranceForm = () => {
                       value={person.major}
                       onChange={(e) => updatePerson(person.id, "major", e.target.value)}
                       placeholder="กรอกสาขาวิชา"
+                      className={cn(validationErrors[person.id]?.includes('major') && "border-red-500 focus:border-red-500")}
                     />
                   </div>
 
@@ -449,7 +482,7 @@ const InsuranceForm = () => {
                       value={person.faculty}
                       onValueChange={(value) => updatePerson(person.id, "faculty", value)}
                     >
-                      <SelectTrigger className="bg-background">
+                      <SelectTrigger className={cn("bg-background", validationErrors[person.id]?.includes('faculty') && "border-red-500 focus:border-red-500")}>
                         <SelectValue placeholder="เลือกคณะ" />
                       </SelectTrigger>
                       <SelectContent className="bg-popover border shadow-[var(--shadow-medium)]">
