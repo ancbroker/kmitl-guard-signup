@@ -34,19 +34,19 @@ const Index = () => {
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center max-w-7xl mx-auto">
             {/* Left Side - Text Content */}
-            <div className="space-y-4 md:space-y-8 text-center lg:text-left lg:pl-8 xl:pl-0">
+            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-8 xl:pl-0">
               <div>
-                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 leading-tight text-black">
+                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 lg:mb-4 xl:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
                   สำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-base md:text-lg lg:text-lg xl:text-xl mb-3 md:mb-6 leading-relaxed text-black">
+                <p className="text-base md:text-lg lg:text-lg xl:text-xl mb-3 md:mb-6 lg:mb-4 xl:mb-6 leading-relaxed text-black">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
 
               {/* Benefits - Show only on desktop (>= 768px) */}
-              <div className="space-y-2 md:space-y-4 hidden md:block">
+              <div className="space-y-2 md:space-y-4 lg:space-y-3 xl:space-y-4 hidden md:block">
                 <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
                   <div className="rounded-full p-1 md:p-2 bg-white">
                     <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
