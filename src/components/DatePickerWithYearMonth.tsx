@@ -91,7 +91,7 @@ export function DatePickerWithYearMonth({
             onValueChange={handleYearChange}
           >
             <SelectTrigger className="w-20 h-8">
-              <SelectValue />
+              <SelectValue placeholder={month.getFullYear().toString()} />
             </SelectTrigger>
             <SelectContent className="bg-popover border shadow-[var(--shadow-medium)] max-h-60">
               {years.map((year) => (
