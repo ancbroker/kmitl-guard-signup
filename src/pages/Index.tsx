@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-6 md:pb-8 lg:pb-10 xl:pb-12 shadow-[var(--shadow-medium)] relative overflow-hidden" >
+      <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 2xl:pt-16 pb-6 md:pb-8 lg:pb-10 xl:pb-12 2xl:pb-16 shadow-[var(--shadow-medium)] relative overflow-hidden" >
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0 xl:max-w-none xl:mx-0 xl:px-12">
           {/* Logos */}
           <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12 lg:mb-8 xl:mb-12">
@@ -34,7 +34,7 @@ const Index = () => {
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-8 xl:gap-12 items-center max-w-7xl mx-auto xl:max-w-none xl:mx-0 xl:w-full xl:grid-cols-1 xl:justify-start">
             {/* Left Side - Text Content */}
-            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-16 xl:pl-0 xl:max-w-2xl xl:mx-0 xl:z-10 xl:relative xl:ml-16 xl:mr-auto">
+            <div className="space-y-4 md:space-y-8 lg:space-y-6 xl:space-y-8 text-center lg:text-left lg:pl-16 xl:pl-0 xl:max-w-2xl xl:mx-0 xl:z-10 xl:relative xl:ml-16 xl:mr-auto 2xl:ml-32 2xl:max-w-3xl">
               <div>
                 <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 lg:mb-4 xl:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
