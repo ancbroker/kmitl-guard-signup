@@ -223,7 +223,7 @@ const Index = () => {
           <div className="text-center mb-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">สิทธิประโยชน์ประกันภัย</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
             {/* Benefits Card */}
             <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
               <CardHeader className="pb-4">
