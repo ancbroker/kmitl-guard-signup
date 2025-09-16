@@ -19,21 +19,6 @@ const Index = () => {
       {/* Section 1: Hero & Intro */}
       <section className="bg-gradient-to-r from-primary to-white text-foreground pt-6 md:pt-8 lg:pt-10 xl:pt-12 2xl:pt-16 pb-6 md:pb-8 lg:pb-10 xl:pb-12 2xl:pb-24 shadow-[var(--shadow-medium)] relative overflow-hidden" >
         <div className="container mx-auto px-4 flex flex-col min-h-[26rem] md:min-h-0 lg:min-h-0 xl:max-w-none xl:mx-0 xl:px-12">
-          {/* Logos */}
-          <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-12 lg:mb-8 xl:mb-12">
-            <img 
-              src={ancLogo} 
-              alt="ANC Insurtech Logo" 
-              className="h-6 md:h-12 lg:h-10 xl:h-12 w-auto object-contain"
-            />
-            <div className="w-px h-6 md:h-12 lg:h-10 xl:h-12 bg-foreground/30"></div>
-            <img 
-              src={kmitlLogo} 
-              alt="KMITL Logo" 
-              className="h-6 md:h-12 lg:h-10 xl:h-12 w-auto object-contain"
-            />
-          </div>
-
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-8 xl:gap-12 items-center max-w-7xl mx-auto xl:max-w-none xl:mx-0 xl:w-full xl:grid-cols-1 xl:justify-start">
             {/* Left Side - Text Content */}
