@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --secondary-foreground: 213 45% 12%;
 
     --muted: 200 30% 96%;
-    --muted-foreground: 213 25% 50%;
+    --muted-foreground: 213 15% 70%;
 
     /* Accent - #F16322 (Orange) */
     --accent: 19 88% 54%; /* #F16322 converted to HSL */
