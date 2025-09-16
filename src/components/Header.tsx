@@ -39,7 +39,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <div className="flex items-center gap-3">
             <img 
@@ -55,19 +55,21 @@ const Header = () => {
             />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <button
-                key={item.sectionId}
-                onClick={() => scrollToSection(item.sectionId)}
-                className={`text-sm font-medium transition-colors hover:text-orange-500 ${
-                  isScrolled ? 'text-gray-600' : 'text-gray-100'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-center space-x-12">
+              {navigationItems.map((item) => (
+                <button
+                  key={item.sectionId}
+                  onClick={() => scrollToSection(item.sectionId)}
+                  className={`text-sm font-medium transition-colors hover:text-orange-500 ${
+                    isScrolled ? 'text-gray-700' : 'text-gray-200'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -97,7 +99,7 @@ const Header = () => {
                 <button
                   key={item.sectionId}
                   onClick={() => scrollToSection(item.sectionId)}
-                  className="text-left px-4 py-2 text-gray-600 hover:bg-orange-50 hover:text-orange-500 transition-colors"
+                  className="text-left px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition-colors"
                 >
                   {item.label}
                 </button>
