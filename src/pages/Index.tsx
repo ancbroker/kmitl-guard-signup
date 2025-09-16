@@ -140,44 +140,44 @@ const Index = () => {
               </div>
 
               {/* Banner Image and Graphics - Desktop version (>= 768px) */}
-              <div className="w-full hidden md:block">
-                <div className="relative w-full">
+              <div className="w-full hidden md:block xl:absolute xl:bottom-0 xl:right-0 xl:w-1/2 2xl:w-2/5">
+                <div className="relative w-full xl:scale-125 2xl:scale-110 xl:origin-bottom-right">
                   {/* Background Protection Graphics */}
                   <div className="absolute inset-0 overflow-hidden">
                     {/* Shield Icons scattered around */}
                     <div className="absolute top-10 left-10 animate-fade-in">
-                      <Shield className="w-10 h-10 xl:w-14 xl:h-14 text-blue-400/50" strokeWidth={1.5} />
+                      <Shield className="w-10 h-10 xl:w-16 xl:h-16 text-blue-400/50" strokeWidth={1.5} />
                     </div>
                     <div className="absolute top-20 right-16 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                      <Shield className="w-12 h-12 xl:w-16 xl:h-16 text-blue-500/45" strokeWidth={1.5} />
+                      <Shield className="w-12 h-12 xl:w-20 xl:h-20 text-blue-500/45" strokeWidth={1.5} />
                     </div>
                     <div className="absolute top-40 left-20 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                      <Shield className="w-8 h-8 xl:w-12 xl:h-12 text-blue-300/55" strokeWidth={1.5} />
+                      <Shield className="w-8 h-8 xl:w-14 xl:h-14 text-blue-300/55" strokeWidth={1.5} />
                     </div>
                     <div className="absolute bottom-40 right-10 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                      <Shield className="w-10 h-10 xl:w-15 xl:h-15 text-blue-400/50" strokeWidth={1.5} />
+                      <Shield className="w-10 h-10 xl:w-18 xl:h-18 text-blue-400/50" strokeWidth={1.5} />
                     </div>
                     <div className="absolute top-28 right-28 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                      <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-blue-600/40" strokeWidth={1.5} />
+                      <Shield className="w-8 h-8 xl:w-12 xl:h-12 text-blue-600/40" strokeWidth={1.5} />
                     </div>
                     <div className="absolute bottom-28 left-16 animate-fade-in" style={{animationDelay: '1s'}}>
-                      <Shield className="w-9 h-9 xl:w-13 xl:h-13 text-blue-500/50" strokeWidth={1.5} />
+                      <Shield className="w-9 h-9 xl:w-16 xl:h-16 text-blue-500/50" strokeWidth={1.5} />
                     </div>
                     
                     {/* Protective Circle Lines */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-96 h-96 xl:w-[32rem] xl:h-[32rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
+                      <div className="w-96 h-96 xl:w-[40rem] xl:h-[40rem] border border-blue-400/35 rounded-full animate-scale-in"></div>
                     </div>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-80 h-80 xl:w-[28rem] xl:h-[28rem] border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
+                      <div className="w-80 h-80 xl:w-[36rem] xl:h-[36rem] border border-blue-500/30 rounded-full animate-scale-in" style={{animationDelay: '0.3s'}}></div>
                     </div>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-64 h-64 xl:w-96 xl:h-96 border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
+                      <div className="w-64 h-64 xl:w-[32rem] xl:h-[32rem] border border-blue-600/25 rounded-full animate-scale-in" style={{animationDelay: '0.6s'}}></div>
                     </div>
                     
                     {/* Central Protection Glow */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-64 h-64 xl:w-96 xl:h-96 bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
+                      <div className="w-64 h-64 xl:w-[32rem] xl:h-[32rem] bg-blue-400/15 rounded-full blur-3xl animate-pulse"></div>
                     </div>
                   </div>
                   
