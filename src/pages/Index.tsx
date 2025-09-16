@@ -318,7 +318,7 @@ const Index = () => {
               สอบถามข้อมูลเพิ่มเติมหรือขอความช่วยเหลือ
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             <Card className="shadow-[var(--shadow-soft)] h-full flex flex-col">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2 text-lg">
