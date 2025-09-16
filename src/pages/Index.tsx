@@ -21,26 +21,26 @@ const Index = () => {
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
-              className="h-6 md:h-12 w-auto object-contain"
+              className="h-6 md:h-12 lg:h-10 xl:h-12 w-auto object-contain"
             />
-            <div className="w-px h-6 md:h-12 bg-foreground/30"></div>
+            <div className="w-px h-6 md:h-12 lg:h-10 xl:h-12 bg-foreground/30"></div>
             <img 
               src={kmitlLogo} 
               alt="KMITL Logo" 
-              className="h-6 md:h-12 w-auto object-contain"
+              className="h-6 md:h-12 lg:h-10 xl:h-12 w-auto object-contain"
             />
           </div>
 
           {/* Main Content - Responsive Layout */}
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center max-w-7xl mx-auto">
             {/* Left Side - Text Content */}
-            <div className="space-y-4 md:space-y-8 text-center lg:text-left">
+            <div className="space-y-4 md:space-y-8 text-center lg:text-left lg:pl-8 xl:pl-0">
               <div>
-                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 md:mb-6 leading-tight text-black">
+                <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold mb-3 md:mb-6 leading-tight text-black">
                   ประกันอุบัติเหตุทิพยประกันภัย<br />
                   สำหรับบุคลากร สจล. และครอบครัว
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl mb-3 md:mb-6 leading-relaxed text-black">
+                <p className="text-base md:text-lg lg:text-lg xl:text-xl mb-3 md:mb-6 leading-relaxed text-black">
                   สิทธิพิเศษสำหรับบุคลากร ญาติ และผู้เกษียณ สะดวก รวดเร็ว ซื้อได้ที่นี่
                 </p>
               </div>
@@ -52,7 +52,7 @@ const Index = () => {
                     <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
-                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
+                    <span className="text-base md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl font-bold text-gray-600">เสียชีวิต/ทุพพลภาพถาวร 400,000 บาท</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
@@ -60,7 +60,7 @@ const Index = () => {
                     <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
-                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
+                    <span className="text-base md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl font-bold text-gray-600">ค่ารักษาพยาบาลต่อครั้ง 40,000 บาท</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 md:gap-4 justify-center lg:justify-start">
@@ -68,7 +68,7 @@ const Index = () => {
                     <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" strokeWidth={3} />
                   </div>
                   <div>
-                    <span className="text-base md:text-xl lg:text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
+                    <span className="text-base md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl font-bold text-gray-600">ทำประกันได้ตั้งแต่อายุ 1-91 ปี</span>
                   </div>
                 </div>
               </div>
