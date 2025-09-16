@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Section 1: Hero & Intro */}
-      <section className="bg-gradient-to-r from-primary to-white text-foreground py-12 shadow-[var(--shadow-medium)] relative overflow-hidden">
+      <section className="bg-gradient-to-br from-blue-100 via-blue-50 to-white text-foreground py-12 shadow-[var(--shadow-medium)] relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Logos */}
           <div className="flex items-center justify-center gap-6 mb-12">
