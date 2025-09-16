@@ -1,7 +1,7 @@
 import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } from "lucide-react";
 import kmitlLogo from "@/assets/kmitl-logo.webp";
 import ancLogo from "@/assets/anc-logo.svg";
-import insurancePeopleHero from "@/assets/insurance-people-hero.png";
+import insurancePeopleBanner from "@/assets/insurance-people-banner.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
@@ -83,44 +83,13 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Right Side - Image with Shield Protection Background */}
-            <div className="relative lg:block hidden">
-              {/* Blue Shield Background with Lines */}
-              <div className="absolute inset-0 bg-blue-50 rounded-2xl overflow-hidden">
-                {/* Decorative Shield Pattern */}
-                <div className="absolute top-4 left-4">
-                  <Shield className="w-8 h-8 text-blue-200" strokeWidth={1} />
-                </div>
-                <div className="absolute top-1/4 right-8">
-                  <Shield className="w-12 h-12 text-blue-300" strokeWidth={1} />
-                </div>
-                <div className="absolute bottom-1/4 left-8">
-                  <Shield className="w-6 h-6 text-blue-200" strokeWidth={1} />
-                </div>
-                <div className="absolute bottom-8 right-4">
-                  <Shield className="w-10 h-10 text-blue-200" strokeWidth={1} />
-                </div>
-                
-                {/* Protection Lines */}
-                <div className="absolute top-0 left-1/4 w-px h-full bg-blue-200/50"></div>
-                <div className="absolute top-0 right-1/4 w-px h-full bg-blue-200/50"></div>
-                <div className="absolute left-0 top-1/4 w-full h-px bg-blue-200/50"></div>
-                <div className="absolute left-0 bottom-1/4 w-full h-px bg-blue-200/50"></div>
-                
-                {/* Central Shield */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-blue-500/20 rounded-full p-6">
-                    <Shield className="w-16 h-16 text-blue-600" strokeWidth={2} />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Main Image */}
-              <div className="relative z-10 p-8">
+            {/* Right Side - Image positioned at bottom */}
+            <div className="relative lg:flex hidden items-end justify-center h-full">
+              <div className="relative">
                 <img 
-                  src={insurancePeopleHero} 
+                  src={insurancePeopleBanner} 
                   alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
-                  className="w-full h-auto object-contain rounded-xl"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
