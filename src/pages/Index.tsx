@@ -93,7 +93,7 @@ const Index = () => {
               <img 
                 src={silverShield} 
                 alt="Silver protective shield representing insurance coverage" 
-                className="w-[400px] h-auto object-contain opacity-25 drop-shadow-2xl"
+                className="w-[550px] h-auto object-contain opacity-25 drop-shadow-2xl"
               />
             </div>
             
