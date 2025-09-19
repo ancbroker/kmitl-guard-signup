@@ -687,8 +687,8 @@ const InsuranceForm = () => {
                  
                 </div>
                  {/* Beneficiary Information Section */}
-              <div className="border-t pt-6 px-6 pb-6">
-                <h4 className="font-medium text-base text-gray-700 mb-4">ข้อมูลผู้รับประโยชน์</h4>
+              <div className="border-t pt-6 pb-6 mt-6">
+                <h4 className="font-bold text-base text-gray-700 mb-4">ข้อมูลผู้รับประโยชน์</h4>
                 
                 {/* Beneficiary Type */}
                 <div className="mb-4">
@@ -802,7 +802,7 @@ const InsuranceForm = () => {
           className="flex-1 py-3 text-sm"
         >
           <Plus className="w-4 h-4 mr-2" />
-          เพิ่มผู้เอาประกัน
+          เพิ่มผู้สมัคร
         </Button>
         
         <Button
