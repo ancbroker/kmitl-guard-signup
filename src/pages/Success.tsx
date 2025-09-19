@@ -1,7 +1,6 @@
 import { CheckCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 
 const Success = () => {
   return (
@@ -24,12 +23,12 @@ const Success = () => {
               <p>📋 เอกสารประกันจะถูกดำเนินการภายใน 3-5 วันทำการ</p>
             </div>
 
-            <Link to="/">
-              <Button variant="outline" className="w-full">
+            <Button asChild variant="outline" className="w-full">
+              <a href="/">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 กลับสู่หน้าหลัก
-              </Button>
-            </Link>
+              </a>
+            </Button>
           </div>
         </CardContent>
       </Card>

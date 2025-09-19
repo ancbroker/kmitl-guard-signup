@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { DatePickerWithYearMonth } from "./DatePickerWithYearMonth";
+import { postFormData, toFormData, setupPayment } from "@/lib/api";
 
 interface PersonData {
   id: string;
@@ -25,6 +26,12 @@ interface PersonData {
   major: string;
   faculty: string;
   isExpanded?: boolean;
+  beneficiaryType?: string;
+  beneficiaryPrefix?: string;
+  beneficiaryFirstName?: string;
+  beneficiaryRelationship?: string;
+  beneficiaryLastName?: string;
+  beneficiaryRelationshipOther?: string;
 }
 
 const calculateAge = (birthDate: Date) => {
@@ -55,6 +62,16 @@ const getPremiumByAge = (years: number) => {
   return 0;
 };
 
+const getPackIDByAge = (years: number) => {
+  if (years >= 1 && years <= 14) return "105-282-1701";
+  if (years >= 15 && years <= 65) return "105-282-1702";
+  if (years >= 66 && years <= 70) return "105-282-1703";
+  if (years >= 71 && years <= 75) return "105-282-1704";
+  if (years >= 76 && years <= 80) return "105-282-1705";
+  if (years >= 81 && years <= 91) return "105-282-1706";
+  return "";
+};
+
 const relationships = [
   "บิดา",
   "มารดา", 
@@ -65,14 +82,42 @@ const relationships = [
 ];
 
 const faculties = [
-  "วิศวกรรมศาสตร์",
-  "เทคโนโลยีสารสนเทศ",
-  "วิทยาศาสตร์",
-  "สถาปัตยกรรมศาสตร์",
-  "วิทยาศาสตรการกีฬา",
-  "บริหารธุรกิจ",
-  "นวัตกรรมการออกแบบและสถาปัตยกรรม",
-  "เทคโนโลยีการเกษตร"
+  "คณะวิศวกรรมศาสตร์",
+  "คณะสถาปัตยกรรม ศิลปะและการออกแบบ",
+  "คณะวิทยาศาสตร์",
+  "คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี",
+  "คณะเทคโนโลยีการเกษตร",
+  "คณะเทคโนโลยีสารสนเทศ",
+  "คณะอุตสาหกรรมอาหาร",
+  "คณะบริหารธุรกิจ",
+  "คณะศิลปศาสตร์",
+  "คณะแพทยศาสตร์",
+  "คณะทันตแพทยศาสตร์",
+  "คณะพยาบาลศาสตร์",
+  "คณะเทคโนโลยีนวัตกรรมบูรณาการ",
+  "วิทยาลัยการจัดการนวัตกรรมและอุตสาหกรรม",
+  "วิทยาลัยอุตสาหกรรมการบินนานาชาติ",
+  "วิทยาลัยวิศวกรรมสังคีต"
+];
+
+const titlePrefixes = [
+  "นาย",
+  "นาง",
+  "นางสาว",
+  "เด็กชาย",
+  "เด็กหญิง"
+];
+
+const beneficiaryRelationships = [
+  "สามี",
+  "ภรรยา",
+  "บิดา",
+  "มารดา",
+  "พี่",
+  "น้อง",
+  "บุตรชาย",
+  "บุตรสาว",
+  "อื่นๆ"
 ];
 
 const InsuranceForm = () => {
@@ -89,10 +134,18 @@ const InsuranceForm = () => {
       relationship: "",
       major: "",
       faculty: "",
-      isExpanded: true
+      isExpanded: true,
+      beneficiaryType:"ทายาทตามกฎหมาย",
+      beneficiaryPrefix: "",
+      beneficiaryFirstName: "",
+      beneficiaryRelationship: "",
+      beneficiaryLastName: "",
+      beneficiaryRelationshipOther: ""
     }
   ]);
   const [showSummary, setShowSummary] = useState(false);
+  const [paymentLoading, setPaymentLoading] = useState(false);
+  const [ref1Code, setRef1Code] = useState<string>('');
   const [validationErrors, setValidationErrors] = useState<{[key: string]: string[]}>({});
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -110,7 +163,13 @@ const InsuranceForm = () => {
       relationship: "",
       major: "",
       faculty: "",
-      isExpanded: true
+      isExpanded: true,
+      beneficiaryType:"ทายาทตามกฎหมาย",
+      beneficiaryPrefix: "",
+      beneficiaryFirstName: "",
+      beneficiaryRelationship: "",
+      beneficiaryLastName: "",
+      beneficiaryRelationshipOther: ""
     };
     setPeople([...people, newPerson]);
     setShowSummary(false);
@@ -154,7 +213,7 @@ const InsuranceForm = () => {
       if (!person.lastName) personErrors.push('lastName');
       if (!person.birthDate) personErrors.push('birthDate');
       if (!person.idNumber) personErrors.push('idNumber');
-      if (!person.beneficiary) personErrors.push('beneficiary');
+     // if (!person.beneficiary) personErrors.push('beneficiary');
       if (!person.referencePersonName) personErrors.push('referencePersonName');
       if (!person.relationship) personErrors.push('relationship');
       if (!person.major) personErrors.push('major');
@@ -181,7 +240,7 @@ const InsuranceForm = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validateForm()) {
       toast({
         title: "ข้อมูลไม่ครบถ้วน",
@@ -191,20 +250,162 @@ const InsuranceForm = () => {
       return;
     }
 
-    setShowSummary(true);
+    try {
+      toast({ title: "กำลังส่งข้อมูล", description: "กำลังส่งข้อมูลผู้สมัครทั้งหมด..." });
+      // const baseUrl = (import.meta as any).env?.VITE_THIRD_PARTY_SAVE_URL || '';
+      // const API_URL = baseUrl.endsWith('.php') ? baseUrl : baseUrl + '.php';
+      const API_URL = (import.meta as any).env?.VITE_THIRD_PARTY_SAVE_URL || 'https://ancbroker.synology.me:8122/php/third_party_save.php';
+      function generateRef1() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        while (true) {
+          let code = '';
+          for (let i = 0; i < 15; i++) code += chars[Math.floor(Math.random() * chars.length)];
+          if (/[A-Z]/.test(code) && /\d/.test(code)) return code; // ensure at least one letter & number
+        }
+      }
+      const ref1Code = generateRef1();
+      setRef1Code(ref1Code);
+
+      function buildPayload(p: PersonData, idx: number) {
+        const premium = p.birthDate ? getPremiumByAge(calculateAge(p.birthDate).years) : 0;
+        const packId  = p.birthDate ? getPackIDByAge(calculateAge(p.birthDate).years) : '';
+        const birthDateStr = p.birthDate ? p.birthDate.toISOString().split('T')[0] : '';
+        const beneficiarySet = [
+          { benName: p.beneficiaryType === 'อื่นๆ' ? p.beneficiaryFirstName : 'ทายาทตามกฎหมาย' , benLastName: p.beneficiaryType === 'อื่นๆ' ? p.beneficiaryLastName : '', benMobile: '', benEmail: idx === 0 ? p.email : '', benRelation: p.beneficiaryType === 'อื่นๆ' && p.beneficiaryRelationship === 'อื่นๆ' ? p.beneficiaryRelationshipOther : p.beneficiaryType === 'อื่นๆ' && p.beneficiaryRelationship != 'อื่นๆ' ? p.beneficiaryRelationship : 'ทายาทตามกฎหมาย', benPercent: 100 }
+        ];
+        return {
+          secretKey: (import.meta as any).env?.VITE_SECRET_KEY || '',
+          checkbiaUrl: (import.meta as any).env?.VITE_CHECKBIA_URL || 'http://localhost:8121',
+          prakunUrl: (import.meta as any).env?.VITE_PRAKUN_URL || 'https://www.prakun.com',
+          assured_add_street: '',
+          assured_add_country: 'th',
+          assured_type: 'P',
+          assured_card_type: 'P',
+          assured_email: people[0].email,
+          assured_name: `${p.firstName}`.trim(),
+          assured_lastname: `${p.lastName}`.trim(),
+          assured_bdate: birthDateStr,
+          assured_czid: p.idNumber,
+          q_hp_sex: '',
+          q_to_name: `${p.firstName} ${p.lastName}`.trim(),
+          q_to_email: people[0].email,
+          q_agt_id: (import.meta as any).env?.VITE_Q_AGT_ID || '2435',
+          q_vmi_startCover: '',
+          q_vmi_stopCover: '',
+          
+          qsub_vmi_NETPREMIUM: String(premium),
+          qsub_vmi_PREMIUM: String(premium),
+          qsub_vmi_INS: (import.meta as any).env?.VITE_INS_CODE || '',
+          qsub_vmi_INSID: (import.meta as any).env?.VITE_INS_ID || '',
+          qsub_vmi_POTYPEID: '2411',
+          qsub_vmi_POTYPE: 'PA',
+          qsub_vmi_IDPACK: packId,
+          qsub_vmi_PACKNAME: (import.meta as any).env?.VITE_PLAN_NAME || '',
+          q_no: '',
+          note: '',
+          REF1: ref1Code,
+          payMethod: 'bank',
+          mkt_id: '',
+          resultType: 'json',
+          q_type_source: 'new',
+          q_tag: '',
+          q_old_pono: '',
+          leadType: 'D2F',
+          status_order: 'summary',
+          beneficiarySet: JSON.stringify(beneficiarySet),
+          json_object: '',
+          AfterPay: '',
+          AfterReceivePolicy: '',
+          qsub_type_group: 'PA',
+          comission_affiliate: '',
+          comission_baht_vmi: '',
+          comission_baht_cmi: '',
+          q_login_id: '',
+          paidGroup: ref1Code
+        };
+      }
+
+      const results: { raw: any; ok: boolean; index: number; error?: string; blind?: boolean }[] = [];
+      for (let i = 0; i < people.length; i++) {
+        const payload = buildPayload(people[i], i);
+        const fd = toFormData(payload);
+        try {
+          const resp = await fetch(API_URL, { method: 'POST', body: fd });
+          let text: string | null = null;
+          let parsed: any = null;
+          try { text = await resp.text(); } catch { /* body unreadable due to CORS; treat as blind success */ }
+          
+          if (text) { try { parsed = JSON.parse(text); } catch { /* not JSON */ } }
+          const status = parsed?.Status;
+          const msg = parsed?.Msg;
+          if (status === '0' && msg === 'Success') {
+            results.push({ raw: parsed, ok: true, index: i });
+          } else if (!text && resp.ok) {
+            // Single attempt, body not readable but request likely delivered
+            results.push({ raw: null, ok: true, index: i, blind: true });
+          } else {
+            results.push({ raw: parsed ?? text, ok: false, index: i, error: `Status=${status} Msg=${msg}` });
+            toast({ title: 'รายการล้มเหลว', description: `ผู้สมัครที่ ${i + 1}: ${msg || 'ไม่สำเร็จ'}`, variant: 'destructive' });
+          }
+        } catch (err: any) {
+          results.push({ raw: null, ok: false, index: i, error: err?.message });
+          toast({ title: 'เชื่อมต่อไม่สำเร็จ', description: `ผู้สมัครที่ ${i + 1}: ${err?.message || 'ไม่ทราบสาเหตุ'}`, variant: 'destructive' });
+        }
+      }
+
+      const allSuccess = results.every(r => r.ok);
+      const blindCount = results.filter(r => r.blind).length;
+      if (allSuccess) {
+        const desc = blindCount > 0
+          ? `ทั้งหมด ${people.length} รายการ `
+          : `ทั้งหมด ${people.length} รายการ `;
+        toast({ title: 'ส่งข้อมูลสำเร็จ', description: desc });
+        setShowSummary(true);
+      } else {
+        const failed = results.filter(r => !r.ok).map(r => r.index + 1).join(', ');
+        toast({ title: 'บางรายการไม่สำเร็จ', description: `ล้มเหลว: ${failed}`, variant: 'destructive' });
+      }
+      
+    } catch (error: any) {
+      toast({ title: "ส่งข้อมูลไม่สำเร็จ", description: error?.message || "เกิดข้อผิดพลาดในการส่งข้อมูล", variant: "destructive" });
+    }
   };
 
-  const proceedToPayment = () => {
-    // Simulate payment redirect
-    toast({
-      title: "กำลังดำเนินการ",
-      description: "กำลังเปลี่ยนเส้นทางไปยังระบบชำระเงิน...",
-    });
-    
-    // Simulate redirect delay
-    setTimeout(() => {
-      navigate('/success');
-    }, 2000);
+  const proceedToPayment = async () => {
+    if (paymentLoading) return;
+    try {
+      setPaymentLoading(true);
+      toast({ title: 'กำลังเข้าสู่หน้าชำระเงิน', description: 'กำลังสร้างรายการชำระเงิน...' });
+      // Map current people to payment shape
+      const paymentPeople = people.map((p, idx) => {
+        const ageYears = p.birthDate ? calculateAge(p.birthDate).years : 0;
+        return {
+          firstName: p.firstName,
+            lastName: p.lastName,
+          email: idx === 0 ? p.email : '',
+          idNumber: p.idNumber,
+          premium: p.birthDate ? getPremiumByAge(ageYears) : 0,
+          tel: ''
+        };
+      });
+  const successUrl = window.location.origin + '/#/success';
+      await setupPayment({
+        people: paymentPeople,
+        totalPremium,
+        agentId: (import.meta as any).env?.VITE_Q_AGT_ID,
+        insCode: (import.meta as any).env?.VITE_INS_CODE,
+        planName: (import.meta as any).env?.VITE_PLAN_NAME || 'KMITL Guard',
+        successUrl,
+        detailUrl: successUrl,
+        updateUrl: (import.meta as any).env?.VITE_CHECKBIA_URL ? `${(import.meta as any).env?.VITE_CHECKBIA_URL}/admin/paid-update.php?ref=${ref1Code}` : successUrl,
+        qNo: ref1Code || undefined,
+        ref1: ref1Code
+      });
+    } catch (err: any) {
+      toast({ title: 'ไม่สามารถไปหน้าชำระเงิน', description: err?.message || 'เกิดข้อผิดพลาด', variant: 'destructive' });
+    } finally {
+      setPaymentLoading(false);
+    }
   };
 
   const totalPremium = people.reduce((total, person) => {
@@ -240,7 +441,7 @@ const InsuranceForm = () => {
                       <div>
                         <h4 className="font-semibold">{person.firstName} {person.lastName}</h4>
                         <p className="text-sm text-muted-foreground">
-                          {age ? `อายุ ${age.years} ปี ${age.months} เดือน` : 'ไม่ระบุอายุ'} • {person.relationship}
+                          {age ? `อายุ ${age.years} ปี ${age.months} เดือน` : 'ไม่ระบุอายุ'} 
                         </p>
                       </div>
                     </div>
@@ -278,11 +479,12 @@ const InsuranceForm = () => {
             variant="default"
             size="xl"
             onClick={proceedToPayment}
-            className="flex-1 py-3 text-sm"
+            disabled={paymentLoading}
+            className="flex-1 py-3 text-sm disabled:opacity-70"
             style={{backgroundColor: '#4DCFFF', color: 'white'}}
           >
             <CreditCard className="w-4 h-4 mr-2" />
-            ไปชำระเงิน {totalPremium.toLocaleString()} บาท
+            {paymentLoading ? 'กำลังไปหน้าชำระเงิน...' : `ไปชำระเงิน ${totalPremium.toLocaleString()} บาท`}
           </Button>
         </div>
       </div>
@@ -419,18 +621,6 @@ const InsuranceForm = () => {
                     </div>
                   )}
 
-                  {/* Beneficiary */}
-                  <div>
-                    <Label htmlFor={`beneficiary-${person.id}`}>ผู้รับประโยชน์ *</Label>
-                    <Input
-                      id={`beneficiary-${person.id}`}
-                      value={person.beneficiary}
-                      onChange={(e) => updatePerson(person.id, "beneficiary", e.target.value)}
-                      placeholder="ชื่อผู้รับประโยชน์"
-                      className={cn(validationErrors[person.id]?.includes('beneficiary') && "border-red-500 focus:border-red-500")}
-                    />
-                  </div>
-
                   {/* Reference Person */}
                   <div>
                     <Label htmlFor={`referencePerson-${person.id}`}>ชื่อบุคคลอ้างอิง (บุคลากรของ สจล.) *</Label>
@@ -494,7 +684,109 @@ const InsuranceForm = () => {
                       </SelectContent>
                     </Select>
                   </div>
+                 
                 </div>
+                 {/* Beneficiary Information Section */}
+              <div className="border-t pt-6 px-6 pb-6">
+                <h4 className="font-medium text-base text-gray-700 mb-4">ข้อมูลผู้รับประโยชน์</h4>
+                
+                {/* Beneficiary Type */}
+                <div className="mb-4">
+                  <Label>ประเภทผู้รับประโยชน์ *</Label>
+                  <Select
+                    value={person.beneficiaryType}
+                    onValueChange={(value) => updatePerson(person.id, "beneficiaryType", value)}
+                  >
+                    <SelectTrigger className="bg-background">
+                      <SelectValue placeholder="เลือกประเภทผู้รับประโยชน์" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="ทายาทตามกฎหมาย">ทายาทตามกฎหมาย</SelectItem>
+                      <SelectItem value="อื่นๆ">อื่นๆ</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Show additional fields if "อื่นๆ" is selected */}
+                {person.beneficiaryType === 'อื่นๆ' && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Beneficiary Prefix */}
+                    <div>
+                      <Label>คำนำหน้า *</Label>
+                      <Select
+                        value={person.beneficiaryPrefix}
+                        onValueChange={(value) => updatePerson(person.id, "beneficiaryPrefix", value)}
+                      >
+                        <SelectTrigger className={cn("bg-background", validationErrors[person.id]?.includes('beneficiaryPrefix') && "border-red-500 focus:border-red-500")}>
+                          <SelectValue placeholder="เลือกคำนำหน้า" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {titlePrefixes.map((prefix) => (
+                            <SelectItem key={prefix} value={prefix}>
+                              {prefix}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Beneficiary First Name */}
+                    <div>
+                      <Label>ชื่อ *</Label>
+                      <Input
+                        value={person.beneficiaryFirstName}
+                        onChange={(e) => updatePerson(person.id, "beneficiaryFirstName", e.target.value)}
+                        placeholder="ชื่อผู้รับประโยชน์"
+                        className={cn(validationErrors[person.id]?.includes('beneficiaryFirstName') && "border-red-500 focus:border-red-500")}
+                      />
+                    </div>
+
+                    {/* Beneficiary Last Name */}
+                    <div>
+                      <Label>นามสกุล *</Label>
+                      <Input
+                        value={person.beneficiaryLastName}
+                        onChange={(e) => updatePerson(person.id, "beneficiaryLastName", e.target.value)}
+                        placeholder="นามสกุลผู้รับประโยชน์"
+                        className={cn(validationErrors[person.id]?.includes('beneficiaryLastName') && "border-red-500 focus:border-red-500")}
+                      />
+                    </div>
+
+                    {/* Beneficiary Relationship */}
+                    <div>
+                      <Label>ความสัมพันธ์ *</Label>
+                      <Select
+                        value={person.beneficiaryRelationship}
+                        onValueChange={(value) => updatePerson(person.id, "beneficiaryRelationship", value)}
+                      >
+                        <SelectTrigger className={cn("bg-background", validationErrors[person.id]?.includes('beneficiaryRelationship') && "border-red-500 focus:border-red-500")}>
+                          <SelectValue placeholder="เลือกความสัมพันธ์" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {beneficiaryRelationships.map((relationship) => (
+                            <SelectItem key={relationship} value={relationship}>
+                              {relationship}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Other Relationship Input - Full width when visible */}
+                    {person.beneficiaryRelationship === 'อื่นๆ' && (
+                      <div className="md:col-span-2">
+                        <Label>ระบุความสัมพันธ์ *</Label>
+                        <Input
+                          value={person.beneficiaryRelationshipOther}
+                          onChange={(e) => updatePerson(person.id, "beneficiaryRelationshipOther", e.target.value)}
+                          placeholder="ระบุความสัมพันธ์"
+                          className={cn(validationErrors[person.id]?.includes('beneficiaryRelationshipOther') && "border-red-500 focus:border-red-500")}
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
               </CardContent>
             </CollapsibleContent>
           </Collapsible>
