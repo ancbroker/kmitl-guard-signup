@@ -71,3 +71,53 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Environment Variables
+
+This project uses Vite, so only variables prefixed with `VITE_` are exposed to the client at build time.
+
+1. Copy `.env.example` to `.env`:
+	```sh
+	cp .env.example .env
+	```
+2. Fill in real values (never commit secrets you do not want public).
+3. Restart the dev server after adding or changing `.env` values.
+
+### Variables in use
+
+| Name | Purpose |
+|------|---------|
+| `VITE_API_URL` | Fallback/local API base path. |
+| `VITE_SECRET_KEY` | Secret key passed with each submission. |
+| `VITE_Q_AGT_ID` | Agent ID used in payload. |
+| `VITE_INS_CODE` / `VITE_INS_ID` | Insurer identifiers. |
+| `VITE_FROM_COUNTRY` / `VITE_TO_COUNTRY` | Travel or coverage origin/destination. |
+| `VITE_TA_TYPE` | Travel insurance type flag. |
+| `VITE_CALLBACK_BASE` | Base URL for AfterPay / AfterReceivePolicy callbacks. |
+| `VITE_CHECKBIA_URL` | External check service URL. |
+| `VITE_PRAKUN_URL` | Prakun site base URL. |
+
+### Accessing in code
+
+```ts
+const url = import.meta.env.VITE_THIRD_PARTY_SAVE_URL;
+```
+
+Avoid using `(import.meta as any)` unless necessary—TypeScript can be taught about these by adding a `env.d.ts` declaration if desired.
+
+### Development Proxy (CORS Bypass)
+
+During development we proxy the path `/third_party_save` to the remote PHP endpoint to avoid CORS issues:
+
+```
+client (http://localhost:8080) --> /third_party_save (Vite dev proxy) --> https://ancbroker.synology.me:8122/php/third_party_save.php
+```
+
+Configure in `.env` (dev):
+
+```
+VITE_THIRD_PARTY_SAVE_URL=/third_party_save
+```
+
+The proxy is defined in `vite.config.ts` under `server.proxy`. In production you must enable proper CORS headers on the real server (or deploy a backend proxy under the same origin). The front-end alone cannot override missing `Access-Control-Allow-Origin` on the remote server.
+
