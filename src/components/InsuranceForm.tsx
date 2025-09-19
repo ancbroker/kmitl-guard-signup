@@ -273,6 +273,14 @@ const InsuranceForm = () => {
         const beneficiarySet = [
           { benName: p.beneficiaryType === 'อื่นๆ' ? p.beneficiaryFirstName : 'ทายาทตามกฎหมาย' , benLastName: p.beneficiaryType === 'อื่นๆ' ? p.beneficiaryLastName : '', benMobile: '', benEmail: idx === 0 ? p.email : '', benRelation: p.beneficiaryType === 'อื่นๆ' && p.beneficiaryRelationship === 'อื่นๆ' ? p.beneficiaryRelationshipOther : p.beneficiaryType === 'อื่นๆ' && p.beneficiaryRelationship != 'อื่นๆ' ? p.beneficiaryRelationship : 'ทายาทตามกฎหมาย', benPercent: 100 }
         ];
+        const department = {
+          major: p.major,
+          faculty: p.faculty
+        };
+        const refference ={
+          name: p.referencePersonName,
+          relation: p.relationship
+        }
         return {
           secretKey: (import.meta as any).env?.VITE_SECRET_KEY || '',
           checkbiaUrl: (import.meta as any).env?.VITE_CHECKBIA_URL || 'http://localhost:8121',
@@ -302,7 +310,7 @@ const InsuranceForm = () => {
           qsub_vmi_IDPACK: packId,
           qsub_vmi_PACKNAME: (import.meta as any).env?.VITE_PLAN_NAME || '',
           q_no: '',
-          note: '',
+          note: JSON.stringify(department),
           REF1: ref1Code,
           payMethod: 'bank',
           mkt_id: '',
@@ -321,7 +329,8 @@ const InsuranceForm = () => {
           comission_baht_vmi: '',
           comission_baht_cmi: '',
           q_login_id: '',
-          paidGroup: ref1Code
+          paidGroup: ref1Code,
+          assured_ref_person: JSON.stringify(refference)
         };
       }
 
