@@ -1,7 +1,8 @@
-import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check } from "lucide-react";
+import { Shield, Users, CheckCircle, Phone, Mail, MapPin, ArrowDown, Check, AlertCircle } from "lucide-react";
 import kmitlLogo from "@/assets/kmitl-logo.webp";
 import ancLogo from "@/assets/anc-logo.svg";
 import insurancePeopleBanner from "@/assets/banner-desktop.jpg";
+import insurancePeopleBannerMobile from "@/assets/banner-mobile.jpg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsuranceForm from "@/components/InsuranceForm";
@@ -12,6 +13,12 @@ const scrollToForm = () => {
 };
 
 const Index = () => {
+  // Check if current date is after September 30th
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const cutoffDate = new Date(currentYear, 8, 30); // September 30th (month is 0-indexed)
+  const isAfterCutoff = currentDate > cutoffDate;
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -23,16 +30,27 @@ const Index = () => {
                   สำหรับบุคลากร สจล. และครอบครัว
                 </h1>
         <div className="relative z-10 w-full">
-          <img src={insurancePeopleBanner} alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" />
+          {/* Desktop Banner - แสดงใน md ขึ้นไป (768px+) */}
+          <img 
+            src={insurancePeopleBanner} 
+            alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
+            className="hidden md:block w-full h-auto object-cover"
+          />
+          {/* Mobile Banner - แสดงใน mobile เท่านั้น (ต่ำกว่า 768px) */}
+          <img 
+            src={insurancePeopleBannerMobile} 
+            alt="ประกันอุบัติเหตุ - ผู้ป่วยที่มีความสุขและได้รับการดูแล" 
+            className="block md:hidden w-full h-auto object-cover"
+          />
         </div>
         {/* CTA Button */}
               <Button 
                 onClick={scrollToForm}
-                size="xl" 
-                className="absolute z-[99] bottom-[14%] left-[9%] bg-accent hover:bg-accent/90 text-accent-foreground text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-xl shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-all duration-300 hover:scale-105"
+                size="sm" 
+                className="absolute z-40 bottom-[8%] md:bottom-[9%] xl:bottom-[12%] left-1/2 md:left-[9%] transform -translate-x-1/2 md:transform-none bg-accent hover:bg-accent/90 text-accent-foreground text-base md:text-base xl:text-xl px-6 py-3 md:px-8 md:py-4 xl:px-12 xl:py-6 rounded-lg shadow-[var(--shadow-medium)]"
               >
                 กรอกข้อมูลเพื่อซื้อเลย
-                <ArrowDown className="ml-3 w-5 h-5 md:w-6 md:h-6 animate-bounce" />
+                <ArrowDown className="ml-2 w-4 h-4 animate-bounce" />
               </Button>
       </section>
 
@@ -40,13 +58,29 @@ const Index = () => {
       <section id="insurance-form" className="py-8 md:py-12 lg:py-10 xl:py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">กรอกข้อมูลผู้สมัครประกัน</h2>
-              <p className="text-muted-foreground">
-                กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง สามารถเพิ่มผู้สมัครได้หลายคน
-              </p>
-            </div>
-            <InsuranceForm />
+            {isAfterCutoff ? (
+              // Show expiration message if after September 30th
+              <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-red-600">ขออภัย</h2>
+                <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+                  สิทธิการซื้อประกันสิ้นสุดแล้วตั้งแต่วันที่ 30 กันยายน 2568
+                </p>
+                <div className="inline-flex items-center justify-center w-20 h-20 md:w-28 md:h-28 bg-red-100 rounded-full mx-auto">
+                  <AlertCircle className="w-12 h-12 md:w-16 md:h-16 text-red-500" />
+                </div>
+              </div>
+            ) : (
+              // Show form if before or on September 30th
+              <>
+                <div className="text-center mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-2">กรอกข้อมูลผู้สมัครประกัน</h2>
+                  <p className="text-muted-foreground">
+                    กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง สามารถเพิ่มผู้สมัครได้หลายคน
+                  </p>
+                </div>
+                <InsuranceForm />
+              </>
+            )}
           </div>
         </div>
 
@@ -122,7 +156,8 @@ const Index = () => {
                 <div>• บุคลากรผู้เกษียณอายุ</div>
                 <div>• อาจารย์พิเศษ</div>
                 <div className="text-xs text-muted-foreground mt-2 pt-2 border-t">
-                  สำหรับผู้มีอายุ 1-91 ปี สุขภาพสมบูรณ์ แข็งแรง ไม่มีส่วนใดส่วนหนึ่งพิการหรือวิกลจริต
+                  <div>- สำหรับผู้มีอายุ 1-91 ปี สุขภาพสมบูรณ์ แข็งแรง ไม่มีส่วนใดส่วนหนึ่งพิการหรือวิกลจริต</div>
+                  <div>- สามารถซื้อประกันได้ถึง 30 กันยายน 2568 เท่านั้น</div>
                 </div>
               </CardContent>
             </Card>

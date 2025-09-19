@@ -148,3 +148,10 @@ All colors MUST be HSL.
     animation: float-delayed 3s ease-in-out infinite 1.5s;
   }
 }
+
+/* Custom container min-width for very large screens (1700px+) */
+@media (min-width: 1700px) {
+  .container {
+    min-width: 1600px;
+  }
+}

@@ -60,30 +60,30 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-18 2xl:h-20">
           {/* Logo Section */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <img 
               src={ancLogo} 
               alt="ANC Insurtech Logo" 
-              className="h-8 w-auto object-contain"
+              className="h-6 md:h-7 xl:h-8 2xl:h-9 w-auto object-contain"
             />
-            <div className="w-px h-8 bg-foreground/30"></div>
+            <div className="w-px h-6 md:h-7 xl:h-8 2xl:h-9 bg-foreground/30"></div>
             <img 
               src={kmitlLogo} 
               alt="KMITL Logo" 
-              className="h-8 w-auto object-contain"
+              className="h-6 md:h-7 xl:h-8 2xl:h-9 w-auto object-contain"
             />
           </div>
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-16">
+            <div className="flex items-center space-x-16 2xl:space-x-20">
               {navigationItems.map((item) => (
                 <button
                   key={item.sectionId}
                   onClick={() => scrollToSection(item.sectionId)}
-                  className="text-base font-medium text-gray-700 hover:text-orange-500 transition-colors"
+                  className="text-base 2xl:text-lg font-medium text-gray-700 hover:text-orange-500 transition-colors"
                 >
                   {item.label}
                 </button>
@@ -95,11 +95,7 @@ const Header = () => {
           <Button
             variant="outline"
             size="sm"
-            className={`md:hidden ${
-              isScrolled 
-                ? 'border-gray-300 text-gray-700' 
-                : 'border-white/30 text-white bg-white/10'
-            }`}
+            className="md:hidden border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
